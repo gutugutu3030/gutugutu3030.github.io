@@ -1,20 +1,220 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title></title>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
-<!--&#91;if lt IE 9&#93;>
-<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-<!&#91;endif&#93;-->
-<link rel="shortcut icon" href="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		.img-responsive-overwrite {
+			margin: 0 auto;
+		}
+		
+		.panelHeader {
+			color: rgb(33, 125, 187);;
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="">
 </head>
+
 <body>
-<h1>てすと！</h1>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Contents</a></li>
+						<li><a href="profile.html">Profile</a></li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+
+		<div class="row">
+			<div class="row-height">
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/realtimeProcessing/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Processimg RealtimeMode</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/realtimeProcessing/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>プログラムを書き始めるとすぐさま実行結果に反映される</p>
+								<p>Processing2のモードとして実装した</p>
+								<p><small>2015/3</small></p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/somen/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> 流しそうめん音ゲー</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/somen/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>音ゲーとそうめんは似ている</p>
+								<p>ステップマニアという音ゲーを流しそうめん化した</p>
+								<p><small>2014/9</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> 画像変形ツール</h3>
+						</div>
+						<div class="panel-body">
+							<img src="contents/imageDeformer/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>画像・動画を変形でき，kinectと連携すれば自分の動きとキャラクタを同調できる</p>
+								<p>空間キーフレーム法使用(既存手法 再実装)</p>
+								<p><small>2014/5</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/numericKeypad/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> オリジナルテンキー</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/numericKeypad/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>内部配線を導電性インクでハック</p>
+								<p>Arduinoとつなげて自由なキー割り当てを可能にした</p>
+								<p><small>2014/3</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/ProjectronMapping/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Projectron Mapping</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/ProjectronMapping/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>ドラッグ操作による手軽な電子工作</p>
+								<p>プロジェクションマッピングによる電子部品の擬似動作を利用した</p>
+								<p><small>2013/10~2014/12</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/duelDisk/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> デュエルディスク</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/duelDisk/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>某アニメの決闘盤を再現</p>
+								<p>デュエルディスクにカードを挿入するとキャラクタが召喚される</p>
+								<p><small>2013/5</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/Hako/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Hako</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/Hako/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>箱とARキャラクタとのインタラクション</p>
+								<p>AR棒人間がキックをすると現実世界上の箱が動く</p>
+								<p><small>2012/11</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/ARmodeling/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> ARモデリングツール</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/ARmodeling/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>3Dモデリングをなぜ2次元上でやらねばらないのか</p>
+								<p>ARで3Dモデリングを可能にした</p>
+								<p><small>2012/9</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-sm-height">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<a href="contents/battleLine/index.html">
+								<h3 class="panel-title panelHeader"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> BattleLine</h3>
+							</a>
+						</div>
+						<div class="panel-body">
+							<img src="contents/battleLine/thumbnail.jpg" class="img-responsive img-responsive-overwrite">
+							<div class="caption">
+								<p>線と線の戦い　ぶつかると死ぬ</p>
+								<p>最後まで生き残った方が勝ち　アイテムを上手く使って生き残れ！</p>
+								<p><small>2009/3~2011/10</small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>
