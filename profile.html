@@ -14,6 +14,18 @@
 		body {
 			padding-top: 80px;
 		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
 	</style>
 	<!--&#91;if lt IE 9&#93;>
 		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -40,13 +52,68 @@
 						<li class="active"><a href="profile.html">Profile</a></li>
 						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
 						<li><a href="https://sites.google.com/site/gutugutu30/">備忘録</a></li>
-						
 					</ul>
 				</div>
 			</div>
 		</div>
 	</header>
 	<div class="container">
+		<div>
+			<h1>Profile</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<img class="img-rounded img-responsive" src="icon.svg" />
+			</div>
+			<div class="col-sm-8">
+				<h2>秋山 耀 <small>Yoh Akiyama</small></h2>
+				<ul style="list-style-type:none;">
+					<li>明治大学理工学部情報科学科4年</li>
+					<li><a href="http://www.th.cs.meiji.ac.jp/">玉木研究室</a>所属</li>
+					<li><a href="http://miyashita.com/">宮下研究室</a>座敷童</li>
+					<li><i class="glyphicon glyphicon-envelope"></i> akyoh9933@gmail.com</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<h2>Publications</h2>
+			<ul style="list-style-type:none;">
+				<li>査読付き学術論文
+					<ol>
+						<li>秋山耀, 宮下芳明. プロジェクションマッピングによる電子工作体験支援. 日本バーチャルリアリティ学会論文誌, Vol.20, No.2, pp.83-86, 2015.
+							<a href="https://www.youtube.com/watch?v=N3dJ4XRDF1I" target="_blank"><i class="glyphicon glyphicon-film"></i></a>
+						</li>
+					</ol>
+				</li>
+				<li>査読付き国際会議（デモ・ポスター・動画発表）
+					<ol>
+						<li>Yoh Akiyama and Homei Miyashita. Electronic kit with no current flow that uses projection mapping. CHI '14 Extended
+							Abstracts on Human Factors in Computing Systems(CHI2014), pp.155-156, 2014.
+							<a href="http://dl.acm.org/citation.cfm?id=2559206.2579523&coll=DL&dl=ACM" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+						</li>
+						<li>Yoh Akiyama and Homei Miyashita. Projectron Mapping: The Exercise and Extension of Augmented Workspaces for Learning
+							Electronic Modeling through Projection Mapping. Proceedings of the adjunct publication of the 27th annual ACM symposium
+							on User interface software and technology(UIST2014), pp.57-58, 2014.
+							<a href="http://dl.acm.org/citation.cfm?id=2658779.2659113&coll=DL&dl=ACM" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+							<strong class="text-info">(SUI2014で招待デモ発表)</strong>
+						</li>
+					</ol>
+				</li>
+				<li>デモ・ポスター発表
+					<ol>
+						<li>秋山耀, 宮下芳明. 部品へのプロジェクションマッピングによる通電しない電子工作. 第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2013), pp.141-142, 2013.
+							<a href="http://www.wiss.org/WISS2013Proceedings/demo/089.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+							<strong class="text-info">[対話発表賞]</strong>
+						</li>
+						<li>加藤邦拓, 秋山耀, 宮下芳明. タッチ入力の柔軟な再配置を可能としたインタフェースの作成支援. 第22回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2014), pp.151-152, 2014.
+							<a href="http://www.wiss.org/WISS2014Proceedings/demo/086.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+							<a href="https://www.youtube.com/watch?v=hM2Jfhzky48" target="_blank"><i class="glyphicon glyphicon-film"></i></a>
+						</li>
+					</ol>
+				</li>
+			</ul>
+
+		</div>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
