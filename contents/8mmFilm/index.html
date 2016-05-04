@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - OHPシートとインクジェットプリンタを用いた自作8mmフィルムの製作</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../index.html">Products</a></li>
+								<li><a href="../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li><a href="../../profile.html">Profile</a></li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/site/gutugutu30/">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+            <h1>Bad Apple!! in 8mm Film <small>OHPシートとインクジェットプリンタを用いた自作8mmフィルムの製作</small></h1>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>8mmフィルムは動画記録方法の一種である．未だに愛用するプロが存在するらしく，未だにフィルムの製造，現像が行われている．</p>
+                    <p>しかし，現在ではカラーのリバーサルフィルムが販売されておらず，ネガフィルムのみの販売となっている．ネガフィルムは撮影した際にネガポジが反転して現像されるため，映写機で再生することは困難である．</p>
+					<p>そこで，筆者はOHPシートとインクジェットプリンタを用いてSuper8互換フィルムを製造することを試みた．有名な東方のN次創作である「<a href="http://www.nicovideo.jp/watch/sm8628149" target="_blank">【東方】Bad Apple!! PV【影絵】</a>」のフィルム化を行った．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1CRq5bLOMLU" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="film.png">
+						<div class="caption">
+							<p>制作フィルム</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<h2>製作方法</h2>
+					<p>まず，フィルム化に際して24fpsまたは18fpsの連番画像を用意する必要がある．筆者は<a href="http://www.xmedia-recode.de/index.html" target="_blank">XMedia Recode</a>を用いて対象動画のフレームレート変換を行った．そして<a href="http://www.sourcenext.com/product/sony/vegaspro/" target="_blank">sony vegas pro</a>を用いて連番画像化を行った．</p>
+                    <p>次に制作した連番画像を<a href="https://github.com/gutugutu3030/super8filmMaker" target="_blank">super8filmMaker</a>によってフィルムに変換する．super8filmMakerはProcessingを用いて製作した．super8filmMakerを起動すると画面が表示されるので，連番画像をすべてドラッグアンドドロップすることで，フィルムの形状をしたpdfまたはaiファイル（フィルムデータ）を出力することができる．</p>
+                    <p>次に出力されたフィルムデータをインクジェットプリンタでOHPシートに印刷する．使用したOHPシートは<a href="http://bungu.plus.co.jp/product/paper/inkjet/senyo.htm" target="_blank">プラス社のOHPシート</a>であり，使用したプリンタは<a href="http://cweb.canon.jp/e-support/faq/answer/inkjetmfp/74850-1.html" target="_blank">MG7130</a>である．</p>
+                    <p>最後にレーザーカッタを用いて印刷したフィルムのカッティングを行う．カッターを用いて手動でのカッティングも可能だが，今回は効率化を求めてレーザーカッタを使用した．</p>
+				</div>
+			</div>
+		</section>
+        <section>
+			<div class="row">
+				<div class="col-sm-8">
+					<h2>制作上の注意</h2>
+					<p>今回，制作したフィルムは光学面積方式で音を録音したフィルムであるが，ノイズが酷くて特に高音がうまく再生ができなかった．これはプリンタの印刷精度に原因があるだけでなくフィルムにwavファイルの波形を印刷する際にも何らかのコツがあると筆者は考えている．例えば，波形データはただ大きく印刷しても音は大きくならず，逆に波形を小さくすることで音が少し大きくなる現象が確認された．また，高音が聞こえないためにイコライザで高音を限界まで大きくしたり，ダイナミックレンジを小さくするなどの波形編集を行っているが，まだうまく行っていない．そのため，今回の動画では音を合成している．<a href="">一応，再生に失敗している動画も記す.</a></p>
+                    <p>OHPシートを用いた8mmフィルムの作成は<a href="http://jesseengland.net/index.php?/project/inkjet-printed-film-process/" target="_blank">England</a>も行っている．彼の16mmフィルム映像を見ると，レーザー方式よりインクジェット方式のプリンタを用いた方が良いと筆者が感じたため，今回はインクジェットプリンタを使用した．また，以下に述べることはOHPシートを使用する際の常識なのかもしれないが，一応記す．OHPシートには両面印刷できるものより片面のみ印刷できるものの方が印刷が綺麗であった印象があった．同じ理由で使用するインクジェットプリンタは顔料インクより染料インクを用いたものを使用することを強く推奨する．</p>
+                    <p>レーザーカッターの火力は若干低めに設定することを推奨する．なぜならば，火力が強いとパーフォレーション（穴）の部分が壊れてしまうからである．ただし，火力を低めに設定するとパーフォレーションが切り取りきれず，手動でプチプチ穴を開ける手間が発生する．（当たり前ですが，OHPシートの種類を変更したらレーザーカッターの設定も変更する必要があることをお忘れなく．）</p>
+				</div>
+				<div class="col-sm-4">
+					<h2>結果と感想</h2>
+                    <p>映像や（特に）音声が本物の8mmフィルムには及ばないクオリティとなった．実際の8mmはもっとよいクオリティなので，本物の8mmフィルムを再生する動画を見ることを推奨する．</p>
+                    <p>8mm機材を提供してくれた祖父が製作所版に「DVDでよくね？」と言ってきたが，製作中に何度も「そう思う」と答えそうになった．</p>
+					<p>また，コンテンツにBad Appleを用いたのは要望があったからである．てか白黒フィルムは普通に売ってるんだからそっちで作れよ，と幾度となく思ったがコマ撮りの8mmカメラが無くても制作できるのがこの方式の利点かもしれない．</p>
+				</div>
+			</div>
+		</section>
+			<h2>参考文献</h2>
+			<ol>
+				<li>試行錯誤の過程
+					<a href="https://sites.google.com/site/gutugutu30/quanku-guan-xinai/8mmfirumuwozizuoshitahua" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
+				</li>
+				<li>England, J. Inkjet Printed Film Process: Video frames printed onto transparency film and cut down to Super 8 or 16mm film dimensions. 2011.
+					<a href="http://jesseengland.net/index.php?/project/inkjet-printed-film-process/" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
+				</li>
+			</ol>
+		</section>
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+
+</html>
