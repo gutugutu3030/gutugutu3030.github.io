@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - Fitter:実寸に合ったものを得るシステム</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../index.html">Products</a></li>
+								<li><a href="../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li><a href="../../profile.html">Profile</a></li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/site/gutugutu30/">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>Fitter <small>実寸に合ったものを得るシステム</small></h1>
+		</section>
+		<section>
+			<div class="thumbnail">
+				<img src="process.png">
+				<div class="caption">
+					<p>モデリングプロセス</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>3Dモデルを新規に制作する場合でも,既存のモデルを造形する場合でも,実世界のものに合わせて作成する場合が多くあり,そのサイズ合わせはデリケートな問題である.</p>
+					<p>この問題を解決するため,サイズをそのまま写しとり,それに合わせてモデル作成・修正を行い,それをその場で出力するというコンセプトを提案する．このコンセプトを実現するため,ビルドプレートにタッチディスプレイを設置した3Dプリンタのプロトタイプを制作した.</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DO-5nfyj7cY" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="system.png">
+						<div class="caption">
+							<p>システム</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<h2>システム</h2>
+					<p>プロトタイプシステムは，造形を行うビルドプレートの部分がディスプレイ（build display）となっており，シングルタッチ入力が可能である．ユーザはそれを用いてモデリングや移動・拡縮など，造形作業を行う．</p>
+					<p>また，プリンタ上部にはwebカメラが設置されており，ビルドプレート上に配置された実物体をキャプチャし，ディスプレイに実寸大表示することが可能である．</p>
+					<p>build displayにはwebカメラを用いてキャプチャを行い作業の準備をするためのTraceボタン，PC内の3Dモデルを読み込むLoadボタン，造形を開始するPrintボタンの3つのボタンが用意されている．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-7">
+					<h2>モデリング</h2>
+					<p>新しくオリジナルの3Dモデルを制作するには，タッチペンを用いてbuild display上をなぞって作りたいモデルの形を描けば良い．</p>
+					<p>今回モデリングで制作できるのは入れ物である．ユーザは書き方を変えることで2種類の入れ物を設計できる．</p>
+					<p>入力ストロークの始点と終点が離れている場合は，視点と終点の間を穴とする入れ物を作成できる．（ハサミ入れ）</p>
+					<p>ストロークの始点と終点が近く，輪のようなストロークが与えられた時は，底面が空いたような3Dモデルを作成できる．（ドローンケース）</p>
+				</div>
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="strokeToModel.png">
+						<div class="caption">
+							<p>モデリングシステム：a)入力ストロークが輪でない場合 b)入力ストロークが輪の場合</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<h2>既存モデルの造形</h2>
+					<p>提案システムではモデリングを行えるだけでなく，既存のモデルを拡縮して出力することが可能である．</p>
+					<p>build display上のLoadボタンを押すことで，ユーザが事前に設定したPC上の特定のフォルダ内から，最新の3Dモデルを探しだす．</p>
+					<p>ユーザは表示された概形の枠を掴んで拡縮・内部を掴んで移動を行い，位置合わせと大きさ合わせを行う．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2>参考文献</h2>
+			<ol>
+				<li></li>
+			</ol>
+		</section>
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+
+</html>
