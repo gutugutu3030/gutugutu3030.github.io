@@ -66,7 +66,7 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="row-height">
+			<div class="row-height grid">
 				<div class="col-md-4 col-sm-6 col-sm-height">
 					<div class="panel panel-info">
 						<div class="panel-heading">
@@ -340,6 +340,12 @@
 		</div>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.equalheight.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function () {
+ 		   $('.grid img').equalHeight();
+		});
+		</script>
 </body>
 
 </html>

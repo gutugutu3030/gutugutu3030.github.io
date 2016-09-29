@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>gutugutu3030 - 流しそうめん音ゲー</title>
+	<title>gutugutu3030 - pinrataction</title>
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -67,33 +67,47 @@
 	</header>
 	<div class="container">
 		<section>
-			<h1>流しそうめん音ゲー <small>どう見てもそうめんは音ゲー</small></h1>
+			<h1>pintaraction <small>プロジェクションマッピングによる電子工作体験支援</small></h1>
 		</section>
 		<section>
 			<div class="row">
 				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_xPJkJJuWGk" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
-					</div>
+					<h2>概要</h2>
+					<p>筆者らはこれまで初学者のための電子工作体験支援の環境である<a href="../ProjectronMapping/index.html">Projectron Mapping</a>を提案している．</p>
+					<p>ドラッグ操作による電子工作が好評であったが，動作をプロジェクションマッピングで提示しているため，動かせる部品に限りがあった．</p>
+					<p>そこで，ドラッグ操作で実際に電気の流れる配線を作れる基板を提案する．</p>
 				</div>
 				<div class="col-sm-6">
-					<h2>概要</h2>
-					<p>流しそうめんって音ゲーに似てませんか？</p>
-					<p>って思ったので作ってみました</p>
-					<h2>システム</h2>
-					<p>Stepmaniaという音ゲーの譜面をProcessingで読み込んでいる．そして，譜面にしたがって4つあるDCモータを用いてベルトコンベアを回している．ベルトコンベアにそうめんを乗せるのは手作業となる．</p>
-					<p>最初の試行では，早すぎてそうめんが全くキャッチ出来なかったり，譜面が複雑でそうめんをベルトコンベアに乗せる方が間に合わなかったりした．そこで譜面の単純化を行ったが，そうめんを取ることができても，忙しくて食べられなかった．</p>
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1CRq5bLOMLU" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
 			</div>
 		</section>
 		<section>
-			<h2>その他</h2>
-			<ul>
-				<li>デイリーポータルＺで紹介されました！
-					<a style="word-break: break-all;" href="http://portal.nifty.com/kiji/140924165234_1.htm" target="_blank">https://www.nikkan.co.jp/articles/view/00400049</a>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="system.jpg">
+						<div class="caption">
+							<p>システム</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<h2>システム</h2>
+					<p>提案システムはユニバーサル基板を模した形をしており，ドラッグ操作による結線・断線機能を持つ．今回は専用のペンを用いてユニバーサル基板上をなぞり，それを導線として使用する設計とした．システムはリレーを用いて電気的な配線を行う．</p>
+					<p>提案システムをPC上のアプリケーションと接続することで，回路作成支援を付加することが可能になる．例えば，ユーザがショートの起こる配線を行った際，配線を行う代わりに爆発アニメーションを提示しショートを回避する機能を持つ．接続中，ユーザはシステム上だけでなくPC 上でも回路を製作できる．基板の上部にプロジェクタを設置し，ユーザの行った配線を重畳表示する．</p>
+				</div>
+			</div>
+		</section>
+			<h2>参考文献</h2>
+			<ol>
+				<li>秋山耀, 宮下芳明. ドラッグで配線できる基板による電子工作支援. 第23回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2015), pp.183-184, 2015.
+					<a href="http://www.wiss.org/WISS2015Proceedings/demo/2-S02.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
 				</li>
-			</ul>
+			</ol>
 		</section>
 	</div>
 	<script src="../../js/jquery.min.js"></script>
