@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>gutugutu3030 - 3DプリンターのためのPUI</title>
+	<title>gutugutu3030 - 3DプリンターのためのPaper User Interface</title>
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -73,50 +73,44 @@
 	</header>
 	<div class="container">
 		<section>
-			<h1>3DプリンターのためのPUI</h1>
+			<h1>3DプリンターのためのPaper User Interface <small>紙に描いた図面から造形できる3Dプリンタ</small></h1>
 		</section>
 		<section>
 			<div class="row">
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/54m38d4nUgg" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
 				<div class="col-sm-6">
 					<h2>概要</h2>
 					<p>紙を用いたインタフェース（PUI: Paper User Interface)は，手軽さやわかりやすさの優位性から様々なシステムへの導入が試みられており，特に高齢者ユーザへの効果が期待されている．</p>
 					<p>本稿では，3Dプリンタでの出力を前提として，PUIに則った3Dモデル入力を提案し，システムとして実装した．専用紙にマーカで実寸の二面図を描き，角丸仕上げを望むならチェックボックスをチェックする．この紙をセットしてボタンを押すだけで，スキャン→形状推測→モデル生成→3Dプリントまでが自動で完了する．</p>
 					<p>本稿では小学生や80代の実験参加者でも有用性を確認するとともに，その制約について議論を行っている．</p>
 				</div>
-				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HhyCbkTo0Os" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
 			</div>
 		</section>
 		<section>
 			<div class="row">
-				<div class="col-sm-5">
-					<div class="thumbnail">
-						<img src="thumbnail.jpg">
-						<div class="caption">
-							<p>二面図モデリング</p>
-						</div>
-					</div>
-				</div>
 				<div class="col-sm-7">
 					<h2>二面図モデリング</h2>
 					<p>今回，誰でも行ったことがある「紙に図形を描く」という動作に注目した．そしてその中で一般的な方法である，上から見た図や横から見た図を描きとる方法を用いた．</p>
 					<p>システムで使用する専用紙には5mm間隔の方眼が書いてある枠が2つある．水性マーカを用いて，上に正面図を描き，下に上面図を描く．描いた大きさと同じ大きさの造形物を得ることができる．そのため，図面に物を置いて大きさ合わせすることが可能である．縦11cm横15cm高さ15cmまでの物を設計できる．</p>
 					<p>ユーザは1つのパーツごとに色分けを行う必要がある．また，同じ色は2回以上使用不可とした．これはシステム側に正面図と上面図のパーツの対応関係を示す必要があるためである．また，くり抜く部分（差集合をとる部分）は塗りつぶす必要がある．</p>
 				</div>
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="thumbnail1.jpg">
+						<div class="caption">
+							<p>二面図モデリング</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section>
 			<div class="row">
-				<div class="col-sm-6">
-					<h2>ワークショップと作例</h2>
-					<p>9～81歳の男女7名にワークショップを行い，いくつか図面の設計をしてもらった．なお，造形に時間がかかるため，ワークショップ中は図面を描くことのみを行い，後日3Dプリントしたものを渡した．</p>
-					<p>筆者らがサポートを行いながら小学3年生と5年生の男女2人に図面を描いてもらったところ，うさぎのおもちゃ，3つの入れ物，ゲームキャラクタを模した物，そしてコップの6つを設計することができた．このうち2つの造形に成功している．2つは図面の書き損じ，もう2つはシステムの画像認識の失敗によって造形に失敗している．</p>
-					<p>70代，80代の参加者はそれぞれ家の長押（なげし）の大きさに合ったS字フックとブックエンドを設計した．それぞれ造形に成功している．</p>
-				</div>
 				<div class="col-sm-6">
 					<div class="thumbnail">
 						<img src="example.png">
@@ -124,6 +118,12 @@
 							<p>作例</p>
 						</div>
 					</div>
+				</div>
+				<div class="col-sm-6">
+					<h2>ワークショップと作例</h2>
+					<p>9～81歳の男女7名にワークショップを行い，いくつか図面の設計をしてもらった．なお，造形に時間がかかるため，ワークショップ中は図面を描くことのみを行い，後日3Dプリントしたものを渡した．</p>
+					<p>筆者らがサポートを行いながら小学3年生と5年生の男女2人に図面を描いてもらったところ，うさぎのおもちゃ，3つの入れ物，ゲームキャラクタを模した物，そしてコップの6つを設計することができた．このうち2つの造形に成功している．2つは図面の書き損じ，もう2つはシステムの画像認識の失敗によって造形に失敗している．</p>
+					<p>70代，80代の参加者はそれぞれ家の長押（なげし）の大きさに合ったS字フックとブックエンドを設計した．それぞれ造形に成功している．</p>
 				</div>
 			</div>
 		</section>
