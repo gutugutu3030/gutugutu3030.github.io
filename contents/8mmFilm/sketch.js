@@ -25,10 +25,10 @@ function setup() {
 function loadImages() {
   imgs = Array();
   var i = 0;
-  imgs[i++] = { img: loadImage("badapple/thumbnail.jpg"), title: "BadApple!! 影絵", content: "初めての長編自作フィルムです．白黒．作り方の詳細などは<a href='badapple/index.html'>こちら</a>",link:"http://www.nicovideo.jp/watch/sm28787820" };
-  imgs[i++] = { img: loadImage("sha.png"), title: "舎利禮文", content: "初のカラーフィルムです．" ,link:"http://www.nicovideo.jp/watch/sm28845675"};
-  imgs[i++] = { img: loadImage("ROD.png"), title: "R.O.D -The TV- OP", content: "カラーの鮮やかなフィルムです．",link:"http://www.nicovideo.jp/watch/sm28869077" };
-  imgs[i++] = { img: loadImage("film.png"), title: "自作フィルムのつくりかた", content: "フィルム制作の解説動画です．",link:"http://www.nicovideo.jp/watch/sm28876844" };
+  imgs[i++] = { img: loadImage("badapple/thumbnail.jpg"), title: "BadApple!! 影絵", content: "初めての長編自作フィルムです．白黒．作り方の詳細などは<a href='badapple/index.html'>こちら</a>", link: "http://www.nicovideo.jp/watch/sm28787820" };
+  imgs[i++] = { img: loadImage("sha.png"), title: "舎利禮文", content: "初のカラーフィルムです．", link: "http://www.nicovideo.jp/watch/sm28845675" };
+  imgs[i++] = { img: loadImage("ROD.png"), title: "R.O.D -The TV- OP", content: "カラーの鮮やかなフィルムです．", link: "http://www.nicovideo.jp/watch/sm28869077" };
+  imgs[i++] = { img: loadImage("film.png"), title: "自作フィルムのつくりかた", content: "フィルム制作の解説動画です．", link: "http://www.nicovideo.jp/watch/sm28876844" };
 }
 
 
@@ -49,10 +49,18 @@ function drawButton() {
   var h = w / 2.5;
   var x = width - w - 50;
   var y = height - h - 50;
-  stroke(0);
+  if (onPlayButton) {
+    stroke(255, 0, 0);
+    strokeWeight(3);
+  } else {
+    stroke(0);
+  }
   fill(52, 202, 255);
   rect(x, y, w, h);
   fill(255, sin((onPlayButton ? 0.12 : 0.06) * frameCount) * 80 + 80);
+  if (onPlayButton) {
+    strokeWeight(1);
+  }
   rect(x, y, w, h);
   fill(255);
   text("play!", x + w / 2, y + h / 2);
@@ -63,7 +71,7 @@ function drawFilm() {
   noStroke();
   fill(0);
   rect(0, 0, w, height * 1.5);
-  var h = w / (2 / 5) / 2 * 3 / 7;
+  var h = w * 15 / 28;//w / (2 / 5) / 2 * 3 / 7;
   fill(255);
   if (movingTime == 10) {
     movingTime = 0;
@@ -74,8 +82,8 @@ function drawFilm() {
   for (var i = 0; i < 7; i++) {
     fill(backC);
     rect(15, 10 + h * i + h / 2 - w / 20 - moving * h * movingTime / 10 - h, w / 15, w / 10);
-    if(moving==0&&i==3){
-      fill(255,sin(0.04 * frameCount) * 75+150,sin(0.04 * frameCount) * 75+150);
+    if (moving == 0 && i == 3) {
+      fill(255, sin(0.04 * frameCount) * 75 + 150, sin(0.04 * frameCount) * 75 + 150);
       rect(35 + w / 15, 5 + h * i - moving * h * movingTime / 10 - h, w - 40 - w / 15, h);
     }
     fill(255);
@@ -116,13 +124,13 @@ function keyPressed() {
     movingTime = 1;
   }
 }
-var scroll=0;
+var scroll = 0;
 function mouseWheel(event) {
-  if(event.delta<-2){
-    moving=-1;
+  if (event.delta < -2) {
+    moving = -1;
   }
-  if(2<event.delta){
-    moving=1;
+  if (2 < event.delta) {
+    moving = 1;
   }
   if (moving != 0 && movingTime == 0) {
     movingTime = 1;
@@ -142,7 +150,32 @@ function mouseMoved() {
 function mouseReleased() {
   if (onPlayButton) {
     play();
+    return;
   }
+  if (moving != 0) {
+    return;
+  }
+  var angle = PI / 20;
+  var x = mouseX * cos(angle) - mouseY * sin(angle);
+  var y = mouseX * sin(angle) + mouseY * cos(angle);
+  x -= 10;
+  y += 10;
+  if(x<=40 + w / 15 || w - 10<=x){
+    return;
+  }
+  var h = w * 15 / 28;
+  if (0 < mouseY && 10 < y && y < h) {
+    moving=-1;
+  }
+  if ( 10+h*4 < y && y < h*5) {
+    moving=1;
+  }
+  if (moving != 0 && movingTime == 0) {
+    movingTime = 1;
+  }
+
+  //i=1: 40 + w / 15, 10 , w - 10, h
+  //i=5:  10 + h * 4          h*5
 }
 function play() {
   print("play");
