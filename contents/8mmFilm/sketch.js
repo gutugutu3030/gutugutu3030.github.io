@@ -7,19 +7,23 @@ var index = 0;
 var imgs;
 var upImage, downImage;
 
+var reels,reelImage;
+
 function setup() {
   createCanvas(windowWidth, windowHeight - 80);
-  title = createElement('span', '<div><h1>８ミリフィルムプロジェクト</h1><p>インクジェットプリンタやレーザカッターで，8mmフィルム自体を自作（キネコ）しています．そのフィルムを用いた作品集です．</p></div><div><h3 id="imgTitle"></h3><p id="imgContent"></p></div>');
+  title = createElement('span', '<div><h1>８ミリフィルムプロジェクト</h1><p>インクジェットプリンタやレーザカッターで，8mmフィルム自体を自作（キネコ）しています．そのフィルムを用いた作品集です．</p><p>映写機の自作プロジェクトも行っております．ぜひ<a href="projector/index.html">こちら</a>も御覧ください．</p></div><div><h3 id="imgTitle"></h3><p id="imgContent"></p></div>');
   explain = createElement('span', '');
   fixTextPosition();
   backC = color(239, 173, 7);
   w = height * 2 / 5;
-  upImage = loadImage("./up.png");
+  upImage = loadImage("up.png");
   downImage = loadImage("down.png");
+  reelImage = loadImage("reel.png");
   loadImages();
   updateExplain();
   textSize(60);
   textAlign(CENTER, CENTER);
+  reels =Array();
 }
 
 function loadImages() {
@@ -34,12 +38,44 @@ function loadImages() {
 
 function draw() {
   background(backC);
+  drawReel();
   push();
   rotate(-PI / 20);
   translate(10, -10);
   drawFilm();
   pop();
   drawButton();
+}
+
+function drawReel(){
+  if(frameCount%20==0&&reels.length<50){
+    var r=random(60,250);
+    var dx=random(500,1000)/r+3;
+    
+    var dy=random(-dx*2/5,dx*2/5);
+    var reel={x:-r,y:random(height)-r/2,r:r,dx:dx,dy:dy,angle:0};
+    reels.push(reel);
+  }
+  fill(0);
+  for(var i=0;i<reels.length;i++){
+    //ellipse(reels[i].x,reels[i].y,reels[i].r,reels[i].r);
+    push();
+    translate(reels[i].x,reels[i].y);
+    rotate(radians(reels[i].angle));
+    image(reelImage,-reels[i].r/2,-reels[i].r/2,reels[i].r,reels[i].r);
+    pop();
+  }
+  for(var i=0;i<reels.length;i++){
+    if(reels[i].x<-reels[i].r||width+reels[i].r<reels[i].x||reels[i].y<-reels[i].r||height+reels[i].r<reels[i].y){
+      reels.splice( i, 1 ) ;
+      i--;
+      continue;
+    }
+    reels[i].x+=reels[i].dx;
+    reels[i].y+=reels[i].dy;
+    reels[i].angle+=700/reels[i].r;
+  }
+  
 }
 
 var onPlayButton = false;
