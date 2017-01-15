@@ -11,7 +11,7 @@ var reels,reelImage;
 
 function setup() {
   createCanvas(windowWidth, windowHeight - 80);
-  title = createElement('span', '<div><h1>８ミリフィルムプロジェクト</h1><p>インクジェットプリンタやレーザカッターで，8mmフィルム自体を自作（キネコ）しています．そのフィルムを用いた作品集です．</p><p>映写機の自作プロジェクトも行っております．ぜひ<a href="projector/index.html">こちら</a>も御覧ください．</p></div><div><h3 id="imgTitle"></h3><p id="imgContent"></p></div>');
+  title = createElement('span', '<div style="margin: 0.5em;"><div><h1>８ミリフィルムプロジェクト</h1><p>インクジェットプリンタやレーザカッターで，8mmフィルム自体を自作（キネコ）しています．そのフィルムを用いた作品集です．</p><p>映写機の自作プロジェクトも行っております．ぜひ<a href="projector/index.html">こちら</a>も御覧ください．</p></div><div><h3 id="imgTitle"></h3><p id="imgContent"></p></div></div>');
   explain = createElement('span', '');
   fixTextPosition();
   backC = color(239, 173, 7);
