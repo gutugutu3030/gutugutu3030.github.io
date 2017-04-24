@@ -48,8 +48,20 @@
 				</div>
 				<div class="navbar-collapse collapse" id="navbar-main">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Contents</a></li>
-						<li class="active"><a href="profile.html">Profile</a></li>
+						<li class="dropdown">
+							<a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="index.html">Products</a></li>
+								<li><a href="library.html">Libraries</a></li>
+							</ul>
+						</li>
+						<li class="dropdown active">
+							<a href="profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="profile.html">日本語</a></li>
+								<li><a href="profileEng.html">English</a></li>
+							</ul>
+						</li>
 						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
 						<li><a href="https://sites.google.com/site/gutugutu30/">備忘録</a></li>
 					</ul>
@@ -68,16 +80,24 @@
 			<div class="col-sm-8">
 				<h2>秋山 耀 <small>Yoh Akiyama</small></h2>
 				<ul style="list-style-type:none;">
-					<li>明治大学理工学部情報科学科4年</li>
-					<li><a href="http://www.th.cs.meiji.ac.jp/">玉木研究室</a>所属</li>
-					<li><a href="http://miyashita.com/">宮下研究室</a>座敷童</li>
+					<li>明治大学大学院理工学研究科新領域創造専攻2年</li>
+					<li>学部生時代<a href="http://www.th.cs.meiji.ac.jp/">玉木研究室</a>所属</li>
+					<li><a href="http://miyashita.com/">宮下研究室</a>所属</li>
 					<li><i class="glyphicon glyphicon-envelope"></i> akyoh9933@gmail.com</li>
 				</ul>
 				<ul style="list-style-type:none;">
-					<li>趣味：電子工作・プログラミング</li>
-					<li>使用可能言語・環境：Java・Processing・Arduino・(nodeJS・puredata・HSP)</li>
+					<li>趣味：電子工作・プログラミング・8mm映写機いじり・星の撮影</li>
+					<li>興味分野：HCI・タンジブルインタフェース・Fab・電子工作支援・プログラミング支援</li>
+					<li>使用可能言語・環境：Java・Processing・Arduino(・mbed・nodeJS・puredata・HSP)</li>
 				</ul>
+				<p>最近は3Dプリンタ関係の研究をしています．Web系は苦手です．<a href="https://www.youtube.com/watch?v=_xPJkJJuWGk" target="_blank">こういうこと</a>とか
+					<a
+						href="contents/Gilgamesh/index.html" target="_blank">こういうこと</a>して暮らしたい．</p>
 			</div>
+		</div>
+		<div>
+			<h2>作ったものリスト</h2>
+			<p><a href="index.html">こちら</a>をごらんください．</p>
 		</div>
 		<div>
 			<h2>Publications</h2>
@@ -85,6 +105,8 @@
 				<li>査読付き学術論文
 					<ol>
 						<li>秋山耀, 宮下芳明. プロジェクションマッピングによる電子工作体験支援. 日本バーチャルリアリティ学会論文誌, Vol.20, No.2, pp.83-86, 2015.
+							<a href="https://www.dropbox.com/s/2shf337zay5omss/vr.pdf?dl=0" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+							<a href="http://ci.nii.ac.jp/naid/40020528769" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
 							<a href="https://www.youtube.com/watch?v=N3dJ4XRDF1I" target="_blank"><i class="glyphicon glyphicon-film"></i></a>
 						</li>
 					</ol>
@@ -101,6 +123,17 @@
 							<a href="http://dl.acm.org/citation.cfm?id=2658779.2659113&coll=DL&dl=ACM" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
 							<strong class="text-info">(SUI2014で招待デモ発表)</strong>
 						</li>
+						<li>Yoh Akiyama and Homei Miyashita. Fitter: A System for Easily Printing Objects that Fit Real Objects. Proceedings of
+							the adjunct publication of the 29th annual ACM symposium on User interface software and technology(UIST2016), pp.129-131,
+							2016.
+							<a href="http://dl.acm.org/citation.cfm?id=2985730&CFID=853513149&CFTOKEN=66983434" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+						</li>
+					</ol>
+				</li>
+				<li>査読付き国内会議（登壇）
+					<ol>
+						<li>秋山耀, 宮下芳明. 3DプリンタのためのPaper User Interface. 第24回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2016), pp.185-191, 2016.
+						</li>
 					</ol>
 				</li>
 				<li>デモ・ポスター発表
@@ -113,10 +146,49 @@
 							<a href="http://www.wiss.org/WISS2014Proceedings/demo/086.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
 							<a href="https://www.youtube.com/watch?v=hM2Jfhzky48" target="_blank"><i class="glyphicon glyphicon-film"></i></a>
 						</li>
+						<li>秋山耀, 宮下芳明. ドラッグで配線できる基板による電子工作支援. 第23回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2015), pp.183-184, 2015.
+							<a href="http://www.wiss.org/WISS2015Proceedings/demo/2-S02.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+						</li>
 					</ol>
 				</li>
-			</ul>
+				<li>メディア報道（新聞・テレビ）
+					<ol>
+						<li>「コピー感覚で立体造形−明治大、３年以内に新３Ｄプリンター実用化」, 日刊工業新聞記事掲載, (2016年9月16日付).
+							<a href="https://www.nikkan.co.jp/articles/view/00400049" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
+						</li>
+						<li>「【トレたま】コピー機感覚の３Ｄプリンター」, テレビ東京 WBS「トレンドたまご」取材, (2016年10月3日放送).
+							<a href="http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
+						</li>
+						<li>「明治大の３Ｄプリンター　形や大きさ，調整容易　タッチパネル使う試作機」, 日経産業新聞記事掲載, (2016年10月12日付).
+						</li>
+						<li>「描いた絵→立体造形　明大　３Ｄプリンターで簡単に」, 日経産業新聞記事掲載, (2017年1月6日付).
+						</li>
+					</ol>
+				</li>
+				<li>展示
+					<ol>
+						<li>Fitter：実寸に合ったものを得るシステム, Maker Faire Tokyo 2016, 明治大学宮下研究室出展, (2016年8月6-7日).
+							<a href="http://makezine.jp/event/makers2016/meijidaigakumiyashita/" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
+						</li>
+					</ol>
+				</li>
 
+				<li>その他
+					<ul style="list-style-type:none;">
+						<li>卒論　部分グラフ同型アルゴリズムの実装と回路理解支援システムへの応用.
+							<a href="http://www.th.cs.meiji.ac.jp/researches/2015/akiyama/thesis.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2>Awards</h2>
+			<ol>
+				<li>2013年12月 第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集 対話発表賞 「部品へのプロジェクションマッピングによる通電しない電子工作」</li>
+				<li><a href="http://ictco.jp/syousai.html?id=137" target="_blank">2016年9月17日 第二回　3D Printer Digging Festival プラチナ賞 「コピー機並みに使いやすい3Dプリンターの販売アイデア」</a></li>
+				<li><a href="https://fabmitaka.co/docs/2017030600016/" target="_blank">2017年3月17日 第１回みたかFabコンテスト 発展賞 「ミニミニ映写機」</a></li>
+			</ol>
 		</div>
 	</div>
 	<script src="js/jquery.min.js"></script>

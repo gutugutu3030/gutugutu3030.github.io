@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - ドラッグで配線できる基板による電子工作支援</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../index.html">Products</a></li>
+								<li><a href="../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="../../profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../profile.html">日本語</a></li>
+								<li><a href="../../profileEng.html">English</a></li>
+							</ul>
+						</li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/site/gutugutu30/">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>ドラッグで配線できる基板による電子工作支援</h1>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>筆者らはこれまで初学者のための電子工作体験支援の環境である<a href="../ProjectronMapping/index.html">Projectron Mapping</a>を提案している．</p>
+					<p>ドラッグ操作による電子工作が好評であったが，動作をプロジェクションマッピングで提示しているため，動かせる部品に限りがあった．</p>
+					<p>そこで，ドラッグ操作で実際に電気の流れる配線を作れる基板を提案する．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1CRq5bLOMLU" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="system.jpg">
+						<div class="caption">
+							<p>システム</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<h2>システム</h2>
+					<p>提案システムはユニバーサル基板を模した形をしており，ドラッグ操作による結線・断線機能を持つ．今回は専用のペンを用いてユニバーサル基板上をなぞり，それを導線として使用する設計とした．システムはリレーを用いて電気的な配線を行う．</p>
+					<p>提案システムをPC上のアプリケーションと接続することで，回路作成支援を付加することが可能になる．例えば，ユーザがショートの起こる配線を行った際，配線を行う代わりに爆発アニメーションを提示しショートを回避する機能を持つ．接続中，ユーザはシステム上だけでなくPC 上でも回路を製作できる．基板の上部にプロジェクタを設置し，ユーザの行った配線を重畳表示する．</p>
+				</div>
+			</div>
+		</section>
+			<h2>書誌情報</h2>
+			<ol>
+				<li>秋山耀, 宮下芳明. ドラッグで配線できる基板による電子工作支援. 第23回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2015), pp.183-184, 2015.
+					<a href="http://www.wiss.org/WISS2015Proceedings/demo/2-S02.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+				</li>
+			</ol>
+		</section>
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+
+</html>
