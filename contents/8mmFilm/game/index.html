@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - ICレスゲーム機</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../../index.html">Products</a></li>
+								<li><a href="../../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="../../../profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../../profile.html">日本語</a></li>
+								<li><a href="../../../profileEng.html">English</a></li>
+							</ul>
+						</li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/site/gutugutu30/">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>ICレスゲーム機 <small>映写機で音ゲー作ろうとした話</small></h1>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>なにをしようとした？</h2>
+					<p>太陽フレアに打ち勝つゲームセンターを作りたかった．</p>
+					<p>前に作った<a href="./projector/index.html">映写機</a>をもっとステキ仕様にしたかった．</p>
+					<p>真面目な話，模倣している（映写する）だけじゃダメで，超越しないと意味がないと思ったので，インタラクティブな画面を映写機で作るためにまず作りやすそうな音ゲーを選んだという話．</a>
+				</div>
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_P_xx2yTZ5s" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>インタラクティブな画面を映写機で作る</h2>
+					<p>映写機が行えるのは，あらかじめ決められた内容を映写・繰り返す程度だ．</p>
+					<p>これをもっと多彩な映像を作りだすためにはいくつかの方法があるが，今回は「複数の映写機を使用して１つの映像を作る」という方法である．</p>
+					<p>複数の映写機にそれぞれ固有の内容を登録（＝フィルムをセット）しておき，条件が揃った（決まった）タイミングで特定の映写機を動かすことで，ゲームなどの複雑な画面を作成することができる．</p>
+					<p>映写機のフィルムを無限軌道にしておくことで，決まったタイミングで同じ映像を投影できる．</p>
+					<p>この時に必要になる映写機の数は作ろうとする画面の複雑さによる．例えば，マリオを作る場合はマリオ（走る・ジャンプする・攻撃を受ける）と背景の最低4つは必要になるし，ステップマニアやダンスダンスレボリューションなどの音ゲーは4つの矢印を使用する音ゲーなので，4つ映写機を用いる必要がある．</p>
+					<p>そう考えると太鼓の達人はドンとカッの2種類の譜面しかないため，最低2つ映写機があれば作れる簡単なゲームだ．この方式において，太鼓の達人はインベーダーゲームやテトリスより簡単に作れるゲームということになる．</p>
+				</div>
+				<div class="col-sm-6">
+					<h2>決まったタイミングで特定の映写機を動かす</h2>
+					<p>音ゲーにおいては，決まったタイミング＝譜面ということになる．ゲーム映写機で音ゲーを作ろうとすると，譜面データだけで作れてしまうことになる．</p>
+					<p>譜面データ（パンチカード）を読み取り，「譜面を流す」映像を投影する．映写機には「譜面が流れている」映像がループしているフィルムをセットしておく．</p>
+					<p>今回は譜面が7,8コマで流れる映像を9ループする68コマの無限軌道フィルムを使用している．フィルムを流すためのギアが1/4回転するとちょうど映像が流し終わる計算だ．</p>
+					<p>フィルムを流すギアとパンチカード読み取り部分にマイクロスイッチを用意し，それを並列につなぐことで「パンチカードから信号？がきたら映写機を動かし，譜面を流し終わったら映写機を止める」ということを実現している（下の図参照）．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="thumbnail">
+				<img src="projectorCircuit.png">
+				<div class="caption">
+					<p>映写機を動かす回路</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>当たり判定の実装</h2>
+					<p>次の問題は，プレイヤーがちゃんと譜面通りに太鼓を叩けたら点数に追加するという処理である．</p>
+					<p>これは，先程用いた，フィルムを流すギアについたマイクロスイッチの逆側を用いる（さっき使ったのはスイッチが押されるとオフになる側で，今回使うのは押されるとオンになる側）．</p>
+					<p>太鼓に銅箔テープを貼ってそれをスイッチ代わりとした．これとさっきのマイクロスイッチを直列につなぐことで，「譜面が流し終わり」かつ「太鼓が叩かれた」時に点数機に電気が流れる．</p>
+					<p>点数装置には<a href="../../Theater/index.html">これ</a>を用いた．動画を見るとどのように活用されているかが見れるので見てほしい．結構かわいい．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="thumbnail">
+						<img src="addCircuit.png">
+						<div class="caption">
+							<p>当たり判定の回路</p>
+						</div>
+					</div>
+				</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>音を鳴らす</h2>
+					<p>なんでもいいから音を鳴らす．カセットテープでもいいし（読み取る部分は電磁石みたいなもんだし）．今回使用したのは鉄琴です．</p>
+					<p>今回はソレノイドを使って駆動したが，それならばリコーダーとかもできそう．ブロアで空気送りつつ，ソレノイドで塞ぐ穴変えたり．モーターで弦をひっかくとかもできた気がする．</p>
+					<p>しかし，実際に作る場合にはここの作業量を多めに見積もっておいたほうがいいです．それで地獄を見ました．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="thumbnail">
+						<img src="sound.png">
+						<div class="caption">
+							<p>鉄琴とソレノイド</p>
+						</div>
+					</div>
+				</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-4">
+					<h2>最終的な回路</h2>
+					<p>映写機，木琴を叩くソレノイド，パンチカードを送るモーター，得点君はすべて別電源にしている．得点君と映写機の回路は同じスイッチ（3接点）を用いているため，GNDなどの位置には気をつけたい．</p>
+					<p>いま思えば得点回路はソレノイドと並列にすればよかったのでは…？</p>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="circuit.jpg">
+						<div class="caption">
+							<p>回路（全体）</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="thumbnail.png">
+						<div class="caption">
+							<p>実際できたゲーム？機</p>
+						</div>
+					</div>
+				</div>
+		</section>
+		<section>
+			<div class="col-sm-5">
+				<h2>考察・想定外</h2>
+				<p>太鼓の達人と反対に流れる（右方向に流れる）のは本当にミス．普通，映写機で投影する側と反対側から見ていた（トレーシングペーパーに透かして反対側から見ていた）ので，左右反対になった．残念．</p>
+				<p>パンチカード作るために2回大学に泊まりました．仕事量舐めてました…</p>
+				<p>2つの映写機を同じ画面に投影するためには，もう少し遠くまで投影できるようにすべきな気がした．（一応3WLEDに変更して望んだんだけどなあ）そうでないと投影が歪んでしまう．</p>
+				<p>ABPro発表当時，映写機に6Vかけるところを，電源装置の設定が変わってて10Vかかってて，熱でハンダが溶けてとれたらしい．だれだ設定変えたの．</p>
+			</div>
+			<div class="col-sm-7">
+				<h2>おわりに</h2>
+				<p>電子工作って，マイコンができないとスタートラインにも立てないと思われているかもしれない．自分も中高物理部にいて，マイコンを使わないとこの先まずいという風潮があった．（たしかに部員少なすぎてまずかったｗ）</p>
+				<p>たしかにそうなんだが，そうかもしれないんだが，マイコンなしでも面白い挙動って作れると思うんだ．物理部時代そう思っている自分がいた．</p>
+				<p>ただ単にスイッチの組み合わせで楽しいことはできる気がする．例えば，一定間隔で動かす機能（オンオフを繰り返すの）なんかは，タイマIC555とかArduinoとか使わんでも，モーターとタイヤと銅箔テープかマイクロスイッチがあれば作れるんじゃないか？</p>
+				<p>少し時間が遅れてしまった気もするが，いまその証明をできた気がする．今年から作ってた映写機とか得点君とかもそれを証明したかったのかなあ．わからん．</p>
+				<p>マイコンできないからって電子工作を躊躇している人はモーターとスイッチと電池を買って遊んでみてほしい．<small>そんでもってマイコンやパソコンが便利なことを学ぶといいのかもｗ</small></p>
+			</div>
+		</section>
+		</div>
+		<script src="../../,,/js/jquery.min.js"></script>
+		<script src="../../../js/bootstrap.min.js"></script>
+</body>
+
+</html>
