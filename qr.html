@@ -50,7 +50,14 @@
                 </div>
             </div>
         </header>
-        <h2><a href="/" id="data">ロード中...</a></h2>
+        <div class="container">
+            <div class="col-md-12">
+                <h3>リンク：<a href="/" id="data">ロード中...</a></h3>
+            </div>
+            <div class="col-md-12">
+                    <img src="timelineItem/amanogawa1.jpg" class="img-responsive img-responsive-overwrite">
+            </div>                    
+        </div>
     </body>
     <script type="text/javascript">
         $.get("https://script.googleusercontent.com/macros/echo?user_content_key=nWY3Hz7YtGcOBaYzHq8B_fmqtEIf3dQN7WVWoikShB22P69Ls4QRVxZUDG3X5Gr7oF4kjm88xnKUyWjnO411ZhuFm5o2jw10m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPe3sUsAKc7lpUPI30OmE1QNGiwQcW9hO5jOV091LPc2pwXHM1tque563uStV80xpMDyOw0rRDtU&lib=Ma5avj4HuM6XliiQgOJGGym05Xyz2F5qi",
@@ -58,9 +65,9 @@
                 if (data != "") {
                     $("#data").text(data);
                     $("#data").attr("href", data);
-                }else{
+                } else {
                     $("#data").text("現在共有したいURLはありません，ざんねん．");
-                    $("#data").attr("href", "/");                    
+                    $("#data").attr("href", "/");
                 }
             });
     </script>
