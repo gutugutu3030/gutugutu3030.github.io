@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - MultiplaneGirl</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="../../index.html">Products</a>
+								</li>
+								<li>
+									<a href="../../library.html">Libraries</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="../../profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="../../profile.html">日本語</a>
+								</li>
+								<li>
+									<a href="../../profileEng.html">English</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="https://twitter.com/gutugutu3030">
+								<i class="fa fa-twitter"></i> Twitter</a>
+						</li>
+						<li>
+							<a href="https://sites.google.com/site/gutugutu30/">備忘録</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>MultiplaneGirl
+				<small>絵に命を吹き込む一手法</small>
+			</h1>
+		</section>
+		<section>
+			<div class="alert alert-info">
+				<p>組み立てに使用した3Dモデルデータ，プログラム，設計用システムがダウンロードできます</p>
+				<a href="https://github.com/gutugutu3030/realLive2d" target="_blank" class="btn btn-info">ダウンロード</a>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OnYO_MO-YYI" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>キャラクタが指を指した方向を向いたようにみえるシステムを作成した．</p>
+					<p>絵をPCなどで描く時，パーツごとにレイヤを分ける場合がある．本システムはそのレイヤをアクリル板に分けて重ねて配置した．更にそれぞれのレイヤを独立上下左右に平行移動させることによって絵に立体感をもたせることに成功した．</p>
+					<p>同様の手法を用いたものとして，セルアニメーションのマルチプレーンカメラ [1]や，ソフトウェア上ではLive2D [2]などが挙げられる．</p>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-sm-6">
+					<h2>簡単な解説</h2>
+					<p>アクリル板を約7mm感覚で配置している．前髪，目（の枠）・口，瞳，顔の輪郭にわけてアクリル板にホワイトボードマーカーで描きこんでおり，これにより立体感を出している．</p>
+					<p>一つのレイヤ（アクリル板）につき4つのサーボモータで平行移動を担っている．左右にそれぞれ1つの，下に2つのサーボモータを設置している．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="thumbnail">
+						<img src="servo.png">
+						<div class="caption">
+							<p>サーボモータの動き</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-sm-12">
+					<h2>制作方法</h2>
+					<p>正直著者が時間短縮のため（嘘　サボって）まともに設計しなかったため，使用した素材や画像を紹介するに留める．設計図のようなものは上記Githubに上がっているrealLive2DSimulatorを起動していただきたい</p>
+					<h3>部品表</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">商品名</th>
+								<th scope="col">説明</th>
+							</tr>
+						</thead>
+						<tbody>
+							<td>
+								<a href="http://www.tamiya.com/japan/products/70131/index.html" target="_blank">プラ材 5mm角棒 （6本入）</a>
+							</td>
+							<td>フレームとして使用．2セット使った記憶があり．</td>
+						</tbody>
+						<tbody>
+							<td>
+								SG90
+							</td>
+							<td>サーボモータ．16個使用</td>
+						</tbody>
+						<tbody>
+							<td>
+								Ｉ２Ｃ接続１６チャンネル　サーボ＆ＰＷＭ駆動キット
+							</td>
+							<td>PCA9685．
+								<a href="https://akizukidenshi.com" target="_blank">秋月電子</a>で購入可能．</td>
+						</tbody>
+						<tbody>
+							<td>
+								アクリル板
+							</td>
+							<td>4枚．大きさはsimulatorのmeasure参照．
+								<a href="https://www.hazaiya.co.jp/" target="_blank">はざいや</a>で大きさを決めて発注すると楽．</td>
+						</tbody>
+						<tbody>
+							<td>
+								その他
+							</td>
+							<td>電池ボックスには単３電池4本直列のものを使用．マイコンはArduinoを使用．著者が使用しているのは
+								<a href="https://www.pololu.com/product/3103" target="_blank">A-Star 32U4 Mini LV</a>である．これは電源を(何もせずに)サーボと共通化できる（2.8～11.7Vで動く）ためである．
+							</td>
+						</tbody>
+					</table>
+					<h3>組み立て時画像一覧</h3>
+					<p>基本的にはサーボの取り付け部分にプラ棒をアロンアルファでくっつける，のを層によってずらしていくだけである．</p>
+					<p>若干投げやりだが，ここの画像を見て解析して作って欲しい．質問あればTwitterのリプライなどでどうぞ．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2>参考文献</h2>
+			<ol>
+				<li>
+					<a href="https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AB%E3%83%A1%E3%83%A9">マルチプレーン・カメラ.</a>
+				</li>
+				<li>Live2D.
+					<a href="www.live2d.com" target="_blank">www.live2d.com</a>
+				</li>
+			</ol>
+		</section>
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+
+</html>
