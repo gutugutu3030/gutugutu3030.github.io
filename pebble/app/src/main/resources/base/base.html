@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}タイトル{% endblock %}</title>
+</head>
+<body>
+    <!-- ヘッダーの共通部分 -->
+    <header>
+        <h1>ウェブサイトのヘッダー</h1>
+    </header>
+
+    <!-- コンテンツ部分 -->
+    <main>
+        {% block content %}
+        <!-- この部分は子テンプレートで上書きされます -->
+        {% endblock %}
+    </main>
+
+    <!-- フッターの共通部分 -->
+    <footer>
+        <p>&copy; 2024 ウェブサイト</p>
+    </footer>
+</body>
+</html>
