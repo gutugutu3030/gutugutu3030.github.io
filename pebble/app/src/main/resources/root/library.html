@@ -1,79 +1,9 @@
-<!DOCTYPE html>
-<html>
+{% extends "../base.html" %}
 
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>gutugutu3030</title>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<style type="text/css">
-		body {
-			padding-top: 80px;
-		}
-		
-		.img-responsive-overwrite {
-			margin: 0 auto;
-		}
-		
-		.panelHeader {
-			color: rgb(33, 125, 187);
-			;
-		}
-	</style>
-	<!--&#91;if lt IE 9&#93;>
-		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-	<!&#91;endif&#93;-->
-	<link rel="shortcut icon" href="favicon.ico">
-</head>
+{% block title %}ライブラリ{% endblock %}
 
-<body>
-	<header>
-		<div class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a href="/" class="navbar-brand">gutugutu3030</a>
-					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li class="active dropdown">
-							<a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li>
-									<a href="index.html">Products</a>
-								</li>
-								<li>
-									<a href="library.html">Libraries</a>
-								</li>
-								<li>
-									<a href="app/index.html">Apps</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="profile.html">Profile</a>
-						</li>
-						<li>
-							<a href="https://sites.google.com/view/gutugutu3030/home">備忘録</a>
-						</li>
-
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div class="container">
+{% block content %}
+<div class="container">
 		<div>
 			<h1>ライブラリ</h1>
 			<p>作成したライブラリやダウンロード可能コンテンツを公開しております．JavaやProcessingのためのライブラリがほとんどです．</p>
@@ -430,9 +360,5 @@
 				</div>
 			</div>
 		</div>
-
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-</body>
-
-</html>
+	</div>
+{% endblock %}
