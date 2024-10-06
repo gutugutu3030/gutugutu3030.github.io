@@ -5,24 +5,30 @@ package org.example;
 
 import io.pebbletemplates.pebble.PebbleEngine;
 import io.pebbletemplates.pebble.template.PebbleTemplate;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
-import java.util.Map;
 
 public class App {
   public static void main(String[] args) throws IOException {
     PebbleEngine engine = new PebbleEngine.Builder().build();
-    PebbleTemplate compiledTemplate = engine.getTemplate("extend.html");
+    createRootHtml(engine);
+  }
 
-    Map<String, Object> context = new HashMap<>();
-    context.put("name", "Mitchell");
-
-    Writer writer = new StringWriter();
-    compiledTemplate.evaluate(writer, context);
-
-    String output = writer.toString();
-    System.out.println(output);
+  private static void createRootHtml(PebbleEngine engine) throws IOException {
+    Files.list(Paths.get("src/main/resources/root"))
+        .filter(Files::isRegularFile)
+        .filter(path -> path.toString().endsWith(".html"))
+        .forEach(
+            path -> {
+              PebbleTemplate compiledTemplate = engine.getTemplate("root/" + path.getFileName());
+              try (FileWriter writer = new FileWriter("../../" + path.getFileName())) {
+                compiledTemplate.evaluate(writer, new HashMap<>());
+              } catch (IOException e) {
+                e.printStackTrace();
+              }
+            });
   }
 }
