@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - ミニミニ8mm映写機</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+<link rel="shortcut icon" href="../../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../../index.html">Products</a></li>
+								<li><a href="../../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="../../../profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../../profile.html">日本語</a></li>
+								<li><a href="../../../profileEng.html">English</a></li>
+							</ul>
+						</li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/view/gutugutu3030/home">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>ミニミニ8mm映写機 <small>3Dプリンタとレーザカッターを用いた8mm映写機の自作</small></h1>
+		</section>
+		<section>
+			<div class="alert alert-info">
+				<p>3Dモデルデータとレーザーカッティングのパスデータと，組み立ての説明を公開しました．（組立説明書はロードに時間がかかります．）</p>
+				<a href="http://www.thingiverse.com/thing:2047226" target="_blank" class="btn btn-info">ダウンロード</a> <a href="instruction/index.html"
+					target="_blank" class="btn btn-info">組み立て説明</a>
+			</div>
+			<div class="alert alert-info">
+				<p>フィルムのかけかえ方の説明動画を公開しました．</p>
+				<a href="https://youtu.be/M8mY0K9LaLc" target="_blank" class="btn btn-info">動画</a>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>昨今，8mmフィルム映写機は製造されておらず，中古で買う映写機は重くて大きい．また，現在PCなどで手軽に動画を視聴できるが，世界が破滅してこの世のすべてのトランジスタ・ICがイカれた場合，ほぼ全ての動画再生装置が使えなくなってしまう．</p>
+					<p>そこで，3Dプリンタとレーザカッターを用いて映写機を自作した．</p>
+					<p>今回は機構の簡易化のため，無限軌道のフィルムとした．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cy_mY1iS7DA" frameborder="0" allowfullscreen></iframe>
+frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</section>
+<section>
+	<div class="thumbnail">
+		<img src="soul.png">
+		<div class="caption">
+			<p>映写機; 全体像・フィルムと投影装置・ジェネバ機構・スイッチ</p>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="thumbnail">
+				<img src="circuit.png">
+				<div class="caption">
+					<p>回路</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<h2>製作方法</h2>
+			<p>ギアの制作には3Dプリンタを用い，筐体の作成にはレーザカッターを用いた．筐体は2mmのアクリル板を，ギアにはPLAを用いた．動力にはタミヤの<a href="http://www.tamiya.com/japan/products/70190mini_multiratio/index.htm"
+					target="_blank">ミニモーター多段ギヤボックス（12速）</a>（ギヤ比5.1:1）を用い，軸にはタミヤの3mmシャフトを用いた．</p>
+			<p>ギアの制作には<a href="http://www.knowhave.com/gear/indexjp.php" target="_blank">Gear Model For 3D Printer</a>を用いた．間欠運動にはジェネバ機構を採用した．これはクローによる間欠運動よりも簡単に設計できるからである．ジェネバ機構は
+				<a href="http://www.thingiverse.com/thing:1994518" target="_blank">Thingiverseに上がっていたモデル</a>と先述のサイトで制作したギアを組み合わせて作成した．</p>
+			<p>使用したジェネバ機構はスロットが6つあるものである．フィルムを送るための歯車は1回転で30コマすすむ大きさに設定した．</p>
+		</div>
+
+</section>
+<section>
+	<div class="col-sm-12">
+		<h2>工夫と想定外　あと感想</h2>
+
+		<p>アクリル板，透明のものしか用意しなかったため，遮光する必要がある前面を3Dプリンタで出そうとしたら歪んでどうにもならなかった．しょうがないからアクリル板で切ったが，アクリル板についてる茶色のシールを剥がさずに使えばいいことに気づいた．</p>
+		<p>現時点では歯車の位置をテキトーに決定しているため，ところどころかみ合わせが悪く，ジェネバ機構が噛み合う際に歯車が硬くなることがある．LEDとモータを並列にしていることも相まって，ジェネバ機構が噛み合う際，つまりフィルムが送られる際にモータに負荷がかかり，LEDに流れる電流が少なくなり，暗くなる（点滅する）ことが判明した．羽いらなかった．</p>
+
+		<p></p>
+		<p>歯車を自作して物つくったの初めてだし，専門的な知識があんまりない状態だったけど，意外とテキトーでもうまくいった．ギアの設計はwebページで半自動だったし，ジェネバ機構はネットに上がっているのを流用できた．</p>
+		<p>こういうニッチな物って作りたいユーザ自身が作らないとプロとか含めてだれも作ってくれないから，素人でも使えるパーソナルファブリケーションの機械って大事だと思う．</p>
+		<p>まだまだ3Dプリンタとかは進化しないと行けないと思う．例えば，3DCAD上で3ミリの穴をあけても，実際に印刷してみると2.5ミリしか穴の大きさがない場合があった．こういうのはユーザが試行錯誤で求めるんじゃなくて，ノウハウを機械側がためておく方が自然だろう．</p>
+	</div>
+</section>
+<section>
+	<h2>その他</h2>
+	<ul>
+		<li>フィルムの自作プロジェクトも行っております．ぜひ<a href="../index.html">こちら</a>も御覧ください．</li>
+<li>Makezineで紹介されました！
+	<a style="word-break: break-all;" href="http://makezine.jp/blog/2017/01/miniminieishaki.html" target="_blank">http://makezine.jp/blog/2017/01/miniminieishaki.html</a>
+</li>
+		<li>第１回みたかFabコンテストで発展賞を受賞しました！ <a href="https://fabmitaka.co/docs/2017030600016/" target="_blank">https://fabmitaka.co/docs/2017030600016/</a></li>
+
+		</section>
+		</div>
+		<script src="../../,,/js/jquery.min.js"></script>
+		<script src="../../../js/bootstrap.min.js"></script>
+		</body>
+
+		</html>

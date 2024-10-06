@@ -9,12 +9,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 
 public class App {
   public static void main(String[] args) throws IOException {
     PebbleEngine engine = new PebbleEngine.Builder().build();
     createRootHtml(engine);
+    createContentsHtml(engine);
   }
 
   private static void createRootHtml(PebbleEngine engine) throws IOException {
@@ -30,5 +34,22 @@ public class App {
                 e.printStackTrace();
               }
             });
+  }
+
+  private static void createContentsHtml(PebbleEngine engine) throws IOException {
+      Files.list(Paths.get("src/main/resources/contents")).filter(Files::isRegularFile)
+              .filter(path -> path.toString().endsWith(".html")).forEach(path -> {
+                  PebbleTemplate compiledTemplate =
+                          engine.getTemplate("contents/" + path.getFileName());
+                  final var directory = Arrays.stream(path.getFileName().toString().split("\\."))
+                          .filter(s -> s.length() > 0).filter(s -> !s.equals("html"))
+                          .collect(Collectors.joining("/"));
+                  try (FileWriter writer =
+                          new FileWriter("../../contents/%s/index.html".formatted(directory))) {
+                      compiledTemplate.evaluate(writer, new HashMap<>());
+                  } catch (IOException e) {
+                      e.printStackTrace();
+                  }
+              });
   }
 }

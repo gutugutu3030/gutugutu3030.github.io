@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - 流しそうめん音ゲー</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../index.html">Products</a></li>
+								<li><a href="../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="../../profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../profile.html">日本語</a></li>
+								<li><a href="../../profileEng.html">English</a></li>
+							</ul>
+						</li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/view/gutugutu3030/home">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>流しそうめん音ゲー <small>どう見てもそうめんは音ゲー</small></h1>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_xPJkJJuWGk" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>流しそうめんって音ゲーに似てませんか？</p>
+					<p>って思ったので作ってみました</p>
+					<h2>システム</h2>
+					<p>Stepmaniaという音ゲーの譜面をProcessingで読み込んでいる．そして，譜面にしたがって4つあるDCモータを用いてベルトコンベアを回している．ベルトコンベアにそうめんを乗せるのは手作業となる．</p>
+					<p>最初の試行では，早すぎてそうめんが全くキャッチ出来なかったり，譜面が複雑でそうめんをベルトコンベアに乗せる方が間に合わなかったりした．そこで譜面の単純化を行ったが，そうめんを取ることができても，忙しくて食べられなかった．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2>その他</h2>
+			<ul>
+				<li>デイリーポータルＺで紹介されました！
+					<a style="word-break: break-all;" href="http://portal.nifty.com/kiji/140924165234_1.htm" target="_blank">http://portal.nifty.com/kiji/140924165234_1.htm</a>
+				</li>
+				<li>ねとらぼで紹介されました！
+					<a style="word-break: break-all;" href="http://nlab.itmedia.co.jp/nl/articles/1409/30/news159.html" target="_blank">http://nlab.itmedia.co.jp/nl/articles/1409/30/news159.html</a>
+
+				</li>
+			</ul>
+		</section>
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+
+</html>

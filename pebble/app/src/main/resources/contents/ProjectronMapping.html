@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - Projectron Mapping</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+	<style type="text/css">
+		body {
+			padding-top: 80px;
+		}
+		
+		ol li {
+			list-style-type: none;
+			list-style-position: inside;
+			counter-increment: cnt;
+			margin-bottom: 0.5em;
+		}
+		
+		ol li:before {
+			display: marker;
+			content: "[" counter(cnt) "] ";
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="../../favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="../../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../index.html">Products</a></li>
+								<li><a href="../../library.html">Libraries</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="../../profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../../profile.html">日本語</a></li>
+								<li><a href="../../profileEng.html">English</a></li>
+							</ul>
+						</li>
+						<li><a href="https://twitter.com/gutugutu3030"><i class="fa fa-twitter"></i> Twitter</a></li>
+						<li><a href="https://sites.google.com/view/gutugutu3030/home">備忘録</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<section>
+			<h1>Projectron Mapping <small>プロジェクションマッピングによる電子工作体験支援</small></h1>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>電子工作初学者は部品の仕様を学ぶする必要があるが，仕様書やソフトウェアシミュレータで勉強することは，難しかったり，現実感が無かったりしてモチベーション低下につながる．
+					</p>
+					<p>そこで，実際に部品が動く現実感とソフトウェアシミュレータの高速な試行錯誤を同時に達成するシステムを提案した．プロジェクションマッピングによって電子部品の擬似動作を可能にした．実際の部品でなく，3Dプリンタで出力した部品のモックアップでも高い現実感を実現した．
+						これにより初学者のモチベーションの維持が期待できる．
+					</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/N3dJ4XRDF1I" frameborder="0" allowfullscreen></iframe>
+						frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="system.png">
+						<div class="caption">
+							<p>システム</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<h2>システム</h2>
+					<p>タッチパネル対応ディスプレイを水平にし，その上方にプロジェクタを設置している．ユーザはディスプレイ上を作業面として電子工作を行う．素子の動作状況の提示はすべてPMによって行う．タッチ位置とプロジェクタの投影位置を合わせるためにプロジェクタをディスプレイとミラーリングしている．また，ディスプレイの全体が映る位置にwebカメラを設置している．
+					</p>
+					<p>ユーザからの入力はタッチパネルとカメラの2種類を用いる．前者はタッチジェスチャなどのディスプレイに直接触れる操作に用いる．後者はスイッチや可変抵抗の状態把握など，タッチパネルに指を付けないオーバーな操作の認識に使用する．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-7">
+					<h2>プロジェクションマッピングによる擬似動作</h2>
+					<p>素子によって擬似動作させるために適した投影内容が変わるため，素子によって投影内容を変更している．LED・マトリクスLED・7セグLEDはグラデーションを行わない単色で，素子の発光部分におおよそ一致するような投影で現実感のある発光を再現できた．
+						豆電球の場合は，擬似点灯させる部分の周りにパーティクル表現を表示することで，単色の投影より現実感のある発光に成功している．
+					</p>
+					<p>
+						駆動時に発光しない素子もシステムによって現実感のある擬似動作をさせることが可能である．ブザー，バイブレータは，素子駆動時の音を録音したものをPCから鳴らすことにより駆動を表現した．
+					</p>
+					<p>3Dプリンタでは実部品を出力することはできないが，素子の形を真似たモックアップを出力することは可能である．システムにより，3Dプリンタで出力したモックアップも同様の擬似発光が可能だとわかった．
+					</p>
+				</div>
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="pseudoLighting.png">
+						<div class="caption">
+							<p>擬似点灯</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2>書誌情報</h2>
+			<ol>
+				<li>秋山耀, 宮下芳明. 部品へのプロジェクションマッピングによる通電しない電子工作. 第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2013), pp.141-142, 2013.
+					<a href="http://www.wiss.org/WISS2013Proceedings/demo/089.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+					<strong class="text-info">[対話発表賞]</strong>
+				</li>
+				<li>Yoh Akiyama and Homei Miyashita. Electronic kit with no current flow that uses projection mapping. CHI '14 Extended Abstracts
+					on Human Factors in Computing Systems(CHI2014), pp.155-156, 2014.
+					<a href="http://dl.acm.org/citation.cfm?id=2559206.2579523&coll=DL&dl=ACM" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+				</li>
+				<li>Yoh Akiyama and Homei Miyashita. Projectron Mapping: The Exercise and Extension of Augmented Workspaces for Learning
+					Electronic Modeling through Projection Mapping. Proceedings of the adjunct publication of the 27th annual ACM symposium
+					on User interface software and technology(UIST2014), pp.57-58, 2014.
+					<a href="http://dl.acm.org/citation.cfm?id=2658779.2659113&coll=DL&dl=ACM" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+					<strong class="text-info">(SUI2014で招待デモ発表)</strong>
+				</li>
+				<li>秋山耀, 宮下芳明. プロジェクションマッピングによる電子工作体験支援. 日本バーチャルリアリティ学会論文誌, Vol.20, No.2, pp.83-86, 2015.
+					<a href="https://www.dropbox.com/s/2shf337zay5omss/vr.pdf?dl=0" target="_blank"><i class="fa fa-file-pdf-o"></i></a>							
+					<a href="http://ci.nii.ac.jp/naid/40020528769" target="_blank"><i class="glyphicon glyphicon-link"></i></a>
+					<a href="https://www.youtube.com/watch?v=N3dJ4XRDF1I" target="_blank"><i class="glyphicon glyphicon-film"></i></a>
+				</li>
+			</ol>
+		</section>
+		<section>
+			<h2>その他</h2>
+			<ul>
+				<li>Makezineで紹介されました！
+					<a style="word-break: break-all;" href="http://makezine.jp/blog/2013/11/electronics_with_projection_mapping.html" target="_blank">http://makezine.jp/blog/2013/11/electronics_with_projection_mapping.html</a>
+				</li>
+			</ul>
+		</section>
+
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+
+</html>
