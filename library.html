@@ -19,13 +19,12 @@
 			margin-top: 90px;
 		}
 
-		.img-responsive-overwrite {
-			margin: 0 auto;
+		body {
+			background-color: #f9f9f9;
 		}
 
-		.panelHeader {
-			color: rgb(33, 125, 187);
-			;
+		.card-body {
+			background-color: #f6faff;
 		}
 	</style>
 	<link rel="shortcut icon" href="favicon.ico">
@@ -68,11 +67,9 @@
 			<p>バグなどを発見された場合は連絡をお願いします．</p>
 		</div>
         
-        <div class="panel panel-info" id="HSP3DPrinter" name="HSP3DPrinter">
-			<div class="panel-heading">
+        <div class="card" id="HSP3DPrinter" name="HSP3DPrinter">
+			<div class="card-body">
 				<h3 class="panel-title">HSP3DPrinter</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>とても簡単に3DプリンタをHSPから制御できます．</p>
@@ -95,11 +92,9 @@
 			</div>
 		</div>
         
-        <div class="panel panel-info" id="s8pm" name="s8pm">
-			<div class="panel-heading">
+        <div class="card" id="s8pm" name="s8pm">
+			<div class="card-body">
 				<h3 class="panel-title">typeS8mmPDFMaker</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>連番画像から8mmフィルム（Super8と同規格）のpdfを出力します．</p>
@@ -129,11 +124,9 @@
 			</div>
 		</div>
         
-        <div class="panel panel-info" id="CheatMode" name="CheatMode">
-			<div class="panel-heading">
+        <div class="card" id="CheatMode" name="CheatMode">
+			<div class="card-body">
 				<h3 class="panel-title">Processing 2.x カンニングモード</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>プログラムに任意のコードを実行時に挿入できるモードです．</p>
@@ -157,11 +150,9 @@
 			</div>
 		</div>
         
-        <div class="panel panel-info" id="GPrintMode" name="GPrintMode">
-			<div class="panel-heading">
+        <div class="card" id="GPrintMode" name="GPrintMode">
+			<div class="card-body">
 				<h3 class="panel-title">Processing 2.x コンソールサーチモード</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>コンソールを少し便利にするモードです．</p>
@@ -184,11 +175,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="SlideMode" name="SlideMode">
-			<div class="panel-heading">
+		<div class="card" id="SlideMode" name="SlideMode">
+			<div class="card-body">
 				<h3 class="panel-title">Processing 2.x プレゼンモード</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>画像ファイルを用いて，Processing上でプレゼンを行うことができるモードです．</p>
@@ -211,11 +200,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="imageTranslater" name="imageTranslater">
-			<div class="panel-heading">
+		<div class="card" id="imageTranslater" name="imageTranslater">
+			<div class="card-body">
 				<h3 class="panel-title">OpenCV-Java-Processing画像変換ライブラリ</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>javaのBufferedImage，ProcessingのPImageと，OpenCV for JavaのMatを変換するためのライブラリです．例えば，OpenCVのMatからProcessingのPImageに変換したい場合は，<code>PImage dst=it.Mat2PI(src);</code>と書くだけで行えます．</p>
@@ -238,11 +225,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="wlfomatter" name="wlformatter">
-			<div class="panel-heading">
+		<div class="card" id="wlfomatter" name="wlformatter">
+			<div class="card-body">
 				<h3 class="panel-title">weka・LibSVMのgrid.py　csv変換ソフト</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>wekaで交差検証したり，LibSVMのgrid.pyでグリッドサーチしたりするために，データを適切な必要なフォーマットに変換するライブラリ兼ソフトを作りました．</p>
@@ -266,11 +251,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="realtimeProcessing" name="realtimeProcessing">
-			<div class="panel-heading">
+		<div class="card" id="realtimeProcessing" name="realtimeProcessing">
+			<div class="card-body">
 				<h3 class="panel-title">Processing RealtimeMode</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>ソースコードを編集すると即時に実行結果に反映される，processingのモードです．クラスなどは使用することが出来ません．</p>
@@ -291,11 +274,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="pmiku" name="pmiku">
-			<div class="panel-heading">
+		<div class="card" id="pmiku" name="pmiku">
+			<div class="card-body">
 				<h3 class="panel-title">pocketMiku用ライブラリ</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>Javaから<a href="http://otonanokagaku.net/nsx39/" target="_blank">ポケットミク</a>を喋らせるためのライブラリです．</p>
@@ -317,11 +298,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="chatwork4j" name="chatwork4j">
-			<div class="panel-heading">
+		<div class="card" id="chatwork4j" name="chatwork4j">
+			<div class="card-body">
 				<h3 class="panel-title">chatwork4j</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>Javaからchatworkへ投稿するためのライブラリです．現時点では投稿のみ可能です．chatwork APIを取得しておく必要があります．</p>
@@ -342,11 +321,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="awav" name="awav">
-			<div class="panel-heading">
+		<div class="card" id="awav" name="awav">
+			<div class="card-body">
 				<h3 class="panel-title">Awav Java</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>立体音響ライブラリをJavaから叩くためのアダプタライブラリです．</p>
@@ -367,11 +344,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="BanBanJar" name="BanBanJar">
-			<div class="panel-heading">
+		<div class="card" id="BanBanJar" name="BanBanJar">
+			<div class="card-body">
 				<h3 class="panel-title">BanBanJar</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>キー入力をするとウィンドウ内のキャラクタがキーボードを叩く素振りをします．</p>
@@ -391,11 +366,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info" id="battleLine" name="battleLine">
-			<div class="panel-heading">
+		<div class="card" id="battleLine" name="battleLine">
+			<div class="card-body">
 				<h3 class="panel-title">BattleLine</h3>
-			</div>
-			<div class="panel-body">
 				<div class="caption row">
 					<div class="col-sm-6">
 						<p>線がアイテム以外の何かにぶつかると死にます．線をぶつからないように操作して，相手の線を殺しに行くゲームです．明治高校物理部が昔作成したゲームのリメイクです．</p>

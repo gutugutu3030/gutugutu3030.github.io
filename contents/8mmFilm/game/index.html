@@ -19,13 +19,12 @@
 			margin-top: 90px;
 		}
 
-		.img-responsive-overwrite {
-			margin: 0 auto;
+		body {
+			background-color: #f9f9f9;
 		}
 
-		.panelHeader {
-			color: rgb(33, 125, 187);
-			;
+		.card-body {
+			background-color: #f6faff;
 		}
 	</style>
 	<link rel="shortcut icon" href="favicon.ico">
@@ -75,9 +74,9 @@
 					<p>真面目な話，模倣している（映写する）だけじゃダメで，超越しないと意味がないと思ったので，インタラクティブな画面を映写機で作るためにまず作りやすそうな音ゲーを選んだという話．</a>
 				</div>
 				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_P_xx2yTZ5s" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
+
 					</div>
 				</div>
 			</div>
@@ -104,7 +103,7 @@
 		</section>
 		<section>
 			<div class="thumbnail">
-				<img src="projectorCircuit.png">
+				<img src="projectorCircuit.png" class="img-fluid">
 				<div class="caption">
 					<p>映写機を動かす回路</p>
 				</div>
@@ -121,7 +120,7 @@
 				</div>
 				<div class="col-sm-6">
 					<div class="thumbnail">
-						<img src="AddCircuit.png">
+						<img src="AddCircuit.png" class="img-fluid">
 						<div class="caption">
 							<p>当たり判定の回路</p>
 						</div>
@@ -138,7 +137,7 @@
 				</div>
 				<div class="col-sm-6">
 					<div class="thumbnail">
-						<img src="sound.png">
+						<img src="sound.png" class="img-fluid">
 						<div class="caption">
 							<p>鉄琴とソレノイド</p>
 						</div>
@@ -154,7 +153,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<img src="circuit.jpg">
+						<img src="circuit.jpg" class="img-fluid">
 						<div class="caption">
 							<p>回路（全体）</p>
 						</div>
@@ -162,7 +161,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<img src="thumbnail.png">
+						<img src="thumbnail.png" class="img-fluid">
 						<div class="caption">
 							<p>実際できたゲーム？機</p>
 						</div>
@@ -170,20 +169,22 @@
 				</div>
 		</section>
 		<section>
-			<div class="col-sm-5">
-				<h2>考察・想定外</h2>
-				<p>太鼓の達人と反対に流れる（右方向に流れる）のは本当にミス．普通，映写機で投影する側と反対側から見ていた（トレーシングペーパーに透かして反対側から見ていた）ので，左右反対になった．残念．</p>
-				<p>パンチカード作るために2回大学に泊まりました．仕事量舐めてました…</p>
-				<p>2つの映写機を同じ画面に投影するためには，もう少し遠くまで投影できるようにすべきな気がした．（一応3WLEDに変更して望んだんだけどなあ）そうでないと投影が歪んでしまう．</p>
-				<p>ABPro発表当時，映写機に6Vかけるところを，電源装置の設定が変わってて10Vかかってて，熱でハンダが溶けてとれたらしい．だれだ設定変えたの．</p>
-			</div>
-			<div class="col-sm-7">
-				<h2>おわりに</h2>
-				<p>電子工作って，マイコンができないとスタートラインにも立てないと思われているかもしれない．自分も中高物理部にいて，マイコンを使わないとこの先まずいという風潮があった．（たしかに部員少なすぎてまずかったｗ）</p>
-				<p>たしかにそうなんだが，そうかもしれないんだが，マイコンなしでも面白い挙動って作れると思うんだ．物理部時代そう思っている自分がいた．</p>
-				<p>ただ単にスイッチの組み合わせで楽しいことはできる気がする．例えば，一定間隔で動かす機能（オンオフを繰り返すの）なんかは，タイマIC555とかArduinoとか使わんでも，モーターとタイヤと銅箔テープかマイクロスイッチがあれば作れるんじゃないか？</p>
-				<p>少し時間が遅れてしまった気もするが，いまその証明をできた気がする．今年から作ってた映写機とか得点君とかもそれを証明したかったのかなあ．わからん．</p>
-				<p>マイコンできないからって電子工作を躊躇している人はモーターとスイッチと電池を買って遊んでみてほしい．<small>そんでもってマイコンやパソコンが便利なことを学ぶといいのかもｗ</small></p>
+			<div class="row">
+				<div class="col-sm-5">
+					<h2>考察・想定外</h2>
+					<p>太鼓の達人と反対に流れる（右方向に流れる）のは本当にミス．普通，映写機で投影する側と反対側から見ていた（トレーシングペーパーに透かして反対側から見ていた）ので，左右反対になった．残念．</p>
+					<p>パンチカード作るために2回大学に泊まりました．仕事量舐めてました…</p>
+					<p>2つの映写機を同じ画面に投影するためには，もう少し遠くまで投影できるようにすべきな気がした．（一応3WLEDに変更して望んだんだけどなあ）そうでないと投影が歪んでしまう．</p>
+					<p>ABPro発表当時，映写機に6Vかけるところを，電源装置の設定が変わってて10Vかかってて，熱でハンダが溶けてとれたらしい．だれだ設定変えたの．</p>
+				</div>
+				<div class="col-sm-7">
+					<h2>おわりに</h2>
+					<p>電子工作って，マイコンができないとスタートラインにも立てないと思われているかもしれない．自分も中高物理部にいて，マイコンを使わないとこの先まずいという風潮があった．（たしかに部員少なすぎてまずかったｗ）</p>
+					<p>たしかにそうなんだが，そうかもしれないんだが，マイコンなしでも面白い挙動って作れると思うんだ．物理部時代そう思っている自分がいた．</p>
+					<p>ただ単にスイッチの組み合わせで楽しいことはできる気がする．例えば，一定間隔で動かす機能（オンオフを繰り返すの）なんかは，タイマIC555とかArduinoとか使わんでも，モーターとタイヤと銅箔テープかマイクロスイッチがあれば作れるんじゃないか？</p>
+					<p>少し時間が遅れてしまった気もするが，いまその証明をできた気がする．今年から作ってた映写機とか得点君とかもそれを証明したかったのかなあ．わからん．</p>
+					<p>マイコンできないからって電子工作を躊躇している人はモーターとスイッチと電池を買って遊んでみてほしい．<small>そんでもってマイコンやパソコンが便利なことを学ぶといいのかもｗ</small></p>
+				</div>
 			</div>
 		</section>
 		<section>

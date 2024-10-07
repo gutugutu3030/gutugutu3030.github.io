@@ -8,13 +8,13 @@
 			<h1>カービィでPC作ってみた <small>初めての自作PC</small></h1>
 		</section>
 		<section>
-			<img src="parapara.gif" class="img-responsive img-responsive-overwrite">
+			<img src="parapara.gif" class="img-fluid">
 			<p></p>
 			<p>
 				<font size="7">俺の
 					<font color="#ff0099">カービィ</font>，インテル入ってるんだぜ！！</font>
 			</p>
-			<img src="thumbnail.gif" class="img-responsive img-responsive-overwrite">
+			<img src="thumbnail.gif"  class="img-fluid">
 			<p></p>
 		</section>
 		<setion>
@@ -22,7 +22,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="thumbnail">
-							<img src="kuchi.jpg">
+							<img src="kuchi.jpg"  class="img-fluid">
 							<div class="caption">
 								<p>口のどアップ</p>
 							</div>
@@ -38,7 +38,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="thumbnail">
-							<img src="ura.jpg">
+							<img src="ura.jpg" class="img-fluid">
 							<div class="caption">
 								<p>裏面</p>
 							</div>
@@ -54,7 +54,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="thumbnail">
-							<img src="running.jpg">
+							<img src="running.jpg" class="img-fluid">
 							<div class="caption">
 								<p>起動した様子</p>
 							</div>

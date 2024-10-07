@@ -9,7 +9,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-4">
-				<img class="img-rounded img-responsive" src="icon.svg" />
+				<img src="icon.svg" class="img-fluid">
 			</div>
 			<div class="col-sm-8">
 				<h2>秋山 耀

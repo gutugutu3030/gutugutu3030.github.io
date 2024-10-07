@@ -20,7 +20,7 @@
 						<div class="card-body">
 							<h5 class="card-title">{{ item.name }}</h5>
 							<p class="card-text">{{ item.date }}</p>
-							<a href="{{ item.url }}" class="btn btn-primary">詳細</a>
+							<a href="{{ item.url }}" class="btn btn-outline-secondary">詳細</a>
 						</div>
 					</div>
 				</div>

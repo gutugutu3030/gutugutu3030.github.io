@@ -19,13 +19,12 @@
 			margin-top: 90px;
 		}
 
-		.img-responsive-overwrite {
-			margin: 0 auto;
+		body {
+			background-color: #f9f9f9;
 		}
 
-		.panelHeader {
-			color: rgb(33, 125, 187);
-			;
+		.card-body {
+			background-color: #f6faff;
 		}
 	</style>
 	<link rel="shortcut icon" href="favicon.ico">
@@ -81,9 +80,9 @@
 					<p>そこで，プログラムが変更されたと同時に実行結果にも反映されるシステムを作成した．今回はは<a href="https://processing.org/">Processing</a>という言語のモード機能として実装した．システムをProcessingというIDEのアドインとして実装することで，システム使用なしのProcessingへスムーズな移行ができると考えている．</p>
 				</div>
 				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gYHUTUrAxFQ" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
+
 					</div>
 				</div>
 			</div>
@@ -92,19 +91,19 @@
 		</section>
 		<section>
 			<div class="row">
-				<div class="col-sm-7">
+				<div class="col-sm-12">
 					<h2>システム</h2>
 					<p>システムは主に3つの機能を搭載している．まず，プログラム実行時にソースコードを変更すると即時反映する機能，「Realtime」である．これにより，記述したコードが画面上でどのように振る舞うのかを見ただけで知ることができる．</p>
 					<p>次は，fill・strokeといった，コンポーネントに色を塗る命令に対して，指定する色をカラーピッカーによって選べる機能，「Tweak」である．これは，色を設定したい命令をダブルクリックすることで起動する．Tweak機能により視覚的な色の設定を可能とした．</p>
 					<p>最後は，実行画面上でマウスオーバーすることで，描画されている物体がソースコードのどこで記述されているかを特定する機能，「Picker」である．これにより，実行結果とソースコードの対応関係をさらにわかりやすくしている．</p>
 				</div>
-				<div class="col-sm-5">
+				<div class="col-sm-12">
 					<h2>実装</h2>
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.slideshare.net/slideshow/embed_code/key/xSvKIAH61S8uyP" frameborder="0"
 						allowfullscreen></iframe>
 
-						frameborder="0" allowfullscreen></iframe>
+
 					</div>
 				</div>
 			</div>

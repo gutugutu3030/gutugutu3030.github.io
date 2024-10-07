@@ -3,7 +3,7 @@
 {% block title %}Bad Apple!! in 8mm Film{% endblock %}
 
 {% block content %}
-<div class="container"></div>
+<div class="container">
 		<section>
             <h1>Bad Apple!! in 8mm Film <small>OHPシートとインクジェットプリンタを用いた自作8mmフィルムの製作</small></h1>
 		</section>
@@ -22,9 +22,8 @@
 					<p>そこで，筆者はOHPシートとインクジェットプリンタを用いてSuper8互換フィルムを製造することを試みた．有名な東方のN次創作である「<a href="http://www.nicovideo.jp/watch/sm8628149" target="_blank">【東方】Bad Apple!! PV【影絵】</a>」のフィルム化を行った．</p>
 				</div>
 				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TqPrpoFX_pE" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -33,7 +32,7 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="thumbnail">
-						<img src="film.png">
+						<img src="film.png" class="img-fluid">
 						<div class="caption">
 							<p>制作フィルム</p>
 						</div>

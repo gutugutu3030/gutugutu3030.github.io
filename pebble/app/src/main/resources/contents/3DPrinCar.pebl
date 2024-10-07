@@ -12,9 +12,8 @@
 		<section>
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jG5BceMWTeU" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-sm-12">
@@ -37,7 +36,7 @@
 				</div>
 				<div class="col-sm-12">
 					<div class="thumbnail">
-						<img src="system.jpg">
+						<img src="system.jpg" class="img-fluid">
 						<div class="caption">
 							<p>システム構成; a)システムインタフェース概観（助手席）, b)3Dプリンタ（トランク）, c)推薦インタフェース.</p>
 						</div>

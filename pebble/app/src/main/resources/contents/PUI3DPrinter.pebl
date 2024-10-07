@@ -12,9 +12,9 @@
 		<section>
 			<div class="row">
 				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/54m38d4nUgg" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
+
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -35,7 +35,7 @@
 				</div>
 				<div class="col-sm-5">
 					<div class="thumbnail">
-						<img src="thumbnail1.jpg">
+						<img src="thumbnail1.jpg" class="img-fluid">
 						<div class="caption">
 							<p>二面図モデリング</p>
 						</div>
@@ -47,7 +47,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="thumbnail">
-						<img src="example.png">
+						<img src="example.png" class="img-fluid">
 						<div class="caption">
 							<p>作例</p>
 						</div>

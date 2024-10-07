@@ -15,7 +15,7 @@
                     <p>今回筆者らはAR技術を用いて決闘盤の再現を行った．尚，この作品は<a href="http://www.isc.meiji.ac.jp/~autome/">明治大学オートメーション研究部</a>の成果物である．また，著者は決闘盤におけるソフトウェアを担当しており，ハードウェアは制作を行っていない．</p>
                 </div>
                 <div class="col-sm-6">
-                    <div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+                    <div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zhnDp2Jem9s" frameborder="0" allowfullscreen></iframe>
                         frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <div class="thumbnail">
-                        <img src="system.png">
+                        <img src="system.png" class="img-fluid">
                         <div class="caption">
                             <p>システム</p>
                         </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-sm-5">
                     <div class="thumbnail">
-                        <img src="future.png">
+                        <img src="future.png" class="img-fluid">
                         <div class="caption">
                             <p>後のシステム予想図</p>
                         </div>

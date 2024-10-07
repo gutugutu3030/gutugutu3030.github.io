@@ -8,7 +8,7 @@
 			<h1>やさしいギルガメッシュ <small>ゲート・オブ・バビロンを自作した話</small></h1>
 		</section>
 		<section>
-			<img src="thumbnail.gif" class="img-responsive img-responsive-overwrite">
+			<img src="thumbnail.gif" class="img-fluid">
 			<p></p>
 		</section>
 		<section>
@@ -20,7 +20,7 @@
 					<p>しかしいくつかの問題点があります．まず，投げてくれる人がいないということ．そして刺さると危ないということです．</p>
 				</div>
 				<div class="col-sm-6">
-					<img src="issue.png" class="img-responsive img-responsive-overwrite">
+					<img src="issue.png" class="img-fluid">
 					<p></p>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 					<p>まずギリギリ人に当たらないような方角に剣を射出します．そして持っている剣を振ったのに合わせて，それに当たるように剣の射出を調整します．</p>
 				</div>
 				<div class="col-sm-6">
-					<img src="image.png" class="img-responsive img-responsive-overwrite">
+					<img src="image.png" class="img-fluid">
 					<p></p>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 					<p>スマホの加速度を送信して，振ると剣が射出されるようにします．</p>
 				</div>
 				<div class="col-sm-6">
-					<img src="GOB.png" class="img-responsive img-responsive-overwrite">
+					<img src="GOB.png" class="img-fluid">
 					<p></p>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 					<p>アーチャーの干将莫耶も用意しました！</p>
 				</div>
 				<div class="col-sm-6">
-					<img src="archer.jpg" class="img-responsive img-responsive-overwrite">
+					<img src="archer.jpg" class="img-fluid">
 					<p></p>
 				</div>
 			</div>
@@ -67,9 +67,9 @@
 					<p>そのため，あまりやさしくないギルガメッシュとなってしまいました．</p>
 				</div>
 				<div class="col-sm-6">
-					<div class="embed-responsive embed-responsive-16by9" style="margin-top: 5px;margin-bottom: 5px">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/J8Ur_qdHZ2Y" frameborder="0" allowfullscreen></iframe>
-						frameborder="0" allowfullscreen></iframe>
+
 					</div>
 				</div>
 			</div>
