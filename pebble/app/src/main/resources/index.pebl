@@ -1,4 +1,4 @@
-{% extends "../base.pebl" %}
+{% extends "base.pebl" %}
 
 {% block title %}制作物{% endblock %}
 

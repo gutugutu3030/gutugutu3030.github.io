@@ -1,5 +1,6 @@
 package gutugutu3030.config;
 
+import gutugutu3030.config.html_creator.HtmlCreator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -15,6 +16,9 @@ public class WebConfig {
 
   /** 資格 */
   public List<String> qualification;
+
+  /** HTML作成クラス */
+  public List<HtmlCreator> htmlCreator;
 
   /** {@inheritDoc} */
   @Override

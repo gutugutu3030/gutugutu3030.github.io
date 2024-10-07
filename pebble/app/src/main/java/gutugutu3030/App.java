@@ -5,102 +5,27 @@ package gutugutu3030;
 
 import gutugutu3030.config.WebConfig;
 import io.pebbletemplates.pebble.PebbleEngine;
-import io.pebbletemplates.pebble.template.PebbleTemplate;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.BiFunction;
-import java.util.stream.Collectors;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 
 public class App {
   public static void main(String[] args) throws IOException {
-    Yaml yaml = new Yaml();
+    LoaderOptions loaderOptions = new LoaderOptions();
+    loaderOptions.setTagInspector(tag -> true);
+    Yaml yaml = new Yaml(loaderOptions);
 
     final var config =
         yaml.loadAs(ClassLoader.getSystemResourceAsStream("config.yaml"), WebConfig.class);
     System.out.println(config);
 
     final PebbleEngine engine = new PebbleEngine.Builder().build();
-    createIndexHtml(engine, config);
-    createProfileHtml(engine, config);
-    createRootHtml(engine, config);
-    createContentsHtml(engine, config);
-  }
-
-  private static void createIndexHtml(PebbleEngine engine, WebConfig config) throws IOException {
-
-    final BiFunction<String, String, String> directoryToUrl =
-        (file, directory) -> "contents/%s/%s".formatted(directory.replace(".", "/"), file);
-
-    final var contentsList =
-        config.contents.stream().map(c -> c.getContentsMap(directoryToUrl)).toList().reversed();
-    final var newMap = Map.of("directory", "./", "contents", contentsList);
-    PebbleTemplate compiledTemplate = engine.getTemplate("index/index.pebl");
-    try (FileWriter writer = new FileWriter("../../index.html")) {
-      compiledTemplate.evaluate(writer, newMap);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  private static void createProfileHtml(PebbleEngine engine, WebConfig config) throws IOException {
-    final var newMap =
-        Map.of("directory", "./", "career", config.career, "qualification", config.qualification);
-    PebbleTemplate compiledTemplate = engine.getTemplate("profile/profile.pebl");
-    try (FileWriter writer = new FileWriter("../../profile.html")) {
-      compiledTemplate.evaluate(writer, newMap);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  private static void createRootHtml(PebbleEngine engine, WebConfig config) throws IOException {
-    final var newMap = new HashMap<String, Object>();
-    newMap.put("directory", "./");
-
-    Files.list(Paths.get(ClassLoader.getSystemResource("root").getPath()))
-        .filter(Files::isRegularFile)
-        .filter(path -> path.toString().endsWith(".pebl"))
-        .forEach(
-            path -> {
-              PebbleTemplate compiledTemplate = engine.getTemplate("root/" + path.getFileName());
-              try (FileWriter writer =
-                  new FileWriter(
-                      "../../" + path.getFileName().toString().replace("pebl", "html"))) {
-                compiledTemplate.evaluate(writer, newMap);
-              } catch (IOException e) {
-                e.printStackTrace();
-              }
-            });
-  }
-
-  private static void createContentsHtml(PebbleEngine engine, WebConfig config) throws IOException {
-    Files.list(Paths.get(ClassLoader.getSystemResource("contents").getPath()))
-        .filter(Files::isRegularFile)
-        .filter(path -> path.toString().endsWith(".pebl"))
-        .forEach(
-            path -> {
-              PebbleTemplate compiledTemplate =
-                  engine.getTemplate("contents/" + path.getFileName());
-              final var directory =
-                  Arrays.stream(path.getFileName().toString().split("\\."))
-                      .filter(s -> s.length() > 0)
-                      .filter(s -> !s.equals("pebl"))
-                      .collect(Collectors.joining("/"));
-              final var newMap = new HashMap<String, Object>();
-              newMap.put("directory", "./" + "../".repeat(directory.split("/").length + 1));
-
-              try (FileWriter writer =
-                  new FileWriter("../../contents/%s/index.html".formatted(directory))) {
-                compiledTemplate.evaluate(writer, newMap);
-              } catch (IOException e) {
-                e.printStackTrace();
-              }
-            });
+    config.htmlCreator.forEach(creator -> {
+      try {
+        creator.create(engine, config);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    });
   }
 }
