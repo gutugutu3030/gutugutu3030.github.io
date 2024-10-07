@@ -27,6 +27,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.pebbletemplates/pebble
     implementation("io.pebbletemplates:pebble:3.2.2")
+    // https://mvnrepository.com/artifact/org.yaml/snakeyaml
+    implementation("org.yaml:snakeyaml:2.3")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -38,7 +41,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "gutugutu3030.App"
 }
 
 tasks.named<Test>("test") {

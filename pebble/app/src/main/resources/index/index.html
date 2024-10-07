@@ -1,0 +1,39 @@
+{% extends "../base.html" %}
+
+{% block title %}制作物{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div>
+			<p>制作物一覧です．動画一覧は
+				<a href="https://www.youtube.com/playlist?list=PLQyFKRbKsHDv9lAgn7kHZCq7V1gATlHlU" target="_Blank">こちら</a>．制作したライブラリ一覧は
+				<a href="library.html">こちら</a>．</p>
+		</div>
+
+		<div class="row">
+			<div class="row-height grid">
+
+				{% for item in contents %}
+					<div class="col-md-4 col-sm-6 col-sm-height">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<a href="{{ item.url }}">
+									<h3 class="panel-title panelHeader">{{ item.name }}</h3>
+								</a>
+							</div>
+							<div class="panel-body">
+								<a href="{{ item.url }}">
+									<img src="{{ item.thumbnail }}" class="img-responsive img-responsive-overwrite" width="640" height="480">
+								</a>
+								<div class="caption">
+									<p>{{ item.date }}</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+{% endblock %}
