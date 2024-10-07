@@ -1,0 +1,12 @@
+{% extends "../base.pebl" %}
+
+{% block title %}8ミリフィルムプロジェクト{% endblock %}
+
+{% block content %}
+<script src="libraries/p5.js" type="text/javascript"></script>
+<script src="libraries/p5.dom.js" type="text/javascript"></script>
+<script src="libraries/p5.sound.js" type="text/javascript"></script>
+<script src="sketch.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{{ directory }}/css/font-awesome.min.css">
+
+{% endblock %}
