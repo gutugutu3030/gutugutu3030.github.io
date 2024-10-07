@@ -20,12 +20,13 @@ public class App {
     System.out.println(config);
 
     final PebbleEngine engine = new PebbleEngine.Builder().build();
-    config.htmlCreator.forEach(creator -> {
-      try {
-        creator.create(engine, config);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    });
+    config.htmlCreator.forEach(
+        creator -> {
+          try {
+            creator.create(engine, config);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        });
   }
 }
