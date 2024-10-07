@@ -27,6 +27,7 @@ public class App {
 
     final PebbleEngine engine = new PebbleEngine.Builder().build();
     createIndexHtml(engine, config);
+    createProfileHtml(engine, config);
     createRootHtml(engine, config);
     createContentsHtml(engine, config);
   }
@@ -47,6 +48,17 @@ public class App {
     }
   }
 
+  private static void createProfileHtml(PebbleEngine engine, WebConfig config) throws IOException {
+    final var newMap =
+        Map.of("directory", "./", "career", config.career, "qualification", config.qualification);
+    PebbleTemplate compiledTemplate = engine.getTemplate("profile/profile.pebl");
+    try (FileWriter writer = new FileWriter("../../profile.html")) {
+      compiledTemplate.evaluate(writer, newMap);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
   private static void createRootHtml(PebbleEngine engine, WebConfig config) throws IOException {
     final var newMap = new HashMap<String, Object>();
     newMap.put("directory", "./");
@@ -57,7 +69,9 @@ public class App {
         .forEach(
             path -> {
               PebbleTemplate compiledTemplate = engine.getTemplate("root/" + path.getFileName());
-              try (FileWriter writer = new FileWriter("../../" + path.getFileName())) {
+              try (FileWriter writer =
+                  new FileWriter(
+                      "../../" + path.getFileName().toString().replace("pebl", "html"))) {
                 compiledTemplate.evaluate(writer, newMap);
               } catch (IOException e) {
                 e.printStackTrace();
