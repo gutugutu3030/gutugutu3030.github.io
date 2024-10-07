@@ -38,7 +38,7 @@
 					<li>{{ item.description }} 
 					{% if item.url is defined %}
 						<a href="{{ item.url }}" target="_blank">
-							<i class="glyphicon glyphicon-link"></i>
+							<i class="bi-link"></i>
 						</a>
 					{% endif %}
 					</li>
@@ -64,10 +64,10 @@
 								<i class="fa fa-file-pdf-o"></i>
 							</a>
 							<a href="http://ci.nii.ac.jp/naid/40020528769" target="_blank">
-								<i class="glyphicon glyphicon-link"></i>
+								<i class="bi-link"></i>
 							</a>
 							<a href="https://www.youtube.com/watch?v=N3dJ4XRDF1I" target="_blank">
-								<i class="glyphicon glyphicon-film"></i>
+								<i class="bi-film"></i>
 							</a>
 						</li>
 					</ol>
@@ -115,7 +115,7 @@
 										<i class="fa fa-file-pdf-o"></i>
 									</a>
 									<a href="https://www.youtube.com/watch?v=54m38d4nUgg" target="_blank">
-										<i class="glyphicon glyphicon-film"></i>
+										<i class="bi-film"></i>
 									</a>
 								</li>
 							</ol>
@@ -126,10 +126,10 @@
 									Vol.2018-HCI-176，Issue.6，No.12，2018．
 									<a href="https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=185427&item_no=1&page_id=13&block_id=8"
 										target="_blank">
-										<i class="glyphicon glyphicon-link"></i>
+										<i class="bi-link"></i>
 									</a>
 									<a href="https://www.youtube.com/watch?v=jG5BceMWTeU" target="_blank">
-										<i class="glyphicon glyphicon-film"></i>
+										<i class="bi-film"></i>
 									</a>
 									<strong class="text-info">[学生奨励賞]</strong>
 								</li>
@@ -150,7 +150,7 @@
 										<i class="fa fa-file-pdf-o"></i>
 									</a>
 									<a href="https://www.youtube.com/watch?v=hM2Jfhzky48" target="_blank">
-										<i class="glyphicon glyphicon-film"></i>
+										<i class="bi-film"></i>
 									</a>
 								</li>
 								<li>秋山耀, 宮下芳明. ドラッグで配線できる基板による電子工作支援. 第23回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2015),
@@ -169,12 +169,12 @@
 					<ol>
 						<li>「コピー感覚で立体造形−明治大、３年以内に新３Ｄプリンター実用化」, 日刊工業新聞記事掲載, (2016年9月16日付).
 							<a href="https://www.nikkan.co.jp/articles/view/00400049" target="_blank">
-								<i class="glyphicon glyphicon-link"></i>
+								<i class="bi-link"></i>
 							</a>
 						</li>
 						<li>「【トレたま】コピー機感覚の３Ｄプリンター」, テレビ東京 WBS「トレンドたまご」取材, (2016年10月3日放送).
 							<a href="http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/" target="_blank">
-								<i class="glyphicon glyphicon-link"></i>
+								<i class="bi-link"></i>
 							</a>
 						</li>
 						<li>「明治大の３Ｄプリンター　形や大きさ，調整容易　タッチパネル使う試作機」, 日経産業新聞記事掲載, (2016年10月12日付).
@@ -188,7 +188,7 @@
 					<ol>
 						<li>Fitter：実寸に合ったものを得るシステム, Maker Faire Tokyo 2016, 明治大学宮下研究室出展, (2016年8月6-7日).
 							<a href="http://makezine.jp/event/makers2016/meijidaigakumiyashita/" target="_blank">
-								<i class="glyphicon glyphicon-link"></i>
+								<i class="bi-link"></i>
 							</a>
 						</li>
 					</ol>
@@ -215,17 +215,17 @@
 				<li>2013年12月 第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集 対話発表賞 「部品へのプロジェクションマッピングによる通電しない電子工作」</li>
 				<li>2016年9月17日 二回　3D Printer Digging Festival プラチナ賞 「コピー機並みに使いやすい3Dプリンターの販売アイデア」
 					<a href="http://ictco.jp/syousai.html?id=137" target="_blank">
-						<i class="glyphicon glyphicon-link"></i>
+						<i class="bi-link"></i>
 					</a>
 				</li>
 				<li>2017年3月17日 第１回みたかFabコンテスト 発展賞 「ミニミニ映写機」
 					<a href="https://fabmitaka.co/docs/2017030600016/" target="_blank">
-						<i class="glyphicon glyphicon-link"></i>
+						<i class="bi-link"></i>
 					</a>
 				</li>
 				<li>2018年 第176回ヒューマンコンピュータインタラクション研究会 学生奨励賞 「3DPrinCar：行き先に応じた物品を推薦・提供する乗用車」
 					<a href="http://www.meiji.ac.jp/ams/info/6t5h7p00000qa5i3.html" target="_blank">
-						<i class="glyphicon glyphicon-link"></i>
+						<i class="bi-link"></i>
 					</a>
 				</li>
 			</ol>

@@ -20,7 +20,7 @@
 						<p>とても簡単に3DプリンタをHSPから制御できます．</p>
 						<p>現在楕円と矩形が造形できます．</p>
 						<a href="https://github.com/gutugutu3030/HSP3DPrinting"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
                     <div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
@@ -46,22 +46,22 @@
 					<div class="col-sm-6">
 						<p>連番画像から8mmフィルム（Super8と同規格）のpdfを出力します．</p>
 						<p>OHPシートに印刷してご使用ください．</p>
-						<p class="text-warning"><i class="glyphicon glyphicon-warning-sign"></i> 製作途中です．</p>
+						<p class="text-warning"><i class="bi-cone-striped"></i> 製作途中です．</p>
 						<a href="https://github.com/gutugutu3030/super8filmMaker"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<!-- <li>
-									<a href="https://www.dropbox.com/s/0ekm3h81fiow7s7/s8pm.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> s8pm.zip</a> サイレントフィルム　安定版　Windows
+									<a href="https://www.dropbox.com/s/0ekm3h81fiow7s7/s8pm.zip?dl=0" target="_blank"><i class="bi-download"></i> s8pm.zip</a> サイレントフィルム　安定版　Windows
 								</li>
 								<li>
-									<a href="https://www.dropbox.com/s/b34hmq0zizx7bey/s8pm4mac.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> s8pm.zip</a> サウンドフィルム　最新版　Mac
+									<a href="https://www.dropbox.com/s/b34hmq0zizx7bey/s8pm4mac.zip?dl=0" target="_blank"><i class="bi-download"></i> s8pm.zip</a> サウンドフィルム　最新版　Mac
 								</li> -->
 								<li>
-									<a href="https://github.com/gutugutu3030/super8filmMaker" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> GitHub</a> サウンドフィルム　最新版
+									<a href="https://github.com/gutugutu3030/super8filmMaker" target="_blank"><i class="bi-download"></i> GitHub</a> サウンドフィルム　最新版
 								</li>
 							</ul>
 							<p><small>2016/4~2016/5</small></p>
@@ -82,14 +82,14 @@
 						<p>マクロみたいなものを組めます．Processingをハックした気になれるお手軽モードです．</p>
 						<p>詳しい使い方はgithubを御覧ください．</p>
 						<a href="https://github.com/gutugutu3030/cheatMode"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/olk1u6h1a90ejsj/CheatMode.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> CheatMode.zip</a>
+									<a href="https://www.dropbox.com/s/olk1u6h1a90ejsj/CheatMode.zip?dl=0" target="_blank"><i class="bi-download"></i> CheatMode.zip</a>
 								</li>
 							</ul>
 							<p><small>2016/2</small></p>
@@ -110,14 +110,14 @@
 						<p>コンソールをクリックするとそれがどこのprintln記述によるものかを解析し，記述地点にジャンプしてくれます．</p>
 						<p>詳しい使い方はgithubを御覧ください．</p>
 						<a href="https://github.com/gutugutu3030/gprintMode"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/5ogamroq70ywa4n/GreatPrintMode.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> GreatPrintMode.zip</a>
+									<a href="https://www.dropbox.com/s/5ogamroq70ywa4n/GreatPrintMode.zip?dl=0" target="_blank"><i class="bi-download"></i> GreatPrintMode.zip</a>
 								</li>
 							</ul>
 							<p><small>2016/1</small></p>
@@ -137,14 +137,14 @@
 						<p>画像ファイルは，パワーポイントを用いて出力したものを簡単に利用できるような仕様となっています．</p>
 						<p>詳しい使い方はgithubを御覧ください．</p>
 						<a href="https://github.com/gutugutu3030/SlideMode"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/pu1neydfdxgk4kx/SlideMode.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> SlideMode.zip</a>
+									<a href="https://www.dropbox.com/s/pu1neydfdxgk4kx/SlideMode.zip?dl=0" target="_blank"><i class="bi-download"></i> SlideMode.zip</a>
 								</li>
 							</ul>
 							<p><small>2015/10</small></p>
@@ -164,14 +164,14 @@
 
 						<p>詳しい使い方はzipファイルに同梱されているjava-docを御覧ください．</p>
 						<a href="https://sites.google.com/view/gutugutu3030/other/matopencvtobufferedimagetopimageprocesingwoxianghubianhuankenengnaraiburariwozuottemita"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/sh/4t22x1v30wmspir/AAAgPXp8CibC9q2fOeGNsQqga/imageTranslater.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> imageTranslater.zip</a>
+									<a href="https://www.dropbox.com/sh/4t22x1v30wmspir/AAAgPXp8CibC9q2fOeGNsQqga/imageTranslater.zip?dl=0" target="_blank"><i class="bi-download"></i> imageTranslater.zip</a>
 								</li>
 							</ul>
 							<p><small>2014/2~2015/9</small></p>
@@ -189,17 +189,17 @@
 					<div class="col-sm-6">
 						<p>wekaで交差検証したり，LibSVMのgrid.pyでグリッドサーチしたりするために，データを適切な必要なフォーマットに変換するライブラリ兼ソフトを作りました．</p>
 						<p>Javaのライブラリとして使用することも可能ですし，どちらかのフォーマットをどちらかのフォーマットに変換することも可能です．</p>
-						<a href="https://sites.google.com/view/gutugutu3030/other/psvmkarawekatokagridpynibuntougeruyongnoraiburari" target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						<a href="https://sites.google.com/view/gutugutu3030/other/psvmkarawekatokagridpynibuntougeruyongnoraiburari" target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/ycmp0mxkgd570hf/%E5%A4%89%E6%8F%9B.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> 変換.zip</a>　変換用bat付き　java8を使用
+									<a href="https://www.dropbox.com/s/ycmp0mxkgd570hf/%E5%A4%89%E6%8F%9B.zip?dl=0" target="_blank"><i class="bi-download"></i> 変換.zip</a>　変換用bat付き　java8を使用
 								</li>
 								<li>
-									<a href="https://www.dropbox.com/s/aekgam8uwqa2duv/wlformatter.jar?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> wlformatter.jar</a>　Processing動作確認　java7を使用
+									<a href="https://www.dropbox.com/s/aekgam8uwqa2duv/wlformatter.jar?dl=0" target="_blank"><i class="bi-download"></i> wlformatter.jar</a>　Processing動作確認　java7を使用
 								</li>
 							</ul>
 							<p><small>2015/4</small></p>
@@ -217,14 +217,14 @@
 					<div class="col-sm-6">
 						<p>ソースコードを編集すると即時に実行結果に反映される，processingのモードです．クラスなどは使用することが出来ません．</p>
 						<p>使用にはJDK1.7がインストールされているパソコンと，OscP5ライブラリがインストールされているProcessingが必要になります．また，使用時には同梱されているjsk_path.txtの記述を，使用されている環境に合わせて変更してください．</p>
-						<a href="contents/realtimeProcessing/index.html"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						<a href="contents/realtimeProcessing/index.html"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/sh3sxz9d6fd343v/RealtimeTweakMode.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> RealtimeTweakMode.zip</a>
+									<a href="https://www.dropbox.com/s/sh3sxz9d6fd343v/RealtimeTweakMode.zip?dl=0" target="_blank"><i class="bi-download"></i> RealtimeTweakMode.zip</a>
 								</li>
 							</ul>
 							<p><small>2015/3</small></p>
@@ -243,14 +243,14 @@
 						<p>Javaから<a href="http://otonanokagaku.net/nsx39/" target="_blank">ポケットミク</a>を喋らせるためのライブラリです．</p>
 						<p>別途ポケットミクを用意する必要があります．</p>
 						<a href="https://sites.google.com/view/gutugutu3030/other/pokettomikuwojiandannishieruyouniraiburariwozuottemitaprocessing%E3%83%BBjava"
-						target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/f1u03m1q18tmhhe/pocketmiku.jar" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> pocketmiku.jar</a>
+									<a href="https://www.dropbox.com/s/f1u03m1q18tmhhe/pocketmiku.jar" target="_blank"><i class="bi-download"></i> pocketmiku.jar</a>
 								</li>
 							</ul>
 							<p><small>2014/9</small></p>
@@ -268,14 +268,14 @@
 					<div class="col-sm-6">
 						<p>Javaからchatworkへ投稿するためのライブラリです．現時点では投稿のみ可能です．chatwork APIを取得しておく必要があります．</p>
 						<p><code>new Chatwork("トークンID","部屋番号").mes("メッセージ");</code>と書くだけで投稿が可能です．</p>
-						<a href="https://sites.google.com/view/gutugutu3030/other/javaprocessingkarachattowakuhetougaosuru" target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						<a href="https://sites.google.com/view/gutugutu3030/other/javaprocessingkarachattowakuhetougaosuru" target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/zy0y8j5666y86qt/chatwork4j.zip?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> chatwork4j.zip</a>
+									<a href="https://www.dropbox.com/s/zy0y8j5666y86qt/chatwork4j.zip?dl=0" target="_blank"><i class="bi-download"></i> chatwork4j.zip</a>
 								</li>
 							</ul>
 							<p><small>2014/9</small></p>
@@ -293,14 +293,14 @@
 					<div class="col-sm-6">
 						<p>立体音響ライブラリをJavaから叩くためのアダプタライブラリです．</p>
 						<p>別途<a href="http://3daudioprogramminginjava.blogspot.jp/2010/09/3dsoundsimulator.html" target="_blank">3DSoundSimulator</a>が必要になります．</p>
-						<a href="https://sites.google.com/view/gutugutu3030/other/processingjavakaralitiyinxiangraiburariwokouitemiru" target="_blank"><i class="glyphicon glyphicon-info-sign"></i> もっと詳しく</a>
+						<a href="https://sites.google.com/view/gutugutu3030/other/processingjavakaralitiyinxiangraiburariwokouitemiru" target="_blank"><i class="bi-info-circle"></i> もっと詳しく</a>
 					</div>
 					<div class="col-sm-6">
 						<div class="alert alert-info" style="height: 100%;">
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/6olfp7e0yx88nte/Awav.jar" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> Awav.jar</a>
+									<a href="https://www.dropbox.com/s/6olfp7e0yx88nte/Awav.jar" target="_blank"><i class="bi-download"></i> Awav.jar</a>
 								</li>
 							</ul>
 							<p><small>2014/4</small></p>
@@ -324,7 +324,7 @@
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="https://www.dropbox.com/s/zq0less9xiytgtu/banbanban.jar?dl=0" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> banbanban.jar</a>
+									<a href="https://www.dropbox.com/s/zq0less9xiytgtu/banbanban.jar?dl=0" target="_blank"><i class="bi-download"></i> banbanban.jar</a>
 								</li>
 							</ul>
 							<p><small>2009/8</small></p>
@@ -348,10 +348,10 @@
 							<h4>Download</h4>
 							<ul style="list-style-type:none;margin:0;padding:0;">
 								<li>
-									<a href="http://www.mediafire.com/download/zqmjdzb3y0z/バトルライン4.0.zip" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> バトルライン4.0.zip</a>　HSP版　BGMインポート機能あり
+									<a href="http://www.mediafire.com/download/zqmjdzb3y0z/バトルライン4.0.zip" target="_blank"><i class="bi-download"></i> バトルライン4.0.zip</a>　HSP版　BGMインポート機能あり
 								</li>
 								<li>
-									<a href="http://www.mediafire.com/download/yv9326aovibtmv4/battlelinex.zip" target="_blank"><i class="glyphicon glyphicon-download-alt"></i> battleLinex.zip</a>　java版　HSPに比べアイテム・システムが強化　BGMインポート機能なし
+									<a href="http://www.mediafire.com/download/yv9326aovibtmv4/battlelinex.zip" target="_blank"><i class="bi-download"></i> battleLinex.zip</a>　java版　HSPに比べアイテム・システムが強化　BGMインポート機能なし
 								</li>
 							</ul>
 							<p><small>2009/3~2011/12</small></p>

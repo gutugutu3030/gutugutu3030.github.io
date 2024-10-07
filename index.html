@@ -11,12 +11,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	<script src="./js/jquery.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/jquery.equalheight.min.js"></script>
+	<script src="./js/bootstrap.bundle.min.js"></script>
 	<style type="text/css">
-		body {
-			padding-top: 90px;
+		main {
+			margin-top: 90px;
 		}
 
 		.img-responsive-overwrite {
@@ -28,55 +28,38 @@
 			;
 		}
 	</style>
-	<!--&#91;if lt IE 9&#93;>
-		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-	<!&#91;endif&#93;-->
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 
 <body>
-	<header>
-		<div class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a href="/" class="navbar-brand">gutugutu3030</a>
-					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li class="active dropdown">
-							<a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li>
-									<a href="./index.html">Products</a>
-								</li>
-								<li>
-									<a href="./library.html">Libraries</a>
-								</li>
-								<li>
-									<a href="./app/index.html">Apps</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="./profile.html">Profile</a>
-						</li>
-						<li>
-							<a href="https://sites.google.com/view/gutugutu3030/home">備忘録</a>
-						</li>
-
-					</ul>
-				</div>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">gutugutu3030</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Contents
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="./index.html">Products</a></li>
+							<li><a class="dropdown-item" href="./library.html">Libraries</a></li>
+							<li><a class="dropdown-item" href="./app/index.html">Apps</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./profile.html">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://sites.google.com/view/gutugutu3030/home">備忘録</a>
+					</li>
+				</ul>
 			</div>
 		</div>
-	</header>
+	</nav>
     <main>
         	<div class="container">
 		<div>
@@ -85,426 +68,284 @@
 				<a href="library.html">こちら</a>．</p>
 		</div>
 
-		<div class="row">
-			<div class="row-height grid">
-
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/reallive2d/index.html">
-									<h3 class="panel-title panelHeader">MultiplaneGirl</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/reallive2d/index.html">
-									<img src="contents/reallive2d/thumbnail.gif" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2018/6-2022</p>
-								</div>
-
-							</div>
+		<div class="row row-cols-md-3 row-cols-sm-1 g-4">
+							<div class="col">
+					<div class="card">
+						<a href="contents/reallive2d/index.html">
+      						<img src="contents/reallive2d/thumbnail.gif" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">MultiplaneGirl</h5>
+							<p class="card-text">2018/6-2022</p>
+							<a href="contents/reallive2d/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/3DPrinCar/index.html">
-									<h3 class="panel-title panelHeader">3DPrinCar</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/3DPrinCar/index.html">
-									<img src="contents/3DPrinCar/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2017/5-2018/1</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/3DPrinCar/index.html">
+      						<img src="contents/3DPrinCar/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">3DPrinCar</h5>
+							<p class="card-text">2017/5-2018/1</p>
+							<a href="contents/3DPrinCar/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/8mmFilm/game/index.html">
-									<h3 class="panel-title panelHeader">ICレスゲーム機</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/8mmFilm/game/index.html">
-									<img src="contents/8mmFilm/game/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2017/9</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/8mmFilm/game/index.html">
+      						<img src="contents/8mmFilm/game/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">ICレスゲーム機</h5>
+							<p class="card-text">2017/9</p>
+							<a href="contents/8mmFilm/game/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua">
-									<h3 class="panel-title panelHeader">背負型3Dプリンタ</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua">
-									<img src="contents/mobileFabrication/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2017/3-2018/3</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua">
+      						<img src="contents/mobileFabrication/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">背負型3Dプリンタ</h5>
+							<p class="card-text">2017/3-2018/3</p>
+							<a href="https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/Theater/index.html">
-									<h3 class="panel-title panelHeader">Theater</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/Theater/index.html">
-									<img src="contents/Theater/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2017/1-2017/2</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/Theater/index.html">
+      						<img src="contents/Theater/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Theater</h5>
+							<p class="card-text">2017/1-2017/2</p>
+							<a href="contents/Theater/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/8mmFilm/projector/index.html">
-									<h3 class="panel-title panelHeader">ミニミニ8mm映写機</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/8mmFilm/projector/index.html">
-									<img src="contents/8mmFilm/projector/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2017/1</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/8mmFilm/projector/index.html">
+      						<img src="contents/8mmFilm/projector/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">ミニミニ8mm映写機</h5>
+							<p class="card-text">2017/1</p>
+							<a href="contents/8mmFilm/projector/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/PaperBattler/index.html">
-									<h3 class="panel-title panelHeader">Paper Battler</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/PaperBattler/index.html">
-									<img src="contents/PaperBattler/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2017/1</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/PaperBattler/index.html">
+      						<img src="contents/PaperBattler/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Paper Battler</h5>
+							<p class="card-text">2017/1</p>
+							<a href="contents/PaperBattler/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/PUI3DPrinter/index.html">
-									<h3 class="panel-title panelHeader">Pocon</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/PUI3DPrinter/index.html">
-									<img src="contents/PUI3DPrinter/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2016/7-2018/3</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/PUI3DPrinter/index.html">
+      						<img src="contents/PUI3DPrinter/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Pocon</h5>
+							<p class="card-text">2016/7-2018/3</p>
+							<a href="contents/PUI3DPrinter/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/Gilgamesh/index.html">
-									<h3 class="panel-title panelHeader">やさしいギルガメッシュ</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/Gilgamesh/index.html">
-									<img src="contents/Gilgamesh/thumbnail.gif" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2016/9</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/Gilgamesh/index.html">
+      						<img src="contents/Gilgamesh/thumbnail.gif" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">やさしいギルガメッシュ</h5>
+							<p class="card-text">2016/9</p>
+							<a href="contents/Gilgamesh/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/Fitter/index.html">
-									<h3 class="panel-title panelHeader">Fitter</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/Fitter/index.html">
-									<img src="contents/Fitter/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2016/7-2018/3</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/Fitter/index.html">
+      						<img src="contents/Fitter/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Fitter</h5>
+							<p class="card-text">2016/7-2018/3</p>
+							<a href="contents/Fitter/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/kirbyPC/index.html">
-									<h3 class="panel-title panelHeader">カービィでPC作ってみた</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/kirbyPC/index.html">
-									<img src="contents/kirbyPC/thumbnail.gif" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2016/7</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/kirbyPC/index.html">
+      						<img src="contents/kirbyPC/thumbnail.gif" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">カービィでPC作ってみた</h5>
+							<p class="card-text">2016/7</p>
+							<a href="contents/kirbyPC/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/8mmFilm/index.html">
-									<h3 class="panel-title panelHeader">自作8mmフィルムプロジェクト</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/8mmFilm/index.html">
-									<img src="contents/8mmFilm/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2016/5</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/8mmFilm/index.html">
+      						<img src="contents/8mmFilm/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">自作8mmフィルムプロジェクト</h5>
+							<p class="card-text">2016/5</p>
+							<a href="contents/8mmFilm/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="https://github.com/gutugutu3030/gprintMode">
-									<h3 class="panel-title panelHeader">Processing コンソールサーチモード</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="https://github.com/gutugutu3030/gprintMode">
-									<img src="contents/GPrint/thumbnail.gif" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2016/1</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="https://github.com/gutugutu3030/gprintMode">
+      						<img src="contents/GPrint/thumbnail.gif" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Processing コンソールサーチモード</h5>
+							<p class="card-text">2016/1</p>
+							<a href="https://github.com/gutugutu3030/gprintMode" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/pinteraction/index.html">
-									<h3 class="panel-title panelHeader">pinteraction</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/pinteraction/index.html">
-									<img src="contents/pinteraction/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2015/9-2016/3</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/pinteraction/index.html">
+      						<img src="contents/pinteraction/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">pinteraction</h5>
+							<p class="card-text">2015/9-2016/3</p>
+							<a href="contents/pinteraction/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/DraggableBoard/index.html">
-									<h3 class="panel-title panelHeader">ドラッグで配線できる基板</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/DraggableBoard/index.html">
-									<img src="contents/DraggableBoard/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2015/12</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/DraggableBoard/index.html">
+      						<img src="contents/DraggableBoard/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">ドラッグで配線できる基板</h5>
+							<p class="card-text">2015/12</p>
+							<a href="contents/DraggableBoard/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="https://www.youtube.com/watch?v=3zLj8GU9hfM">
-									<h3 class="panel-title panelHeader">Gesture Processing</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="https://www.youtube.com/watch?v=3zLj8GU9hfM">
-									<img src="contents/gestureProcessing/thumbnail.png" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2015/9</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="https://www.youtube.com/watch?v=3zLj8GU9hfM">
+      						<img src="contents/gestureProcessing/thumbnail.png" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Gesture Processing</h5>
+							<p class="card-text">2015/9</p>
+							<a href="https://www.youtube.com/watch?v=3zLj8GU9hfM" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/realtimeProcessing/index.html">
-									<h3 class="panel-title panelHeader">Processing RealtimeMode</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/realtimeProcessing/index.html">
-									<img src="contents/realtimeProcessing/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2015/3</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/realtimeProcessing/index.html">
+      						<img src="contents/realtimeProcessing/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Processing RealtimeMode</h5>
+							<p class="card-text">2015/3</p>
+							<a href="contents/realtimeProcessing/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/somen/index.html">
-									<h3 class="panel-title panelHeader">流しそうめん音ゲー</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/somen/index.html">
-									<img src="contents/somen/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2014/9</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/somen/index.html">
+      						<img src="contents/somen/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">流しそうめん音ゲー</h5>
+							<p class="card-text">2014/9</p>
+							<a href="contents/somen/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru">
-									<h3 class="panel-title panelHeader">オリジナルテンキー</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru">
-									<img src="contents/numericKeypad/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2014/3</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru">
+      						<img src="contents/numericKeypad/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">オリジナルテンキー</h5>
+							<p class="card-text">2014/3</p>
+							<a href="https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/ProjectronMapping/index.html">
-									<h3 class="panel-title panelHeader">Projectron Mapping</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/ProjectronMapping/index.html">
-									<img src="contents/ProjectronMapping/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2013/10-2014/12</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/ProjectronMapping/index.html">
+      						<img src="contents/ProjectronMapping/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Projectron Mapping</h5>
+							<p class="card-text">2013/10-2014/12</p>
+							<a href="contents/ProjectronMapping/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="contents/duelDisk/index.html">
-									<h3 class="panel-title panelHeader">デュエルディスク</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="contents/duelDisk/index.html">
-									<img src="contents/duelDisk/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2013/5</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="contents/duelDisk/index.html">
+      						<img src="contents/duelDisk/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">デュエルディスク</h5>
+							<p class="card-text">2013/5</p>
+							<a href="contents/duelDisk/index.html" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="https://www.youtube.com/watch?v=ZBfd_9pjG98">
-									<h3 class="panel-title panelHeader">Hako</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="https://www.youtube.com/watch?v=ZBfd_9pjG98">
-									<img src="contents/Hako/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2012/11</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="https://www.youtube.com/watch?v=ZBfd_9pjG98">
+      						<img src="contents/Hako/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">Hako</h5>
+							<p class="card-text">2012/11</p>
+							<a href="https://www.youtube.com/watch?v=ZBfd_9pjG98" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-									<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="https://www.youtube.com/watch?v=pb9ExH-FXCY">
-									<h3 class="panel-title panelHeader">ARモデリングツール</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="https://www.youtube.com/watch?v=pb9ExH-FXCY">
-									<img src="contents/ARmodeling/thumbnail.jpg" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>2012/9</p>
-								</div>
-
-							</div>
+				</div>
+							<div class="col">
+					<div class="card">
+						<a href="https://www.youtube.com/watch?v=pb9ExH-FXCY">
+      						<img src="contents/ARmodeling/thumbnail.jpg" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">ARモデリングツール</h5>
+							<p class="card-text">2012/9</p>
+							<a href="https://www.youtube.com/watch?v=pb9ExH-FXCY" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-				
-			</div>
-		</div>
+				</div>
+					</div>
     </main>
 </body>
 </html>

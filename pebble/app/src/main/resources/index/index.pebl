@@ -10,30 +10,20 @@
 				<a href="library.html">こちら</a>．</p>
 		</div>
 
-		<div class="row">
-			<div class="row-height grid">
-
-				{% for item in contents %}
-					<div class="col-md-4 col-sm-6 col-sm-height">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<a href="{{ item.url }}">
-									<h3 class="panel-title panelHeader">{{ item.name }}</h3>
-								</a>
-							</div>
-							<div class="panel-body">
-								<a href="{{ item.url }}">
-									<img src="{{ item.thumbnail }}" class="img-responsive img-responsive-overwrite" width="640" height="480">
-								</a>
-								<div class="caption">
-									<p>{{ item.date }}</p>
-								</div>
-
-							</div>
+		<div class="row row-cols-md-3 row-cols-sm-1 g-4">
+			{% for item in contents %}
+				<div class="col">
+					<div class="card">
+						<a href="{{ item.url }}">
+      						<img src="{{ item.thumbnail }}" class="card-img-top">
+						</a>
+						<div class="card-body">
+							<h5 class="card-title">{{ item.name }}</h5>
+							<p class="card-text">{{ item.date }}</p>
+							<a href="{{ item.url }}" class="btn btn-primary">詳細</a>
 						</div>
 					</div>
-				{% endfor %}
-
-			</div>
+				</div>
+			{% endfor %}
 		</div>
 {% endblock %}
