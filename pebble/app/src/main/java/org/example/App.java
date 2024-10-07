@@ -3,25 +3,30 @@
  */
 package org.example;
 
-import io.pebbletemplates.pebble.PebbleEngine;
-import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.function.BiConsumer;
+import java.util.Map;
 import java.util.stream.Collectors;
+import io.pebbletemplates.pebble.PebbleEngine;
+import io.pebbletemplates.pebble.template.PebbleTemplate;
 
 public class App {
   public static void main(String[] args) throws IOException {
     PebbleEngine engine = new PebbleEngine.Builder().build();
-    createRootHtml(engine);
-    createContentsHtml(engine);
+    Map<String, Object> map = new HashMap<>();
+    createRootHtml(engine, map);
+    createContentsHtml(engine, map);
   }
 
-  private static void createRootHtml(PebbleEngine engine) throws IOException {
+  private static void createRootHtml(PebbleEngine engine, Map<String, Object> map)
+      throws IOException {
+    final var newMap = new HashMap<>(map);
+    newMap.put("directory", "./");
+
     Files.list(Paths.get("src/main/resources/root"))
         .filter(Files::isRegularFile)
         .filter(path -> path.toString().endsWith(".html"))
@@ -29,14 +34,15 @@ public class App {
             path -> {
               PebbleTemplate compiledTemplate = engine.getTemplate("root/" + path.getFileName());
               try (FileWriter writer = new FileWriter("../../" + path.getFileName())) {
-                compiledTemplate.evaluate(writer, new HashMap<>());
+                compiledTemplate.evaluate(writer, newMap);
               } catch (IOException e) {
                 e.printStackTrace();
               }
             });
   }
 
-  private static void createContentsHtml(PebbleEngine engine) throws IOException {
+  private static void createContentsHtml(PebbleEngine engine, Map<String, Object> map)
+      throws IOException {
       Files.list(Paths.get("src/main/resources/contents")).filter(Files::isRegularFile)
               .filter(path -> path.toString().endsWith(".html")).forEach(path -> {
                   PebbleTemplate compiledTemplate =
@@ -44,9 +50,12 @@ public class App {
                   final var directory = Arrays.stream(path.getFileName().toString().split("\\."))
                           .filter(s -> s.length() > 0).filter(s -> !s.equals("html"))
                           .collect(Collectors.joining("/"));
+            final var newMap = new HashMap<>(map);
+            newMap.put("directory", "./" + "../".repeat(directory.split("/").length + 1));
+
                   try (FileWriter writer =
                           new FileWriter("../../contents/%s/index.html".formatted(directory))) {
-                      compiledTemplate.evaluate(writer, new HashMap<>());
+              compiledTemplate.evaluate(writer, newMap);
                   } catch (IOException e) {
                       e.printStackTrace();
                   }
