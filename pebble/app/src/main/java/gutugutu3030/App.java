@@ -39,7 +39,7 @@ public class App {
     final var contentsList =
         config.contents.stream().map(c -> c.getContentsMap(directoryToUrl)).toList().reversed();
     final var newMap = Map.of("directory", "./", "contents", contentsList);
-    PebbleTemplate compiledTemplate = engine.getTemplate("index/index.html");
+    PebbleTemplate compiledTemplate = engine.getTemplate("index/index.pebl");
     try (FileWriter writer = new FileWriter("../../index.html")) {
       compiledTemplate.evaluate(writer, newMap);
     } catch (IOException e) {
@@ -53,7 +53,7 @@ public class App {
 
     Files.list(Paths.get(ClassLoader.getSystemResource("root").getPath()))
         .filter(Files::isRegularFile)
-        .filter(path -> path.toString().endsWith(".html"))
+        .filter(path -> path.toString().endsWith(".pebl"))
         .forEach(
             path -> {
               PebbleTemplate compiledTemplate = engine.getTemplate("root/" + path.getFileName());
@@ -68,7 +68,7 @@ public class App {
   private static void createContentsHtml(PebbleEngine engine, WebConfig config) throws IOException {
     Files.list(Paths.get(ClassLoader.getSystemResource("contents").getPath()))
         .filter(Files::isRegularFile)
-        .filter(path -> path.toString().endsWith(".html"))
+        .filter(path -> path.toString().endsWith(".pebl"))
         .forEach(
             path -> {
               PebbleTemplate compiledTemplate =
@@ -76,7 +76,7 @@ public class App {
               final var directory =
                   Arrays.stream(path.getFileName().toString().split("\\."))
                       .filter(s -> s.length() > 0)
-                      .filter(s -> !s.equals("html"))
+                      .filter(s -> !s.equals("pebl"))
                       .collect(Collectors.joining("/"));
               final var newMap = new HashMap<String, Object>();
               newMap.put("directory", "./" + "../".repeat(directory.split("/").length + 1));

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="google-site-verification" content="G8Ld4AL7hUV0wr4ONAumt7CRVi5l8gZ3LO9CbFaaIoU" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - プロファイル</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.equalheight.min.js"></script>
+	<style type="text/css">
+		body {
+			padding-top: 90px;
+		}
+
+		.img-responsive-overwrite {
+			margin: 0 auto;
+		}
+
+		.panelHeader {
+			color: rgb(33, 125, 187);
+			;
+		}
+	</style>
+	<!--&#91;if lt IE 9&#93;>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<!&#91;endif&#93;-->
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+	<header>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">gutugutu3030</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contents
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="./index.html">Products</a>
+								</li>
+								<li>
+									<a href="./library.html">Libraries</a>
+								</li>
+								<li>
+									<a href="./app/index.html">Apps</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="./profile.html">Profile</a>
+						</li>
+						<li>
+							<a href="https://sites.google.com/view/gutugutu3030/home">備忘録</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+    <main>
+        	<div class="container">
+		<div>
+			<h1>Profile</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<img class="img-rounded img-responsive" src="icon.svg" />
+			</div>
+			<div class="col-sm-8">
+				<h2>秋山 耀
+					<small>Yoh Akiyama</small>
+				</h2>
+				<ul style="list-style-type:none;">
+					<li>明治大学情報科学科
+						<a href="http://www.th.cs.meiji.ac.jp/" target="_blank">玉木研</a>→ 明治大学大学院新領域創造専攻
+						<a href="http://miyashita.com/" target="_blank">宮下研</a>→チームラボ
+					</li>
+					<li>
+						<i class="glyphicon glyphicon-envelope"></i> akyoh9933@gmail.com
+					</li>
+				</ul>
+				<ul style="list-style-type:none;">
+					<li>趣味：電子工作・プログラミング・8mm映写機いじり・
+						<a href="https://www.dropbox.com/sh/1e70svg8g1p001g/AACb8rk-Knv6hUnIa_mD34sXa?dl=0"
+							target="_blank">星の撮影</a>（
+						<a href="http://gutugutu3030.tumblr.com/" target="_blank">低画質版</a>）
+					</li>
+					<li>興味分野：HCI・タンジブルインタフェース・Fab・電子工作支援・プログラミング支援</li>
+					<li>使用可能言語・環境：Java(intellij・eclipse)・Processing・Arduino(・C#・mbed・openFrameworks・nodeJS・puredata・HSP)
+					</li>
+				</ul>
+				<p>大学生時代は電子工作支援の，院生時代は3Dプリンタ使用支援の研究をしていました．Web系は苦手なのでやりたくないです．
+					くるまで田舎めぐりしながら暮らすのが夢です．</p>
+			</div>
+		</div>
+		<div>
+			<h2>作ったものリスト</h2>
+			<p>
+				<a href="index.html">こちら</a>をごらんください．
+			</p>
+		</div>
+		<div>
+			<h2>お仕事</h2>
+			<ol>
+				<li>2017年7月24日
+					<a href="http://eonet.jp/zing/articles/_4100703.html"
+						target="_blank">Zing!,「3Dプリンタで“声の立体化”に挑戦!?」</a>
+				</li>
+				<li>2017年9月22日
+					<a href="http://eonet.jp/zing/articles/_4101119.html"
+						target="_blank">Zing!,「まるでハンドパワー！「手をかざすと動く台」をFabってみた」</a>
+				</li>
+			</ol>
+		</div>
+		<div>
+			<h2>Publications</h2>
+			<ul style="list-style-type:none;">
+				<li>
+					<h4>査読付き学術論文</h4>
+					<ol>
+						<li>秋山耀, 宮下芳明. プロジェクションマッピングによる電子工作体験支援. 日本バーチャルリアリティ学会論文誌, Vol.20, No.2, pp.83-86, 2015.
+							<a href="https://www.dropbox.com/s/2shf337zay5omss/vr.pdf?dl=0" target="_blank">
+								<i class="fa fa-file-pdf-o"></i>
+							</a>
+							<a href="http://ci.nii.ac.jp/naid/40020528769" target="_blank">
+								<i class="glyphicon glyphicon-link"></i>
+							</a>
+							<a href="https://www.youtube.com/watch?v=N3dJ4XRDF1I" target="_blank">
+								<i class="glyphicon glyphicon-film"></i>
+							</a>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<h4>国際会議（デモ・ポスター・動画発表）</h4>
+					<ol>
+						<li>Yoh Akiyama and Homei Miyashita. Electronic kit with no current flow that uses projection
+							mapping. CHI '14 Extended
+							Abstracts on Human Factors in Computing Systems(CHI2014), pp.155-156, 2014.
+							<a href="http://dl.acm.org/citation.cfm?id=2559206.2579523&coll=DL&dl=ACM" target="_blank">
+								<i class="fa fa-file-pdf-o"></i>
+							</a>
+						</li>
+						<li>Yoh Akiyama and Homei Miyashita. Projectron Mapping: The Exercise and Extension of Augmented
+							Workspaces for Learning
+							Electronic Modeling through Projection Mapping. Proceedings of the adjunct publication of
+							the 27th annual ACM symposium
+							on User interface software and technology(UIST2014), pp.57-58, 2014.
+							<a href="http://dl.acm.org/citation.cfm?id=2658779.2659113&coll=DL&dl=ACM" target="_blank">
+								<i class="fa fa-file-pdf-o"></i>
+							</a>
+							<strong class="text-info">(SUI2014で招待デモ発表)</strong>
+						</li>
+						<li>Yoh Akiyama and Homei Miyashita. Fitter: A System for Easily Printing Objects that Fit Real
+							Objects. Proceedings of
+							the adjunct publication of the 29th annual ACM symposium on User interface software and
+							technology(UIST2016), pp.129-131,
+							2016.
+							<a href="http://dl.acm.org/citation.cfm?id=2985730&CFID=853513149&CFTOKEN=66983434"
+								target="_blank">
+								<i class="fa fa-file-pdf-o"></i>
+							</a>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<h4>国内会議</h4>
+					<ul style="list-style-type:none;margin-left: 0;padding-left:0;">
+						<li>査読付き口頭発表
+							<ol>
+								<li>秋山耀, 宮下芳明. 3DプリンタのためのPaper User Interface.
+									第24回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2016), pp.185-191, 2016.
+									<a href="http://www.wiss.org/WISS2016Proceedings/oral/25.pdf" target="_blank">
+										<i class="fa fa-file-pdf-o"></i>
+									</a>
+									<a href="https://www.youtube.com/watch?v=54m38d4nUgg" target="_blank">
+										<i class="glyphicon glyphicon-film"></i>
+									</a>
+								</li>
+							</ol>
+						</li>
+						<li>査読なし口頭発表
+							<ol>
+								<li>秋山耀, 宮下芳明. 3DPrinCar: 行き先に応じた物品を推薦・提供する乗用車. 研究報告ヒューマンコンピュータインタラクション,
+									Vol.2018-HCI-176，Issue.6，No.12，2018．
+									<a href="https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=185427&item_no=1&page_id=13&block_id=8"
+										target="_blank">
+										<i class="glyphicon glyphicon-link"></i>
+									</a>
+									<a href="https://www.youtube.com/watch?v=jG5BceMWTeU" target="_blank">
+										<i class="glyphicon glyphicon-film"></i>
+									</a>
+									<strong class="text-info">[学生奨励賞]</strong>
+								</li>
+							</ol>
+						</li>
+						<li>査読なしデモ・ポスター発表
+							<ol>
+								<li>秋山耀, 宮下芳明. 部品へのプロジェクションマッピングによる通電しない電子工作.
+									第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2013), pp.141-142, 2013.
+									<a href="http://www.wiss.org/WISS2013Proceedings/demo/089.pdf" target="_blank">
+										<i class="fa fa-file-pdf-o"></i>
+									</a>
+									<strong class="text-info">[対話発表賞]</strong>
+								</li>
+								<li>加藤邦拓, 秋山耀, 宮下芳明. タッチ入力の柔軟な再配置を可能としたインタフェースの作成支援.
+									第22回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2014), pp.151-152, 2014.
+									<a href="http://www.wiss.org/WISS2014Proceedings/demo/086.pdf" target="_blank">
+										<i class="fa fa-file-pdf-o"></i>
+									</a>
+									<a href="https://www.youtube.com/watch?v=hM2Jfhzky48" target="_blank">
+										<i class="glyphicon glyphicon-film"></i>
+									</a>
+								</li>
+								<li>秋山耀, 宮下芳明. ドラッグで配線できる基板による電子工作支援. 第23回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2015),
+									pp.183-184, 2015.
+									<a href="http://www.wiss.org/WISS2015Proceedings/demo/2-S02.pdf" target="_blank">
+										<i class="fa fa-file-pdf-o"></i>
+									</a>
+								</li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<h4>メディア報道（新聞・テレビ）</h4>
+					<ol>
+						<li>「コピー感覚で立体造形−明治大、３年以内に新３Ｄプリンター実用化」, 日刊工業新聞記事掲載, (2016年9月16日付).
+							<a href="https://www.nikkan.co.jp/articles/view/00400049" target="_blank">
+								<i class="glyphicon glyphicon-link"></i>
+							</a>
+						</li>
+						<li>「【トレたま】コピー機感覚の３Ｄプリンター」, テレビ東京 WBS「トレンドたまご」取材, (2016年10月3日放送).
+							<a href="http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/" target="_blank">
+								<i class="glyphicon glyphicon-link"></i>
+							</a>
+						</li>
+						<li>「明治大の３Ｄプリンター　形や大きさ，調整容易　タッチパネル使う試作機」, 日経産業新聞記事掲載, (2016年10月12日付).
+						</li>
+						<li>「描いた絵→立体造形　明大　３Ｄプリンターで簡単に」, 日経産業新聞記事掲載, (2017年1月6日付).
+						</li>
+					</ol>
+				</li>
+				<li>
+					<h4>展示</h4>
+					<ol>
+						<li>Fitter：実寸に合ったものを得るシステム, Maker Faire Tokyo 2016, 明治大学宮下研究室出展, (2016年8月6-7日).
+							<a href="http://makezine.jp/event/makers2016/meijidaigakumiyashita/" target="_blank">
+								<i class="glyphicon glyphicon-link"></i>
+							</a>
+						</li>
+					</ol>
+				</li>
+
+				<li>
+					<h4>その他</h4>
+					<ul style="list-style-type:none;">
+						<li>卒論　部分グラフ同型アルゴリズムの実装と回路理解支援システムへの応用.
+							<a href="contents/data/卒論.pdf" target="_blank">
+								<i class="fa fa-file-pdf-o"></i>
+							</a>
+							<a href="contents/data/秋山，卒論5分発表，配布資料.pdf" target="_blank">
+								<i class="fa fa-file-powerpoint-o"></i>
+							</a>
+						</li>
+						<li>新たな技術を福祉にいかす体験ワークショップ, 研究事例紹介, (2017年9月6日).
+							<a href="http://goodjobcenter.com/topics/report/959/" target="_blank">
+								<i class="glyphicon glyphicon-link"></i>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2>Awards</h2>
+			<ol>
+				<li>2013年12月 第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集 対話発表賞 「部品へのプロジェクションマッピングによる通電しない電子工作」</li>
+				<li>2016年9月17日 二回　3D Printer Digging Festival プラチナ賞 「コピー機並みに使いやすい3Dプリンターの販売アイデア」
+					<a href="http://ictco.jp/syousai.html?id=137" target="_blank">
+						<i class="glyphicon glyphicon-link"></i>
+					</a>
+				</li>
+				<li>2017年3月17日 第１回みたかFabコンテスト 発展賞 「ミニミニ映写機」
+					<a href="https://fabmitaka.co/docs/2017030600016/" target="_blank">
+						<i class="glyphicon glyphicon-link"></i>
+					</a>
+				</li>
+				<li>2018年 第176回ヒューマンコンピュータインタラクション研究会 学生奨励賞 「3DPrinCar：行き先に応じた物品を推薦・提供する乗用車」
+					<a href="http://www.meiji.ac.jp/ams/info/6t5h7p00000qa5i3.html" target="_blank">
+						<i class="glyphicon glyphicon-link"></i>
+					</a>
+				</li>
+			</ol>
+		</div>
+	</div>
+
+    </main>
+</body>
+</html>

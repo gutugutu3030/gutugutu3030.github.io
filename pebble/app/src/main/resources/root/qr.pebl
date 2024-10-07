@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../base.pebl" %}
 
 {% block title %}リンク共有サイト{% endblock %}
 

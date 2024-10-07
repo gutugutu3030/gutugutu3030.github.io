@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../base.pebl" %}
 
 {% block title %}流しそうめん音ゲー{% endblock %}
 

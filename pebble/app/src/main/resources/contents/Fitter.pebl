@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../base.pebl" %}
 
 {% block title %}Fitter:実寸に合ったものを得るシステム{% endblock %}
 

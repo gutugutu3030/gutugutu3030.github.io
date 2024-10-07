@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../base.pebl" %}
 
 {% block title %}決闘盤(デュエルディスク){% endblock %}
 

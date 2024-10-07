@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../base.pebl" %}
 
 {% block title %}ドラッグで配線できる基板による電子工作支援{% endblock %}
 

@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../base.pebl" %}
 
 {% block title %}Bad Apple!! in 8mm Film{% endblock %}
 
