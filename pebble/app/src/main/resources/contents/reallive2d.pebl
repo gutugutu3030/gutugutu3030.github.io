@@ -19,8 +19,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CujnVfHNu5g" frameborder="0" allowfullscreen></iframe>
-
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rhOS5JpOuDo" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -98,6 +97,10 @@
 					<p>基本的にはサーボの取り付け部分にプラ棒をアロンアルファでくっつける，のを層によってずらしていくだけである．</p>
 					<p>若干投げやりだが，ここの画像を見て解析して作って欲しい．質問あればTwitterのリプライなどでどうぞ．</p>
 				</div>
+			</div>
+			<h2>その他動画</h2>
+			<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CujnVfHNu5g" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</section>
 		<section>
