@@ -1,0 +1,43 @@
+{% extends "base.pebl" %}
+
+{% block title %}Star{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<div class="row row-cols-md-3 row-cols-sm-1 g-4">
+		{% for item in images %}
+			<div class="col">
+				<div class="card">
+					<img src="{{ item.thumbnail }}" data-full="{{ item.fullsize }}" class="thumbnail img-fluid card-img-top" alt="Image 1" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" loading="lazy">
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="fullsizeImage" src="" class="img-fluid" alt="Full Size Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+	// サムネイル画像をクリックしたときの処理
+	document.querySelectorAll('.thumbnail').forEach(function(thumbnail) {
+		thumbnail.addEventListener('click', function() {
+			// 高解像度の画像URLを取得
+			const fullImageUrl = thumbnail.getAttribute('data-full');
+			
+			// モーダル内の画像を高解像度画像に設定
+			const fullsizeImage = document.getElementById('fullsizeImage');
+			fullsizeImage.src = fullImageUrl;
+		});
+	});
+</script>
+{% endblock %}
