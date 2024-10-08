@@ -49,4 +49,12 @@ htmlCreator:
     path: root/
   - !!gutugutu3030.config.html_creator.ContentsHtmlCreator
     path: contents/
+  - !!gutugutu3030.config.html_creator.StarHtmlCreator
+    path: star.pebl
+    thumbnailImagePath: star/small/
+    fullsizeImagePath: star/full/
+    video:
+      "2023-07-22,ホーリーグレイル　習作.jpg" : "https://www.youtube.com/embed/1YQO81ByZ8k"
+      "2022-12-13,はやま湖.jpg" : "https://www.youtube.com/embed/kqlHLPIOVQE"
+      "2024-01-01,常しえの夜空.jpg" : "https://www.youtube.com/embed/vp9j_aEFtkw"
   
