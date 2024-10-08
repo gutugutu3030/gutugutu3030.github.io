@@ -33,17 +33,22 @@
 		</div>
 		<div>
 			<h2>経歴</h2>
-			<ul>
+			<table class="table">
 				{% for item in career %}
-					<li>{{ item.description }} 
-					{% if item.url is defined %}
-						<a href="{{ item.url }}" target="_blank">
-							<i class="bi-link"></i>
-						</a>
-					{% endif %}
-					</li>
+					<tbody>
+						<td>
+							{{ item.date }}
+						</td>
+						<td>{{ item.description }} 
+						{% if item.url is defined %}
+							<a href="{{ item.url }}" target="_blank">
+								<i class="bi-link"></i>
+							</a>
+						{% endif %}
+						</td>
+					</tbody>
 				{% endfor %}
-			</ul>
+			</table>
 		</div>
 		<div>
 			<h2>資格</h2>
