@@ -52,6 +52,7 @@
 							<li><a class="dropdown-item" href="{{ directory }}index.html">Products</a></li>
 							<li><a class="dropdown-item" href="{{ directory }}library.html">Libraries</a></li>
 							<li><a class="dropdown-item" href="{{ directory }}app.html">Apps</a></li>
+							<li><a class="dropdown-item" href="{{ directory }}star.html">Photos</a></li>
 						</ul>
 					</li>
 					<li class="nav-item">

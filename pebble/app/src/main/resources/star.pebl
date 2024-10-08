@@ -5,39 +5,55 @@
 {% block content %}
 <div class="container">
 
-	<div class="row row-cols-md-3 row-cols-sm-1 g-4">
+	<div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 g-1">
 		{% for item in images %}
 			<div class="col">
 				<div class="card">
-					<img src="{{ item.thumbnail }}" data-full="{{ item.fullsize }}" class="thumbnail img-fluid card-img-top" alt="Image 1" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" loading="lazy">
+					<img src="{{ item.thumbnail }}" data-full="{{ item.fullsize }}" data-type="{{ item.type }}" class="thumbnail img-fluid card-img-top" alt="Image 1" style="cursor: pointer; width: 100%; aspect-ratio: 1/1; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#contentModal" loading="lazy">
 				</div>
 			</div>
 		{% endfor %}
 	</div>
+</div>
 
-	<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img id="fullsizeImage" src="" class="img-fluid" alt="Full Size Image">
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div class="modal fade" id="contentModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-body" id="modalBodyContent">
+			</div>
+		</div>
+	</div>
 </div>
 
 <script>
 	// サムネイル画像をクリックしたときの処理
 	document.querySelectorAll('.thumbnail').forEach(function(thumbnail) {
-		thumbnail.addEventListener('click', function() {
-			// 高解像度の画像URLを取得
-			const fullImageUrl = thumbnail.getAttribute('data-full');
-			
-			// モーダル内の画像を高解像度画像に設定
-			const fullsizeImage = document.getElementById('fullsizeImage');
-			fullsizeImage.src = fullImageUrl;
-		});
-	});
+            thumbnail.addEventListener('click', function() {
+                const fullUrl = thumbnail.getAttribute('data-full'); // 高解像度画像またはYouTubeのURL
+                const contentType = thumbnail.getAttribute('data-type'); // "image"か"video"かの判定
+                const modalBodyContent = document.getElementById('modalBodyContent');
+                
+                // モーダルの中身をクリア
+                modalBodyContent.innerHTML = '';
+
+                if (contentType === 'image') {
+                    // 高解像度画像を表示
+                    const img = document.createElement('img');
+                    img.src = fullUrl;
+                    img.className = 'img-fluid';
+                    modalBodyContent.appendChild(img);
+                } else if (contentType === 'video') {
+                    // YouTube動画を埋め込む
+                    const iframe = document.createElement('iframe');
+                    iframe.src = fullUrl;
+                    iframe.width = '100%';
+                    iframe.height = '500';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                    iframe.allowFullscreen = true;
+                    modalBodyContent.appendChild(iframe);
+                }
+            });
+        });
 </script>
 {% endblock %}

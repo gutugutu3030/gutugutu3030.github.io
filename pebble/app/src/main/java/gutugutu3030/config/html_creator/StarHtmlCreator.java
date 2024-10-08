@@ -5,10 +5,9 @@ import io.pebbletemplates.pebble.PebbleEngine;
 import io.pebbletemplates.pebble.template.PebbleTemplate;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.attribute.FileTime;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Map;
 
 /** 星空写真サイトのHTML作成を行うクラス */
@@ -20,27 +19,44 @@ public class StarHtmlCreator extends HtmlCreator {
   /** フルサイズ画像のパス */
   public String fullsizeImagePath;
 
+  /** ビデオ挿入のパス */
+  public Map<String, String> video = new HashMap<>();
+
   @Override
   public void create(PebbleEngine engine, WebConfig config) throws IOException {
-    Comparator<Path> LastModifiedTimeComparator =
-        Comparator.comparing(
-            p -> {
-              try {
-                return Files.getLastModifiedTime(p);
-              } catch (IOException e) {
-                return FileTime.fromMillis(0);
-              }
-            });
     final var images =
         Files.list(Paths.get("../../" + thumbnailImagePath))
-            .sorted(LastModifiedTimeComparator)
+            .sorted(Comparator.comparing(p -> p.getFileName().toString()))
             .map(
                 p -> {
+                  final var videoPath = video.get(p.getFileName().toString());
+                  if (videoPath != null) {
+                    return Map.of(
+                        "type",
+                        "video",
+                        "thumbnail",
+                        thumbnailImagePath + p.getFileName().toString(),
+                        "fullsize",
+                        videoPath);
+                  }
+                  if (Paths.get("../../" + fullsizeImagePath + p.getFileName().toString())
+                      .toFile()
+                      .exists()) {
+                    return Map.of(
+                        "type",
+                        "image",
+                        "thumbnail",
+                        thumbnailImagePath + p.getFileName().toString(),
+                        "fullsize",
+                        fullsizeImagePath + p.getFileName().toString());
+                  }
                   return Map.of(
+                      "type",
+                      "image",
                       "thumbnail",
                       thumbnailImagePath + p.getFileName().toString(),
                       "fullsize",
-                      fullsizeImagePath + p.getFileName().toString());
+                      thumbnailImagePath + p.getFileName().toString());
                 })
             .toList()
             .reversed();

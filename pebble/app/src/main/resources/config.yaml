@@ -51,6 +51,8 @@ htmlCreator:
     path: contents/
   - !!gutugutu3030.config.html_creator.StarHtmlCreator
     path: star.pebl
-    thumbnailImagePath: star/1024/
+    thumbnailImagePath: star/small/
     fullsizeImagePath: star/full/
+    video:
+      "2023-07-22,ホーリーグレイル　習作.jpg" : "https://www.youtube.com/embed/1YQO81ByZ8k"
   
