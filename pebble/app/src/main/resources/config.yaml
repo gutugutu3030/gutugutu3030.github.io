@@ -40,6 +40,8 @@ qualification:
   - { description: 第二種電気工事士 }
   - { description: "Silver SE 17" , url: "./pdf/JavaSilver.pdf"} 
 
+hobbyDataPath: ./pdf/hobby
+
 htmlCreator:
   - !!gutugutu3030.config.html_creator.IndexHtmlCreator
     path: index.pebl

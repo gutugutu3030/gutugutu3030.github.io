@@ -216,6 +216,11 @@
 								<i class="fa fa-file-powerpoint-o"></i>
 							</a>
 						</li>
+						<li>修論　3Dプリンタにおける制作支援と物品推薦・提供システム.
+							<a href="pdf/秋山,修論,第6稿.pdf" target="_blank">
+								<i class="fa fa-file-pdf-o"></i>
+							</a>
+						</li>
 					</ul>
 				</li>
 			</ul>
@@ -240,6 +245,19 @@
 					</a>
 				</li>
 			</ol>
+		</div>
+		<div>
+			<h2>その他資料</h2>
+			<p>趣味で作った資料。間違ってても責任は取れません。</p>
+			<ul>
+				{% for item in hobbyList %}
+				<li>
+					<a href="{{ directory + hobbyDataPath + '/' + item }}" target="_blank">
+						{{ item }} 
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
 

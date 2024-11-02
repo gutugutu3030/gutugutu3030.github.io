@@ -17,14 +17,17 @@ public class WebConfig {
   /** 資格 */
   public List<QualificationConfig> qualification;
 
+  /** 趣味で作った資料 */
+  public String hobbyDataPath;
+
   /** HTML作成クラス */
   public List<HtmlCreator> htmlCreator;
 
   /** {@inheritDoc} */
   @Override
   public String toString() {
-    return "%s[contents=%s,career=%s,qualification=%s]"
-        .formatted(getClass().getName(), contents, career, htmlCreator);
+    return "%s[contents=%s,career=%s,qualification=%s,hobbyDataPath=%s]"
+        .formatted(getClass().getName(), contents, career, htmlCreator, hobbyDataPath);
   }
 
   /** {@inheritDoc} */
@@ -32,7 +35,11 @@ public class WebConfig {
   public boolean equals(Object obj) {
     if (obj instanceof WebConfig) {
       var target = (WebConfig) obj;
-      return Objects.equals(contents, target.contents);
+      return Objects.equals(contents, target.contents)
+          && Objects.equals(career, target.career)
+          && Objects.equals(qualification, target.qualification)
+          && Objects.equals(hobbyDataPath, target.hobbyDataPath)
+          && Objects.equals(htmlCreator, target.htmlCreator);
     }
     return false;
   }
@@ -40,6 +47,6 @@ public class WebConfig {
   /** {@inheritDoc} */
   @Override
   public int hashCode() {
-    return Objects.hash(contents);
+    return Objects.hash(contents, career, qualification, hobbyDataPath, htmlCreator);
   }
 }
