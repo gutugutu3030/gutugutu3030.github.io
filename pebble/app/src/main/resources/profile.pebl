@@ -54,7 +54,13 @@
 			<h2>資格</h2>
 			<ul>
 				{% for item in qualification %}
-					<li>{{ item }}</li>
+					<li>{{ item.description }} 
+						{% if item.url is defined %}
+							<a href="{{ item.url }}" target="_blank">
+								<i class="bi-link"></i>
+							</a>
+						{% endif %}
+					</li>
 				{% endfor %}
 			</ul>
 		</div>

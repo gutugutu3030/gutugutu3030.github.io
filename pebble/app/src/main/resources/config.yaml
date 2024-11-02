@@ -36,9 +36,9 @@ career:
   - {date: 2022~, description: "インタラクティブシステムとソフトウェアに関するワークショップ(WISS)にてプログラム委員に就任", url: "https://www.wiss.org/"}
 
 qualification:
-  - 普通自動車第一種運転免許（AT限定）
-  - 第二種電気工事士
-  - Silver SE 17
+  - { description: 普通自動車第一種運転免許（AT限定）}
+  - { description: 第二種電気工事士 }
+  - { description: "Silver SE 17" , url: "./pdf/JavaSilver.pdf"} 
 
 htmlCreator:
   - !!gutugutu3030.config.html_creator.IndexHtmlCreator
