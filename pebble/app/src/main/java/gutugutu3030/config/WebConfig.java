@@ -15,7 +15,7 @@ public class WebConfig {
   public List<Map<String, String>> career;
 
   /** 資格 */
-  public List<String> qualification;
+  public List<QualificationConfig> qualification;
 
   /** HTML作成クラス */
   public List<HtmlCreator> htmlCreator;
@@ -23,7 +23,8 @@ public class WebConfig {
   /** {@inheritDoc} */
   @Override
   public String toString() {
-    return "%s[contents=%s]".formatted(getClass().getName(), contents);
+    return "%s[contents=%s,career=%s,qualification=%s]"
+        .formatted(getClass().getName(), contents, career, htmlCreator);
   }
 
   /** {@inheritDoc} */
