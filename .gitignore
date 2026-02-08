@@ -1,0 +1,10 @@
+.DS_Store
+pebble/app/bin
+
+portfolio/.*/
+portfolio/build/
+portfolio/out/
+portfolio/*.imp
+portfolio/*.ipr
+portfolio/*.iws
+portfolio/*.idea
