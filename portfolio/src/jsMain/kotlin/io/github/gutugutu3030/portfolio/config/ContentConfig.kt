@@ -3,7 +3,6 @@ package io.github.gutugutu3030.portfolio.config
 import com.charleskorn.kaml.PolymorphismStyle
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
-import dev.ktml.content
 import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.core.Container
@@ -21,7 +20,17 @@ import kotlinx.serialization.modules.subclass
 
 @Serializable
 data class ContentConfig (
+    val title: String,
+    val subTitle: String? = null,
+    val notice: NoticeContent? = null,
     val contents: List<ContentData>
+)
+
+@Serializable
+data class NoticeContent(
+    val message: String,
+    val buttonUrl: String,
+    val buttonName: String
 )
 
 private val contentModule = SerializersModule {
