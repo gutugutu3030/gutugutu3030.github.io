@@ -1,10 +1,7 @@
 package io.github.gutugutu3030.portfolio
 
-import com.charleskorn.kaml.Yaml
-import io.github.gutugutu3030.portfolio.components.PROFILE_PATH
-import io.github.gutugutu3030.portfolio.components.ProfilePanel
 import io.github.gutugutu3030.portfolio.components.bar
-import io.github.gutugutu3030.portfolio.components.initProfile
+import io.github.gutugutu3030.portfolio.pages.initProfile
 import io.kvision.Application
 import io.kvision.CoreModule
 import io.kvision.BootstrapModule
@@ -22,11 +19,7 @@ import io.kvision.routing.Routing
 import io.kvision.startApplication
 import io.kvision.theme.Theme
 import io.kvision.theme.ThemeManager
-import kotlinx.browser.window
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.await
-import kotlinx.coroutines.launch
 
 class App : Application() {
     init {

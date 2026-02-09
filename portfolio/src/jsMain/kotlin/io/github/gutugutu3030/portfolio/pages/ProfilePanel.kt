@@ -1,7 +1,10 @@
-package io.github.gutugutu3030.portfolio.components
+package io.github.gutugutu3030.portfolio.pages
 
 import com.charleskorn.kaml.Yaml
 import io.github.gutugutu3030.portfolio.App
+import io.github.gutugutu3030.portfolio.components.col
+import io.github.gutugutu3030.portfolio.components.linkMark
+import io.github.gutugutu3030.portfolio.components.row
 import io.github.gutugutu3030.portfolio.config.ProfileConfig
 import io.kvision.html.h1
 import io.kvision.html.h2

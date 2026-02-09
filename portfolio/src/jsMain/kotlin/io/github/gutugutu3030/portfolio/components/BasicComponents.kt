@@ -1,4 +1,5 @@
 package io.github.gutugutu3030.portfolio.components
+import io.github.gutugutu3030.portfolio.pages.PROFILE_PATH
 import io.kvision.core.Container
 import io.kvision.dropdown.dropDown
 import io.kvision.html.ButtonStyle
@@ -60,7 +61,7 @@ fun Container.bar(){
                     "Photos" to "#"),
                 forNavbar = true,
             )
-            navLink("Profile", url=PROFILE_PATH, dataNavigo = true)
+            navLink("Profile", url= PROFILE_PATH, dataNavigo = true)
             navLink(label = "備忘録",  url ="https://sites.google.com/view/gutugutu3030/home")
         }
         navForm {
