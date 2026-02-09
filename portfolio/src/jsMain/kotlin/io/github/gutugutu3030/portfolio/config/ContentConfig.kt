@@ -48,23 +48,10 @@ data class NoticeContent(
 )
 
 /**
- * コンテンツデータのシリアライザーモジュール
- */
-private val contentModule = SerializersModule {
-    polymorphic(ContentData::class) {
-        subclass(ColumnContent::class)
-        subclass(YoutubeContent::class)
-        subclass(ParagraphContent::class)
-        subclass(ImageContent::class)
-    }
-}
-
-/**
  * コンテンツ設定用のYAMLデコーダー
  */
 private val yaml by lazy {
     Yaml(
-        serializersModule = contentModule,
         configuration = YamlConfiguration(polymorphismStyle = PolymorphismStyle.Property)
     )
 }
