@@ -15,6 +15,8 @@ import io.kvision.BootstrapIconsModule
 import io.kvision.Hot
 import io.kvision.html.div
 import io.kvision.panel.root
+import io.kvision.panel.SimplePanel
+import io.kvision.routing.Routing
 import io.kvision.startApplication
 import io.kvision.theme.Theme
 import io.kvision.theme.ThemeManager
@@ -40,18 +42,33 @@ class App : Application() {
      */
     private val scope = MainScope()
 
+    /**
+     * Content panel for routing
+     */
+    private lateinit var contentPanel: SimplePanel
+
     override fun start() {
         root("kvapp") {
             bar()
-            div("Loading...")
+            contentPanel = div("Loading...")
         }
 
         scope.launch {
             val config = LoadConfig()
-            root("kvapp") {
-                bar()
-                add(ProfilePanel(config))
+            
+            val routing = Routing.init()
+            
+            routing.kvOn("/profile") {
+                contentPanel.removeAll()
+                contentPanel.add(ProfilePanel(config))
             }
+            
+            routing.kvOn("/") {
+                contentPanel.removeAll()
+                contentPanel.div("ようこそ！/profile にアクセスしてプロフィールを表示してください。")
+            }
+            
+            routing.kvResolve()
         }
     }
 }
