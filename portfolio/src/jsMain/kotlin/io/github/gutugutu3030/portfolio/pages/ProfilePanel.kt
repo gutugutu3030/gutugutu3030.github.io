@@ -39,7 +39,7 @@ const val PROFILE_YAML = "profile.yaml"
 /**
  * プロフィールの設定を読み込む
  */
-private suspend fun loadConfig(): ProfileConfig =
+private suspend fun loadProfileConfig(): ProfileConfig =
     window.fetch(PROFILE_YAML).await().text().await()
         .let { Yaml.default.decodeFromString(ProfileConfig.serializer(), it) }
 
@@ -50,7 +50,7 @@ fun initProfile(app: App){
     app.apply {
         routing.kvOn(PROFILE_PATH) {
             scope.launch {
-                val config = loadConfig()
+                val config = loadProfileConfig()
                 contentPanel.removeAll()
                 contentPanel.add(ProfilePanel(config))
             }

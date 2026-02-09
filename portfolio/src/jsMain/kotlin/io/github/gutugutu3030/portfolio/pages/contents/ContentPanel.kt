@@ -1,8 +1,6 @@
 package io.github.gutugutu3030.portfolio.pages.contents
 
-import io.github.gutugutu3030.portfolio.App
 import io.github.gutugutu3030.portfolio.config.ContentConfig
-import io.github.gutugutu3030.portfolio.config.loadContentConfig
 import io.kvision.html.div
 import io.kvision.html.h1
 import io.kvision.html.link
@@ -10,26 +8,9 @@ import io.kvision.html.p
 import io.kvision.html.section
 import io.kvision.html.small
 import io.kvision.panel.SimplePanel
-import kotlinx.coroutines.launch
 
-private const val PATH = "/contents/reallive2d"
 
-/**
- * Initialize content list page routing
- */
-fun initRealLive2d(app: App) {
-    app.apply {
-        routing.kvOn(PATH) {
-            scope.launch{
-                val config = loadContentConfig("$PATH/data.yaml")
-                contentPanel.removeAll()
-                contentPanel.add(RealLive2dPanel(config))
-            }
-        }
-    }
-}
-
-class RealLive2dPanel(config: ContentConfig) : SimplePanel() {
+class ContentPanel(config: ContentConfig, path:String) : SimplePanel() {
     init {
         section {
             h1 {
@@ -52,7 +33,7 @@ class RealLive2dPanel(config: ContentConfig) : SimplePanel() {
             config.contents.map{
                 div{
                     setStyle("margin-bottom", "2em")
-                    it.render(this, PATH)
+                    it.render(this, path)
                 }
             }
         }

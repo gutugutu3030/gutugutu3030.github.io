@@ -1,11 +1,11 @@
 package io.github.gutugutu3030.portfolio
 
-import dev.ktml.content
 import io.github.gutugutu3030.portfolio.components.bar
-import io.github.gutugutu3030.portfolio.pages.contents.RealLive2dPanel
-import io.github.gutugutu3030.portfolio.pages.contents.initRealLive2d
+import io.github.gutugutu3030.portfolio.config.loadContentConfig
+import io.github.gutugutu3030.portfolio.pages.contents.ContentPanel
 import io.github.gutugutu3030.portfolio.pages.initContentList
 import io.github.gutugutu3030.portfolio.pages.initProfile
+import io.github.gutugutu3030.portfolio.pages.loadContentListConfig
 import io.kvision.Application
 import io.kvision.CoreModule
 import io.kvision.BootstrapModule
@@ -24,6 +24,7 @@ import io.kvision.startApplication
 import io.kvision.theme.Theme
 import io.kvision.theme.ThemeManager
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 class App : Application() {
     init {
@@ -49,18 +50,33 @@ class App : Application() {
             contentPanel = div(className="container") {}
             contentPanel.div("Loading...")
         }
-        routing = Routing.init()
-        initContentList(this)
-        initProfile(this)
-        initRealLive2d(this)
+        scope.launch {
+           val config = loadContentListConfig()
+            routing = Routing.init()
+            initProfile(this@App)
+            initContentList(this@App)
 
+                config.contents.forEach {
+                    it.apply {
+                        console.log("add route /$directory")
+                        routing.kvOn("$directory"){
+                            console.log("call route /$directory")
+                            scope.launch{
+                                loadContentConfig("$directory/data.yaml").let{
+                                    contentPanel.removeAll()
+                                    contentPanel.add(ContentPanel(it, directory))
+                                }
+                            }
+                        }
+                    }
+                }
+            routing.kvOn(".*") {
+                contentPanel.removeAll()
+                contentPanel.div("not found")
+            }
 
-        routing.kvOn(".*") {
-            contentPanel.removeAll()
-            contentPanel.div("not found")
+            routing.kvResolve()
         }
-
-        routing.kvResolve()
     }
 }
 

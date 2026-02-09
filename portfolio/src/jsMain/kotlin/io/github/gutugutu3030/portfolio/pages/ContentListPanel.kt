@@ -31,7 +31,7 @@ const val CONTENT_LIST_YAML = "content_list.yaml"
 /**
  * コンテンツ一覧の設定を読み込む
  */
-private suspend fun loadConfig(): ContentListConfig =
+suspend fun loadContentListConfig(): ContentListConfig =
     window.fetch(CONTENT_LIST_YAML).await().text().await()
         .let { Yaml.default.decodeFromString(ContentListConfig.serializer(), it) }
 
@@ -42,14 +42,14 @@ fun initContentList(app: App){
     app.apply {
         routing.kvOn("/"){
             scope.launch {
-                val config = loadConfig()
+                val config = loadContentListConfig()
                 contentPanel.removeAll()
                 contentPanel.add(ContentListPanel(config))
             }
         }
         routing.kvOn(CONTENT_LIST_PATH) {
             scope.launch {
-                val config = loadConfig()
+                val config = loadContentListConfig()
                 contentPanel.removeAll()
                 contentPanel.add(ContentListPanel(config))
             }
