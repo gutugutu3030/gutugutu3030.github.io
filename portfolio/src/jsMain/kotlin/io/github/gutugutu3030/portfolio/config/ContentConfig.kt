@@ -4,20 +4,22 @@ import com.charleskorn.kaml.PolymorphismStyle
 import com.charleskorn.kaml.Yaml
 import com.charleskorn.kaml.YamlConfiguration
 import io.github.gutugutu3030.portfolio.components.col
+import io.github.gutugutu3030.portfolio.components.linkMark
 import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.core.Container
 import io.kvision.html.div
 import io.kvision.html.h2
 import io.kvision.html.iframe
 import io.kvision.html.image
+import io.kvision.html.li
+import io.kvision.html.link
+import io.kvision.html.ol
 import io.kvision.html.p
+import io.kvision.html.ul
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.modules.SerializersModule
-import kotlinx.serialization.modules.polymorphic
-import kotlinx.serialization.modules.subclass
 
 /**
  * コンテンツ設定データ
@@ -173,3 +175,49 @@ data class ImageContent(
         }
     }
 }
+
+@Serializable
+enum class DocumentListType(val createList: (Container)-> Container) {
+    NUMBER({ it.ol() }),
+    BULLET({ it.ul() })
+}
+
+@Serializable
+@SerialName("documentList")
+data class DocumentListContent(
+    val title: String,
+    val doc: List<DocumentListItem>,
+    val listType: DocumentListType = DocumentListType.BULLET
+) : ContentData{
+    override fun render(container: Container, path: String) {
+        container.apply {
+            h2(title)
+            listType.createList(this).apply {
+                doc.map{ item->
+                    li{
+                        +item.description
+                        item.url?.let { url -> linkMark(url) }
+                        item.pdf?.let { url -> linkMark(url, "bi-file-earmark-pdf") }
+                        item.video?.let { url -> linkMark(url, "bi-film") }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * ドキュメントコンテンツデータ
+ * @param description 説明文
+ * @param urlTitle URLタイトル
+ * @param url URL
+ * @param video 動画URL
+ * @param pdf PDFURL
+ */
+@Serializable
+data class DocumentListItem(
+    val description: String,
+    val url: String? = null,
+    val video: String? = null,
+    val pdf: String? = null
+)

@@ -33,6 +33,15 @@ contents:
   - type: youtube
     title: その他動画デモ
     url: https://www.youtube.com/embed/CujnVfHNu5g
+  - type: documentList
+    title: 参考文献
+    listType: NUMBER
+    doc:
+      - description: マルチプレーン・カメラ
+        url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AB%E3%83%A1%E3%83%A9
+      - description: Live2D
+        url: www.live2d.com
+
 
 
 

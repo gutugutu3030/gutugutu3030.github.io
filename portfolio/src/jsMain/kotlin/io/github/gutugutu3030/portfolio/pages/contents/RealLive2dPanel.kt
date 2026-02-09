@@ -50,7 +50,10 @@ class RealLive2dPanel(config: ContentConfig) : SimplePanel() {
                 }
             }
             config.contents.map{
-                it.render(this, PATH)
+                div{
+                    setStyle("margin-bottom", "2em")
+                    it.render(this, PATH)
+                }
             }
         }
     }
