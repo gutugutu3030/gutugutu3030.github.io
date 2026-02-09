@@ -7,11 +7,13 @@ import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.linkMark
 import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.core.Container
+import io.kvision.html.Tag
 import io.kvision.html.div
 import io.kvision.html.h2
 import io.kvision.html.iframe
 import io.kvision.html.image
 import io.kvision.html.li
+import io.kvision.html.link
 import io.kvision.html.ol
 import io.kvision.html.p
 import io.kvision.html.table
@@ -25,6 +27,30 @@ import kotlinx.coroutines.await
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.math.min
+
+    private val linkPattern = """\[([^\]]+)\]\(([^)]+)\)""".toRegex()
+fun String.parseMarkdownLinks(tag: Tag): Tag {
+    var lastIndex = 0
+    linkPattern.findAll(this).forEach{ result ->
+        if(result.range.first > lastIndex){
+            tag.apply {
+                +this@parseMarkdownLinks.substring(lastIndex, result.range.first)
+            }
+        }
+        tag.apply{
+            val text = result.groupValues[1]
+            val url = result.groupValues[2]
+            link(text, url = url)
+        }
+        lastIndex = result.range.last + 1
+    }
+    if(lastIndex < this.length) {
+        tag.apply {
+            +substring(lastIndex)
+        }
+    }
+    return tag
+}
 
 /**
  * コンテンツ設定データ
@@ -150,7 +176,7 @@ data class ParagraphContent(
                 h2(it)
             }
             text.map{
-                p(it)
+                it.parseMarkdownLinks(p())
             }
         }
     }
@@ -251,19 +277,17 @@ data class TableContent(
             table(className = "table"){
                 thead{
                     tr{
-                        titleData.map{ td(it) }
+                        titleData.map{ it.parseMarkdownLinks(td())}
                     }
                 }
                 tbody{
                     data.map{ rowData->
                         tr{
-                            rowData.map{ td(it) }
+                            rowData.map{ it.parseMarkdownLinks(td()) }
                         }
                     }
                 }
             }
         }
-
-
     }
 }
