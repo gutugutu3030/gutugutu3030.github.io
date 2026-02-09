@@ -51,7 +51,7 @@ fun Container.col(size: Int, additiveClass: String = "", content: Container.() -
  * Navigation bar
  */
 fun Container.bar(){
-    navbar(label = "gutugutu3030", nColor = NavbarColor.DARK) {
+    navbar(label = "gutugutu3030", nColor = NavbarColor.DARK, className = "fixed-top" ) {
         nav{
             dropDown(
                 "Contents",
