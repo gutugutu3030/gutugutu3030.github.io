@@ -1,6 +1,9 @@
 package io.github.gutugutu3030.portfolio
 
+import dev.ktml.content
 import io.github.gutugutu3030.portfolio.components.bar
+import io.github.gutugutu3030.portfolio.pages.contents.RealLive2dPanel
+import io.github.gutugutu3030.portfolio.pages.contents.initRealLive2d
 import io.github.gutugutu3030.portfolio.pages.initContentList
 import io.github.gutugutu3030.portfolio.pages.initProfile
 import io.kvision.Application
@@ -41,6 +44,7 @@ class App : Application() {
 
     override fun start() {
         root("kvapp") {
+            setStyle("margin-top", "70px")
             bar()
             contentPanel = div(className="container") {}
             contentPanel.div("Loading...")
@@ -48,12 +52,14 @@ class App : Application() {
         routing = Routing.init()
         initContentList(this)
         initProfile(this)
+        initRealLive2d(this)
 
 
         routing.kvOn(".*") {
             contentPanel.removeAll()
             contentPanel.div("not found")
         }
+
         routing.kvResolve()
     }
 }
