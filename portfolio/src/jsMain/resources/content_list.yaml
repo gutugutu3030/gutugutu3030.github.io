@@ -1,24 +1,36 @@
 contents:
-  - {directory: ARmodeling, name: ARモデリングツール, date: 2012/9, url: "https://www.youtube.com/watch?v=pb9ExH-FXCY"}
-  - {directory: Hako, name: Hako, date: 2012/11, url: "https://www.youtube.com/watch?v=ZBfd_9pjG98"}
-  - {directory: duelDisk, name: デュエルディスク, date: 2013/5}
-  - {directory: ProjectronMapping, name: Projectron Mapping, date: 2013/10-2014/12}
-  - {directory: numericKeypad, name: オリジナルテンキー, date: 2014/3, url: "https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru" }
-  - {directory: somen, name: 流しそうめん音ゲー, date: 2014/9 }
-  - {directory: realtimeProcessing, name: Processing RealtimeMode, date: 2015/3 }
-  - {directory: gestureProcessing, name: Gesture Processing, date: 2015/9, url: "https://www.youtube.com/watch?v=3zLj8GU9hfM" }
-  - {directory: DraggableBoard, name: ドラッグで配線できる基板, date: 2015/12 }
-  - {directory: pinteraction, name: pinteraction, date: 2015/9-2016/3 }
-  - {directory: GPrint, name: Processing コンソールサーチモード, date: 2016/1, url: "https://github.com/gutugutu3030/gprintMode" }
-  - {directory: 8mmFilm, name: 自作8mmフィルムプロジェクト, date: 2016/5 }
-  - {directory: kirbyPC, name: カービィでPC作ってみた, date: 2016/7 }
-  - {directory: Fitter, name: Fitter, date: 2016/7-2018/3 }
-  - {directory: Gilgamesh, name: やさしいギルガメッシュ, date: 2016/9 }
-  - {directory: PUI3DPrinter, name: Pocon, date: 2016/7-2018/3 }
-  - {directory: PaperBattler, name: Paper Battler, date: 2017/1 }
-  - {directory: 8mmFilm.projector, name: ミニミニ8mm映写機, date: 2017/1 }
-  - {directory: Theater, name: Theater, date: 2017/1-2017/2 }
-  - {directory: mobileFabrication, name: 背負型3Dプリンタ, date: 2017/3-2018/3, url: "https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua" }
-  - {directory: 8mmFilm.game, name: ICレスゲーム機, date: 2017/9 }
-  - {directory: 3DPrinCar, name: 3DPrinCar, date: 2017/5-2018/1 }
-  - {directory: reallive2d, name: MultiplaneGirl, date: 2018/6-2022 }
+  - {directory: contents/ARmodeling, name: ARモデリングツール, date: 2012/9, url: "https://www.youtube.com/watch?v=pb9ExH-FXCY",
+      thumbnailExp: jpg}
+  - {directory: contents/Hako, name: Hako, date: 2012/11, url: "https://www.youtube.com/watch?v=ZBfd_9pjG98",
+      thumbnailExp: jpg}
+  - {directory: contents/duelDisk, name: デュエルディスク, date: 2013/5}
+  - {directory: contents/ProjectronMapping, name: Projectron Mapping, date: 2013/10-2014/12,
+      thumbnailExp: jpg}
+  - {directory: contents/numericKeypad, name: オリジナルテンキー, date: 2014/3, url: "https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru", thumbnailExp: jpg }
+  - {directory: contents/somen, name: 流しそうめん音ゲー, date: 2014/9,
+      thumbnailExp: jpg }
+  - {directory: contents/realtimeProcessing, name: Processing RealtimeMode, date: 2015/3,
+      thumbnailExp: jpg }
+  - {directory: contents/gestureProcessing, name: Gesture Processing, date: 2015/9, url: "https://www.youtube.com/watch?v=3zLj8GU9hfM" }
+  - {directory: contents/DraggableBoard, name: ドラッグで配線できる基板, date: 2015/12,
+      thumbnailExp: jpg}
+  - {directory: contents/pinteraction, name: pinteraction, date: 2015/9-2016/3 }
+  - {directory: contents/GPrint, name: Processing コンソールサーチモード, date: 2016/1, url: "https://github.com/gutugutu3030/gprintMode" }
+  - {directory: contents/8mmFilm, name: 自作8mmフィルムプロジェクト, date: 2016/5 ,
+      thumbnailExp: jpg}
+  - {directory: contents/kirbyPC, name: カービィでPC作ってみた, date: 2016/7,
+      thumbnailExp: gif }
+  - {directory: contents/Fitter, name: Fitter, date: 2016/7-2018/3,
+      thumbnailExp: jpg}
+  - {directory: contents/Gilgamesh, name: やさしいギルガメッシュ, date: 2016/9,
+      thumbnailExp: gif}
+  - {directory: contents/PUI3DPrinter, name: Pocon, date: 2016/7-2018/3,
+      thumbnailExp: jpg}
+  - {directory: contents/PaperBattler, name: Paper Battler, date: 2017/1 }
+  - { directory: contents/8mmFilm/projector, name: ミニミニ8mm映写機, date: 2017/1 }
+  - {directory: contents/Theater, name: Theater, date: 2017/1-2017/2 }
+  - {directory: contents/mobileFabrication, name: 背負型3Dプリンタ, date: 2017/3-2018/3, url: "https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua", thumbnailExp: jpg }
+  - {directory: contents/8mmFilm/game, name: ICレスゲーム機, date: 2017/9,
+      thumbnailExp: png }
+  - {directory: contents/3DPrinCar, name: 3DPrinCar, date: 2017/5-2018/1 }
+  - {directory: contents/reallive2d, name: MultiplaneGirl, date: 2018/6-2022, thumbnailExp: gif }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gutugutu3030 - Fitter:実寸に合ったものを得るシステム</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./../../css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<script src="./../../js/jquery.min.js"></script>
+	<script src="./../../js/bootstrap.bundle.min.js"></script>
+	<style type="text/css">
+		main {
+			margin-top: 60px;
+		}
+
+		body {
+			background-color: #f9f9f9;
+		}
+
+		.card-body {
+			background-color: #f6faff;
+		}
+
+		.bg-body-tertiary-my{
+			--bs-bg-opacity: 1;
+			background-color: #373857;
+		}
+	</style>
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary-my fixed-top" data-bs-theme="dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">gutugutu3030</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Contents
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="./../../index.html">Products</a></li>
+							<li><a class="dropdown-item" href="./../../library.html">Libraries</a></li>
+							<li><a class="dropdown-item" href="./../../app.html">Apps</a></li>
+							<li><a class="dropdown-item" href="./../../star.html">Photos</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./../../profile.html">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://sites.google.com/view/gutugutu3030/home">備忘録</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+    <main>
+        <div class="container">
+		<section>
+			<h1>Fitter <small>実寸に合ったものを得るシステム</small></h1>
+		</section>
+		<section>
+			<div class="thumbnail">
+				<img src="process.png" class="img-fluid">
+				<div class="caption">
+					<p>モデリングプロセス</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-6">
+					<h2>概要</h2>
+					<p>3Dモデルを新規に制作する場合でも,既存のモデルを造形する場合でも,実世界のものに合わせて作成する場合が多くあり,そのサイズ合わせはデリケートな問題である.</p>
+					<p>この問題を解決するため,サイズをそのまま写しとり,それに合わせてモデル作成・修正を行い,それをその場で出力するというコンセプトを提案する．このコンセプトを実現するため,ビルドプレートにタッチディスプレイを設置した3Dプリンタのプロトタイプを制作した.</p>
+					<p>今回システムが対象とするのは，入れ物の作成とアクセサリの大きさ合わせである．</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="ratio ratio-16x9" style="margin-top: 5px;margin-bottom: 5px">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DO-5nfyj7cY" frameborder="0" allowfullscreen></iframe>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="system.png" class="img-fluid">
+						<div class="caption">
+							<p>システム</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<h2>システム</h2>
+					<p>システムは，造形を行うビルドプレートの部分がディスプレイ（build display）となっており，シングルタッチ入力が可能である．ユーザはそれを用いてモデリングや移動・拡縮など，造形作業を行う．また，プリンタ上部にはwebカメラが設置されており，ビルドプレート上に配置された実物体をキャプチャし，ディスプレイに実寸大表示することが可能である．</p>
+					<p>build displayにはwebカメラを用いてキャプチャを行い作業の準備をするためのTraceボタン，PC内の3Dモデルを読み込むLoadボタン，造形を開始するPrintボタンの3つのボタンが用意されている．</p>
+					<p>なお，システムはreprap機である<a href="https://micro-factory.net/plaza/html/index.php/">Prn3D</a>を改造して作成している．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="row">
+				<div class="col-sm-7">
+					<h2>モデリング</h2>
+					<p>新しくオリジナルの3Dモデルを制作するには，タッチペンを用いてbuild display上をなぞって作りたいモデルの形を描けば良い．</p>
+					<p>今回モデリングで制作できるのは入れ物である．ユーザは書き方を変えることで2種類の入れ物を設計できる．入力ストロークの始点と終点が離れている場合は，視点と終点の間を穴とする入れ物を作成できる（ハサミ入れ）．ストロークの始点と終点が近く，輪のようなストロークが与えられた時は，底面が空いたような3Dモデルを作成できる（ドローンケース）．</p>
+				</div>
+				<div class="col-sm-5">
+					<div class="thumbnail">
+						<img src="strokeToModel.png" class="img-fluid">
+						<div class="caption">
+							<p>モデリングシステム：a)入力ストロークが輪でない場合 b)入力ストロークが輪の場合</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<h2>既存モデルの造形</h2>
+					<p>提案システムではモデリングを行えるだけでなく，既存のモデルを拡縮して出力することが可能である．build display上のLoadボタンを押すことで，ユーザが事前に設定したPC上の特定のフォルダ内から，最新の3Dモデルを探しだす．ユーザは表示された概形の枠を掴んで拡縮・内部を掴んで移動を行い，位置合わせと大きさ合わせを行う．</p>
+					<p>例えば，自分の手のコピーを取り，ダウンロードしてきた指輪のモデルをそれに合わせて拡縮することで，ぴったりの大きさの指輪を造形できる．</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2>書誌情報</h2>
+			<ol>
+				<li>Yoh Akiyama and Homei Miyashita. Fitter: A System for Easily Printing Objects that Fit Real Objects. Proceedings of the
+					adjunct publication of the 29th annual ACM symposium on User interface software and technology(UIST2016), pp.129-131,
+					2016.
+					<a href="http://dl.acm.org/citation.cfm?id=2985730&CFID=853513149&CFTOKEN=66983434" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+				</li>
+			</ol>
+		</section>
+		<section>
+			<h2>その他</h2>
+			<ul>
+				<li>Maker Faire Tokyo 2016に出展しました！
+					<a style="word-break: break-all;" href="http://makezine.jp/event/makers2016/meijidaigakumiyashita/" target="_blank">http://makezine.jp/event/makers2016/meijidaigakumiyashita/</a>
+				</li>
+				<li>日刊工業新聞で紹介されました！
+					<a style="word-break: break-all;" href="https://www.nikkan.co.jp/articles/view/00400049" target="_blank">https://www.nikkan.co.jp/articles/view/00400049</a>
+				</li>
+				<li>第二回　3D Printer Digging Festivalで1位を取りました！
+					<a style="word-break: break-all;" href="http://ictco.jp/syousai.html?id=137" target="_blank">http://ictco.jp/syousai.html?id=137</a>
+				</li>
+				<li>WBSのトレたまで紹介されました！（10/3）
+					<a style="word-break: break-all;" href="http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/" target="_blank">http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/</a>
+				</li>
+				<li>明治大学からのプレスリリースがでました！
+					<a style="word-break: break-all;" href="http://www.meiji.ac.jp/koho/press/2016/6t5h7p00000m2z6v.html" target="_blank">http://www.meiji.ac.jp/koho/press/2016/6t5h7p00000m2z6v.html</a>
+				</li>
+				<li>日経産業新聞で紹介されました！
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<div class="alert alert-info">
+				<p>プロジェクトソースコードを公開しました．</p>
+				<a href="https://github.com/gutugutu3030/Fitter" target="_blank" class="btn btn-info">ソースコード</a>
+			</div>
+		</section>
+	</div>
+    </main>
+</body>
+</html>

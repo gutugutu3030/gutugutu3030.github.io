@@ -23,6 +23,7 @@ data class ContentListConfig(
 @Serializable
 data class ContentItem(
     val directory: String,
+    val thumbnailExp: String = "png",
     val name: String,
     val date: String,
     val url: String? = null

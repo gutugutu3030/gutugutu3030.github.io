@@ -29,7 +29,7 @@ fun Container.linkMark(url: String, icon: String = "bi-link-45deg"): Container =
  *
  * @param content コンテンツ
  */
-fun Container.row( content: Container.() -> Unit): Container {
+fun Container.row(content: Container.() -> Unit): Container {
     return div(className = "row") {
         content()
     }
@@ -41,8 +41,8 @@ fun Container.row( content: Container.() -> Unit): Container {
  *
  * @param content コンテンツ
  */
-fun Container.col(size: Int, content: Container.() -> Unit): Container {
-    return div(className = "col-sm-$size") {
+fun Container.col(size: Int, additiveClass: String = "", content: Container.() -> Unit): Container {
+    return div(className = "col-sm-$size $additiveClass") {
         content()
     }
 }
