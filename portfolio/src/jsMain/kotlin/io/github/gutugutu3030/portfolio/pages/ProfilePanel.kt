@@ -65,7 +65,6 @@ fun initProfile(app: App){
 class ProfilePanel(config: ProfileConfig) : SimplePanel() {
     init {
         h1("Profile")
-        div("Hello world")
         row {
             col(4) {
                 image("icon.svg", className = "img-fluid")
@@ -93,7 +92,7 @@ class ProfilePanel(config: ProfileConfig) : SimplePanel() {
         }
         div {
             h2("経歴")
-            table {
+            table(className = "table") {
                 val maxDateLength = config.career.maxOf { it.date.length }
                 config.career.map {
                     tr {

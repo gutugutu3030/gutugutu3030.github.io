@@ -30,6 +30,20 @@ contents:
     text:
       - 正直著者が時間短縮のため（嘘　サボって）まともに設計しなかったため，使用した素材や画像を紹介するに留める．設計図のようなものは上記Githubに上がっているrealLive2DSimulatorを起動していただきたい
       - 基本的にはサーボの取り付け部分にプラ棒をアロンアルファでくっつける，のを層によってずらしていくだけである．
+  - type: table
+    title: 部品表
+    header:
+      - 商品名
+      - 説明
+    rows:
+      - - "プラ材 5mm角棒(http://www.tamiya.com/japan/products/70131/index.html)"
+        - "フレームとして使用．2セット使った記憶があり．"
+      - - SG90
+        - サーボモータとして使用。16個使用
+      - - Ｉ２Ｃ接続１６チャンネル　サーボ＆ＰＷＭ駆動キットＩ２Ｃ接続１６チャンネル　サーボ＆ＰＷＭ駆動キット
+        - PCA9685。秋月電子(https://akizukidenshi.com)で購入可能
+      - - アクリル板
+        - 4枚。大きさはsimulatorのmeasure参照。
   - type: youtube
     title: その他動画デモ
     url: https://www.youtube.com/embed/CujnVfHNu5g

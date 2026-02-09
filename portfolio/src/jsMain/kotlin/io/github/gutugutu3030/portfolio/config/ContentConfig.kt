@@ -12,14 +12,19 @@ import io.kvision.html.h2
 import io.kvision.html.iframe
 import io.kvision.html.image
 import io.kvision.html.li
-import io.kvision.html.link
 import io.kvision.html.ol
 import io.kvision.html.p
+import io.kvision.html.table
+import io.kvision.html.tbody
+import io.kvision.html.td
+import io.kvision.html.thead
+import io.kvision.html.tr
 import io.kvision.html.ul
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlin.math.min
 
 /**
  * コンテンツ設定データ
@@ -221,3 +226,44 @@ data class DocumentListItem(
     val video: String? = null,
     val pdf: String? = null
 )
+
+/**
+ * 表コンテンツデータ
+ * @param header タイトル行
+ * @param rows 行データリスト
+ */
+@Serializable
+@SerialName("table")
+data class TableContent(
+    val title: String? = null,
+    val header: List<String>,
+    val rows: List<List<String>>
+): ContentData {
+    /**
+     * 有効列数
+     */
+    val availableColNum = min(header.size, rows.minOf{it.size})
+    override fun render(container: Container, path: String) {
+        container.apply{
+            title?.let{ h2(it) }
+            val titleData = header.take(availableColNum)
+            val data = rows.map{ it.take(availableColNum) }
+            table(className = "table"){
+                thead{
+                    tr{
+                        titleData.map{ td(it) }
+                    }
+                }
+                tbody{
+                    data.map{ rowData->
+                        tr{
+                            rowData.map{ td(it) }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
