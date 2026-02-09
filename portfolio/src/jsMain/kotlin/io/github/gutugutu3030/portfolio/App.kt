@@ -1,6 +1,7 @@
 package io.github.gutugutu3030.portfolio
 
 import io.github.gutugutu3030.portfolio.components.bar
+import io.github.gutugutu3030.portfolio.pages.initContentList
 import io.github.gutugutu3030.portfolio.pages.initProfile
 import io.kvision.Application
 import io.kvision.CoreModule
@@ -45,7 +46,9 @@ class App : Application() {
             contentPanel.div("Loading...")
         }
         routing = Routing.init()
+        initContentList(this)
         initProfile(this)
+
 
         routing.kvOn(".*") {
             contentPanel.removeAll()

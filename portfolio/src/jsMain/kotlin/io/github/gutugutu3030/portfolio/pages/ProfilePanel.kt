@@ -26,12 +26,26 @@ import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
 
+/**
+ * プロフィールのルーティングパス
+ */
 const val PROFILE_PATH = "/profile"
 
+/**
+ * プロフィールデータのYAMLファイル名
+ */
+const val PROFILE_YAML = "profile.yaml"
+
+/**
+ * プロフィールの設定を読み込む
+ */
 private suspend fun loadConfig(): ProfileConfig =
-    window.fetch("config.yaml").await().text().await()
+    window.fetch(PROFILE_YAML).await().text().await()
         .let { Yaml.default.decodeFromString(ProfileConfig.serializer(), it) }
 
+/**
+ * Initialize profile page routing
+ */
 fun initProfile(app: App){
     app.apply {
         routing.kvOn(PROFILE_PATH) {
