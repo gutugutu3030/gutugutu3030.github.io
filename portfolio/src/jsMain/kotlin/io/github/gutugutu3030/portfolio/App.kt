@@ -33,7 +33,7 @@ class App : Application() {
     /**
      * Load profile config from config.yaml
      */
-    private suspend fun LoadConfig(): ProfileConfig =
+    private suspend fun loadConfig(): ProfileConfig =
         window.fetch("config.yaml").await().text().await()
             .let{ Yaml.default.decodeFromString(ProfileConfig.serializer(), it) }
 
@@ -50,24 +50,23 @@ class App : Application() {
     override fun start() {
         root("kvapp") {
             bar()
-            contentPanel = div("Loading...")
+            contentPanel = div{}
+            contentPanel.div("Loading...")
         }
 
         scope.launch {
-            val config = LoadConfig()
+            val config = loadConfig()
             
             val routing = Routing.init()
-            
+
             routing.kvOn("/profile") {
                 contentPanel.removeAll()
                 contentPanel.add(ProfilePanel(config))
             }
-            
-            routing.kvOn("/") {
+            routing.kvOn(".*"){
                 contentPanel.removeAll()
-                contentPanel.div("ようこそ！/profile にアクセスしてプロフィールを表示してください。")
+                contentPanel.div("not found")
             }
-            
             routing.kvResolve()
         }
     }
