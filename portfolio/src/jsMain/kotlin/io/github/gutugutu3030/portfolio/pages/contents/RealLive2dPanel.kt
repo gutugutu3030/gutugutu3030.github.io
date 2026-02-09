@@ -1,6 +1,5 @@
 package io.github.gutugutu3030.portfolio.pages.contents
 
-import dev.ktml.Content
 import io.github.gutugutu3030.portfolio.App
 import io.github.gutugutu3030.portfolio.config.ContentConfig
 import io.github.gutugutu3030.portfolio.config.loadContentConfig
@@ -51,7 +50,7 @@ class RealLive2dPanel(config: ContentConfig) : SimplePanel() {
                 }
             }
             config.contents.map{
-                it.render(this)
+                it.render(this, PATH)
             }
         }
     }
