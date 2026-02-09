@@ -1,8 +1,10 @@
 package io.github.gutugutu3030.portfolio
 
 import com.charleskorn.kaml.Yaml
+import io.github.gutugutu3030.portfolio.components.PROFILE_PATH
 import io.github.gutugutu3030.portfolio.components.ProfilePanel
 import io.github.gutugutu3030.portfolio.components.bar
+import io.github.gutugutu3030.portfolio.components.initProfile
 import io.kvision.Application
 import io.kvision.CoreModule
 import io.kvision.BootstrapModule
@@ -21,57 +23,44 @@ import io.kvision.startApplication
 import io.kvision.theme.Theme
 import io.kvision.theme.ThemeManager
 import kotlinx.browser.window
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
 
 class App : Application() {
-    init{
+    init {
         ThemeManager.init(initialTheme = Theme.DARK)
     }
 
     /**
-     * Load profile config from config.yaml
-     */
-    private suspend fun loadConfig(): ProfileConfig =
-        window.fetch("config.yaml").await().text().await()
-            .let{ Yaml.default.decodeFromString(ProfileConfig.serializer(), it) }
-
-    /**
      * Scope for coroutines
      */
-    private val scope = MainScope()
+    val scope = MainScope()
 
     /**
      * Content panel for routing
      */
-    private lateinit var contentPanel: SimplePanel
+    lateinit var contentPanel: SimplePanel
+
+    lateinit var routing: Routing
 
     override fun start() {
         root("kvapp") {
             bar()
-            contentPanel = div{}
+            contentPanel = div(className="container") {}
             contentPanel.div("Loading...")
         }
+        routing = Routing.init()
+        initProfile(this)
 
-        scope.launch {
-            val config = loadConfig()
-            
-            val routing = Routing.init()
-
-            routing.kvOn("/profile") {
-                contentPanel.removeAll()
-                contentPanel.add(ProfilePanel(config))
-            }
-            routing.kvOn(".*"){
-                contentPanel.removeAll()
-                contentPanel.div("not found")
-            }
-            routing.kvResolve()
+        routing.kvOn(".*") {
+            contentPanel.removeAll()
+            contentPanel.div("not found")
         }
+        routing.kvResolve()
     }
 }
-
 
 fun main() {
     startApplication(

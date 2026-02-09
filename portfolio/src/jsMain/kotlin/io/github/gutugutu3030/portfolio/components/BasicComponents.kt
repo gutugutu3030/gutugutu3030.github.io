@@ -54,13 +54,13 @@ fun Container.bar(){
         nav{
             dropDown(
                 "Contents",
-                listOf("Products" to "#",
+                listOf("Products" to "#/index",
                     "Libraries" to "#",
                     "Apps" to "#",
                     "Photos" to "#"),
-                forNavbar = true
+                forNavbar = true,
             )
-            navLink("Profile")
+            navLink("Profile", url=PROFILE_PATH, dataNavigo = true)
             navLink(label = "備忘録",  url ="https://sites.google.com/view/gutugutu3030/home")
         }
         navForm {
