@@ -7,7 +7,9 @@ import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.linkMark
 import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.core.Container
+import io.kvision.html.TAG
 import io.kvision.html.Tag
+import io.kvision.html.customTag
 import io.kvision.html.div
 import io.kvision.html.h2
 import io.kvision.html.iframe
@@ -292,6 +294,41 @@ data class TableContent(
                             rowData.map{ it.parseMarkdownLinks(td()) }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@Serializable
+@SerialName("text")
+data class TextContent(
+    val text: String
+): ContentData{
+    override fun render(container: Container, path: String) {
+        container.apply {
+            +text
+        }
+    }
+}
+
+@Serializable
+@SerialName("customTag")
+data class CustomTagContent(
+    val tag: String,
+    val attr: Map<String, String>? = null,
+    val content: List<ContentData> ? = null
+) : ContentData{
+    override fun render(container: Container, path: String) {
+        container.apply {
+            customTag(tag){
+                attr?.let{
+                    attr.forEach {
+                        setAttribute(it.key, it.value)
+                    }
+                }
+                this@CustomTagContent.content?.map {
+                    it.render(this, path)
                 }
             }
         }

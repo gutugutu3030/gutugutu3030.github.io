@@ -16,6 +16,7 @@ class ContentPanel(config: ContentConfig, path:String) : SimplePanel() {
             h1 {
                 +config.title
                 config.subTitle?.let{
+                    +" "
                     small(it)
                 }
             }
