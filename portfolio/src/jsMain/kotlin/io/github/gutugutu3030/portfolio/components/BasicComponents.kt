@@ -2,7 +2,9 @@ package io.github.gutugutu3030.portfolio.components
 import io.github.gutugutu3030.portfolio.pages.PROFILE_PATH
 import io.kvision.core.Container
 import io.kvision.dropdown.dropDown
+import io.kvision.html.ButtonSize
 import io.kvision.html.ButtonStyle
+import io.kvision.html.button
 import io.kvision.html.div
 import io.kvision.html.i
 import io.kvision.html.link
@@ -11,6 +13,8 @@ import io.kvision.navbar.nav
 import io.kvision.navbar.navForm
 import io.kvision.navbar.navLink
 import io.kvision.navbar.navbar
+import io.kvision.theme.Theme
+import io.kvision.theme.ThemeManager
 import io.kvision.theme.themeSwitcher
 
 /**
@@ -51,21 +55,41 @@ fun Container.col(size: Int, additiveClass: String = "", content: Container.() -
  * Navigation bar
  */
 fun Container.bar(){
-    navbar(label = "gutugutu3030", nColor = NavbarColor.DARK, className = "fixed-top" ) {
+    navbar(label = "gutugutu3030", nColor = NavbarColor.DARK, className = "fixed-top", link = "/" ) {
         nav{
             dropDown(
                 "Contents",
-                listOf("Products" to "#/index",
-                    "Libraries" to "#",
-                    "Apps" to "#",
-                    "Photos" to "#"),
+                listOf("Products" to "/",
+                    "Libraries" to "/",
+                    "Apps" to "/",
+                    "Photos" to "/"),
                 forNavbar = true,
             )
-            navLink("Profile", url= PROFILE_PATH, dataNavigo = true)
+            navLink("Profile", url= PROFILE_PATH)
             navLink(label = "備忘録",  url ="https://sites.google.com/view/gutugutu3030/home")
         }
-        navForm {
-            themeSwitcher(style = ButtonStyle.OUTLINESECONDARY)
+
+        navForm(className = "ms-auto") {
+            button(text="Theme ", style=ButtonStyle.OUTLINESECONDARY, className = "ms-2") {
+                val icon : (String)->Unit = {
+                    removeAll()
+                    i(className = it)
+                }
+                icon("bi-moon-stars")
+                onClick {
+                    ThemeManager.theme = when(ThemeManager.theme){
+                        Theme.DARK -> {
+                            icon("bi-sun")
+                            Theme.LIGHT
+                        }
+                        Theme.LIGHT -> {
+                            icon("bi-moon-stars")
+                            Theme.DARK
+                        }
+                        else -> ThemeManager.theme
+                    }
+                }
+            }
         }
     }
 }
