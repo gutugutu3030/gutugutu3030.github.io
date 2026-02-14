@@ -56,9 +56,10 @@ class App : Application() {
             initProfile(this@App)
             initContentList(this@App)
 
-                config.contents.forEach {
+                config.contents
+//                    .filter{ it.url == null }
+                    .forEach {
                     it.apply {
-                        console.log("add route /$directory")
                         routing.kvOn("$directory"){
                             console.log("call route /$directory")
                             scope.launch{

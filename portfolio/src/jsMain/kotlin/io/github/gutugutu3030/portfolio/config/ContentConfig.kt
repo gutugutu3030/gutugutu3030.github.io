@@ -16,6 +16,7 @@ import io.kvision.html.li
 import io.kvision.html.link
 import io.kvision.html.ol
 import io.kvision.html.p
+import io.kvision.html.strong
 import io.kvision.html.table
 import io.kvision.html.tbody
 import io.kvision.html.td
@@ -118,14 +119,15 @@ sealed interface ContentData{
 @Serializable
 @SerialName("col")
 data class ColumnContent(
-    val column: List<ContentData>
+    val column: List<ContentData>,
+    val width: List<Int>? = null
 ): ContentData {
     override fun render(container: Container, path: String) {
+        val sizeList = width?.takeIf{ it.size == column.size} ?: List(column.size){ 12 / column.size }
         container.apply {
             row{
-                val size = 12 / column.size
-                column.map{
-                    col(size){
+                column.mapIndexed{ index, it->
+                    col(sizeList[index]){
                         it.render(this, path)
                     }
                 }
@@ -218,7 +220,7 @@ enum class DocumentListType(val createList: (Container)-> Container) {
 data class DocumentListContent(
     val title: String,
     val doc: List<DocumentListItem>,
-    val listType: DocumentListType = DocumentListType.BULLET
+    val listType: DocumentListType = DocumentListType.BULLET,
 ) : ContentData{
     override fun render(container: Container, path: String) {
         container.apply {
@@ -230,6 +232,9 @@ data class DocumentListContent(
                         item.url?.let { url -> linkMark(url) }
                         item.pdf?.let { url -> linkMark(url, "bi-file-earmark-pdf") }
                         item.video?.let { url -> linkMark(url, "bi-film") }
+                        item.notice?.let{
+                            strong(" [$it]", className="text-info")
+                        }
                     }
                 }
             }
@@ -250,7 +255,8 @@ data class DocumentListItem(
     val description: String,
     val url: String? = null,
     val video: String? = null,
-    val pdf: String? = null
+    val pdf: String? = null,
+    val notice: String? = null,
 )
 
 /**

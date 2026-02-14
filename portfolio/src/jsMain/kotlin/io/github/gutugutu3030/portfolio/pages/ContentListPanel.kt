@@ -86,14 +86,17 @@ class ContentListPanel(config: ContentListConfig) : SimplePanel() {
  */
 fun Container.contentCard(item: ContentItem): Container = div(className="card") {
     item.apply{
-        image("$directory/thumbnail.$thumbnailExp", className="card-img-top")
+        val targetUrl = url ?: "#/$directory"
+        link(label = "", url = targetUrl){
+            image("$directory/thumbnail.$thumbnailExp", className="card-img-top")
+        }
         div(className="card-body"){
             h5(name, className="card-title")
             p(date, className="card-text")
             link(
                 "詳細",
                 className = "btn btn-outline-secondary",
-                url = url ?: "#/$directory",
+                url = targetUrl,
                 target = if(url != null) "_blank" else "_self"
             )
         }
