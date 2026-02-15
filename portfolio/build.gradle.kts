@@ -45,6 +45,7 @@ kotlin {
         implementation("io.kvision:kvision-pace:$kvisionVersion")
         implementation("io.kvision:kvision-ktml:$kvisionVersion")
         implementation("io.kvision:kvision-routing-navigo-ng:$kvisionVersion")
+        implementation("io.kvision:kvision-state:$kvisionVersion")
         implementation("com.charleskorn.kaml:kaml:0.55.0")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0")
     }
