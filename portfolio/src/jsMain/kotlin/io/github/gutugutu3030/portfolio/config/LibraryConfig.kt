@@ -5,6 +5,8 @@ import io.github.gutugutu3030.portfolio.components.linkMark
 import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.core.Container
 import io.kvision.core.ListStyle
+import io.kvision.core.ListStyleType
+import io.kvision.core.style
 import io.kvision.html.div
 import io.kvision.html.h3
 import io.kvision.html.h4
@@ -39,7 +41,19 @@ data class LibraryConfig(
 data class LibraryDownloadData(
     val url: String,
     val subTitle: String? = null,
-)
+    val description: String? = null,
+) {
+    fun render(container: Container) {
+        container.apply {
+            linkMark(url = url, icon = "bi-download") {
+                + " ${subTitle ?: "ダウンロード"}"
+            }
+            description?.let {
+                p(it)
+            }
+        }
+    }
+}
 
 /**
  * 公開ライブラリの設定データ
@@ -90,12 +104,11 @@ data class LibraryContentsItem(
                             div(className="alert alert-info"){
                                 h4("ダウンロード")
                                 ul{
+                                    style{
+                                        listStyle = ListStyle(ListStyleType.NONE)
+                                    }
                                     download.map{
-                                        li{
-                                            linkMark(url=it.url, icon="bi-download"){
-                                                + " ${it.subTitle ?: "ダウンロード"}"
-                                            }
-                                        }
+                                        li{ it.render(this) }
                                     }
                                 }
                                 p{

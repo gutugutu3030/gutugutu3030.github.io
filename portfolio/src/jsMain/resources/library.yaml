@@ -15,7 +15,8 @@ contents:
       - OHPシートに印刷してご使用ください．
     download:
       - url: https://github.com/gutugutu3030/super8filmMaker/releases
-        subTitle: Github　サウンドフィルム
+        subTitle: Github
+        description: サウンドフィルム
     moreInfoUrl: https://github.com/gutugutu3030/super8filmMaker
     isUnderConstruction: true
   - title: Processing 2.x カンニングモード
@@ -54,9 +55,11 @@ contents:
       - Javaのライブラリとして使用することも可能ですし，どちらかのフォーマットをどちらかのフォーマットに変換することも可能です．
     download:
       - url: https://www.dropbox.com/s/ycmp0mxkgd570hf/%E5%A4%89%E6%8F%9B.zip?dl=0
-        subTitle: 変換.zip　変換用bat付き　java8を使用
+        subTitle: 変換.zip
+        description: 変換用bat付き　java8を使用
       - url: https://www.dropbox.com/s/aekgam8uwqa2duv/wlformatter.jar?dl=0
-        subTitle: wlformatter.jar　Processing動作確認　java7を使用
+        subTitle: wlformatter.jar
+        description: Processing動作確認　java7を使用
     moreInfoUrl: https://gutugutu3030.github.io/contents/realtimeProcessing/index.html
   - title: Processing RealtimeMode
     date: 2014/9
@@ -98,9 +101,11 @@ contents:
       - COMは実装してません．一つのキーボードで最大4人の操作が入るため，外付けキーボードを用意することを推奨します．
     download:
       - url: http://www.mediafire.com/download/zqmjdzb3y0z/%E3%83%90%E3%83%88%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%B34.0.zip
-        subTitle: バトルライン4.0.zip　HSP版　BGMインポート機能あり
+        subTitle: バトルライン4.0.zip
+        description: HSP版　BGMインポート機能あり
       - url: http://www.mediafire.com/download/yv9326aovibtmv4/battlelinex.zip
-        subTitle: battleLinex.zip　java版　HSPに比べアイテム・システムが強化　BGMインポート機能なし
+        subTitle: battleLinex.zip
+        description: java版　HSPに比べアイテム・システムが強化　BGMインポート機能なし
 
 
 
