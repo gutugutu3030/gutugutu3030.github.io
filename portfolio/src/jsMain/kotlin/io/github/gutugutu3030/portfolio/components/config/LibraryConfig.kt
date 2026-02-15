@@ -3,6 +3,7 @@ package io.github.gutugutu3030.portfolio.components.config
 import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.linkMark
 import io.github.gutugutu3030.portfolio.components.row
+import io.github.gutugutu3030.util.parseMarkdown
 import io.kvision.core.Container
 import io.kvision.core.ListStyle
 import io.kvision.core.ListStyleType
@@ -85,7 +86,7 @@ data class LibraryContentsItem(
                     row {
                         col(6){
                             description.map {
-                                it.parseMarkdownLinks(p())
+                                it.parseMarkdown(p())
                             }
                             if(isUnderConstruction){
                                p(className="text-warning"){
