@@ -53,6 +53,7 @@ data class StarPhoto(
                         "aspectRatio" to "1/1",
                         "objectFit" to "cover"
                     ).forEach { (k, v) -> setStyle(k, v) }
+                    setAttribute("loading", "lazy")
                     onClick {
                         selectedStarPhoto.value = this@StarPhoto
                     }
