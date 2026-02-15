@@ -1,7 +1,7 @@
 package io.github.gutugutu3030.portfolio
 
 import io.github.gutugutu3030.portfolio.components.bar
-import io.github.gutugutu3030.portfolio.config.loadContentConfig
+import io.github.gutugutu3030.portfolio.components.config.loadContentConfig
 import io.github.gutugutu3030.portfolio.pages.contents.ContentPanel
 import io.github.gutugutu3030.portfolio.pages.initContentList
 import io.github.gutugutu3030.portfolio.pages.initLibrary

@@ -2,7 +2,7 @@ package io.github.gutugutu3030.portfolio.pages
 
 import com.charleskorn.kaml.Yaml
 import io.github.gutugutu3030.portfolio.App
-import io.github.gutugutu3030.portfolio.config.LibraryConfig
+import io.github.gutugutu3030.portfolio.components.config.LibraryConfig
 import io.kvision.html.div
 import io.kvision.html.h1
 import io.kvision.html.p

@@ -1,6 +1,6 @@
 package io.github.gutugutu3030.portfolio.pages.contents
 
-import io.github.gutugutu3030.portfolio.config.ContentConfig
+import io.github.gutugutu3030.portfolio.components.config.ContentConfig
 import io.kvision.html.div
 import io.kvision.html.h1
 import io.kvision.html.link

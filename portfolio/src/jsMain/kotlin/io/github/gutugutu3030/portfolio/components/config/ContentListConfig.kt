@@ -1,4 +1,4 @@
-package io.github.gutugutu3030.portfolio.config
+package io.github.gutugutu3030.portfolio.components.config
 
 import kotlinx.serialization.Serializable
 

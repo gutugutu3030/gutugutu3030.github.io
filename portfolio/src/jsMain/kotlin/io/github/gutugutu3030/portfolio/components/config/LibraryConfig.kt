@@ -1,4 +1,4 @@
-package io.github.gutugutu3030.portfolio.config
+package io.github.gutugutu3030.portfolio.components.config
 
 import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.linkMark
@@ -15,7 +15,6 @@ import io.kvision.html.li
 import io.kvision.html.p
 import io.kvision.html.small
 import io.kvision.html.ul
-import io.kvision.modal.Alert
 import kotlinx.serialization.Serializable
 
 

@@ -4,8 +4,8 @@ import com.charleskorn.kaml.Yaml
 import io.github.gutugutu3030.portfolio.App
 import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.row
-import io.github.gutugutu3030.portfolio.config.ContentItem
-import io.github.gutugutu3030.portfolio.config.ContentListConfig
+import io.github.gutugutu3030.portfolio.components.config.ContentItem
+import io.github.gutugutu3030.portfolio.components.config.ContentListConfig
 import io.kvision.core.Container
 import io.kvision.html.div
 import io.kvision.html.h5

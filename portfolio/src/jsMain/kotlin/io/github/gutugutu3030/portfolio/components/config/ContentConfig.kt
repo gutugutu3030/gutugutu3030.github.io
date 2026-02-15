@@ -1,4 +1,4 @@
-package io.github.gutugutu3030.portfolio.config
+package io.github.gutugutu3030.portfolio.components.config
 
 import com.charleskorn.kaml.PolymorphismStyle
 import com.charleskorn.kaml.Yaml
@@ -7,7 +7,6 @@ import io.github.gutugutu3030.portfolio.components.col
 import io.github.gutugutu3030.portfolio.components.linkMark
 import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.core.Container
-import io.kvision.html.TAG
 import io.kvision.html.Tag
 import io.kvision.html.customTag
 import io.kvision.html.div
@@ -31,7 +30,9 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.math.min
 
+
     private val linkPattern = """\[([^\]]+)\]\(([^)]+)\)""".toRegex()
+
 fun String.parseMarkdownLinks(tag: Tag): Tag {
     var lastIndex = 0
     linkPattern.findAll(this).forEach{ result ->
