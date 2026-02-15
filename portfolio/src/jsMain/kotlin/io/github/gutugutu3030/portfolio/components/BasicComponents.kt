@@ -4,6 +4,7 @@ import io.kvision.core.Container
 import io.kvision.dropdown.dropDown
 import io.kvision.html.ButtonSize
 import io.kvision.html.ButtonStyle
+import io.kvision.html.Link
 import io.kvision.html.button
 import io.kvision.html.div
 import io.kvision.html.i
@@ -23,8 +24,10 @@ import io.kvision.theme.themeSwitcher
  * @param url リンクURL
  * @param icon アイコンのクラス名（デフォルトはBootstrap Iconsのリンクアイコン）
  */
-fun Container.linkMark(url: String, icon: String = "bi-link-45deg"): Container = link(label = "", url = url, target = "_blank") {
+fun Container.linkMark(url: String, icon: String = "bi-link-45deg",     init: (Link.() -> Unit)? = null
+): Container = link(label = "", url = url, target = "_blank") {
     i(className = icon)
+    init?.invoke(this)
 }
 
 

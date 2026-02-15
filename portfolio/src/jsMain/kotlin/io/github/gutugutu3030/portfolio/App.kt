@@ -4,6 +4,7 @@ import io.github.gutugutu3030.portfolio.components.bar
 import io.github.gutugutu3030.portfolio.config.loadContentConfig
 import io.github.gutugutu3030.portfolio.pages.contents.ContentPanel
 import io.github.gutugutu3030.portfolio.pages.initContentList
+import io.github.gutugutu3030.portfolio.pages.initLibrary
 import io.github.gutugutu3030.portfolio.pages.initProfile
 import io.github.gutugutu3030.portfolio.pages.loadContentListConfig
 import io.kvision.Application
@@ -55,6 +56,7 @@ class App : Application() {
             routing = Routing.init()
             initProfile(this@App)
             initContentList(this@App)
+            initLibrary(this@App)
 
                 config.contents
 //                    .filter{ it.url == null }
