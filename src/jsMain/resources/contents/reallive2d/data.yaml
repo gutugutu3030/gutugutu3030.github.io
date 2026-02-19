@@ -1,0 +1,61 @@
+title: MultiplaneGirl
+subTitle: 絵に命を吹き込む手法
+notice:
+  message: 組み立てに使用した3Dモデルデータ、プログラム、設計用システムがダウンロードできます
+  buttonUrl: https://github.com/gutugutu3030/realLive2d
+  buttonName: ダウンロード
+contents:
+  - type: col
+    column:
+      - type: youtube
+        url: https://www.youtube.com/embed/rhOS5JpOuDo
+      - type: p
+        title: 概要
+        text:
+          - キャラクタが指を指した方向を向いたようにみえるシステムを作成した．
+          -  絵をPCなどで描く時，パーツごとにレイヤを分ける場合がある．本システムはそのレイヤをアクリル板に分けて重ねて配置した．更にそれぞれのレイヤを独立上下左右に平行移動させることによって絵に立体感をもたせることに成功した．
+          -  同様の手法を用いたものとして，セルアニメーションのマルチプレーンカメラ [1]や，ソフトウェア上ではLive2D [2]などが挙げられる．
+  - type: col
+    column:
+      - type: p
+        title: 簡単な解説
+        text:
+          - アクリル板を約7mm感覚で配置している．前髪，目（の枠）・口，瞳，顔の輪郭にわけてアクリル板にホワイトボードマーカーで描きこんでおり，これにより立体感を出している．
+          - 一つのレイヤ（アクリル板）につき4つのサーボモータで平行移動を担っている．左右にそれぞれ1つの，下に2つのサーボモータを設置している．
+      - type: image
+        src: ./servo.png
+        caption: サーボモータの動き
+  - type: p
+    title: 制作方法
+    text:
+      - 正直著者が時間短縮のため（嘘　サボって）まともに設計しなかったため，使用した素材や画像を紹介するに留める．設計図のようなものは上記Githubに上がっているrealLive2DSimulatorを起動していただきたい
+      - 基本的にはサーボの取り付け部分にプラ棒をアロンアルファでくっつける，のを層によってずらしていくだけである．
+  - type: table
+    title: 部品表
+    header:
+      - 商品名
+      - 説明
+    rows:
+      - - "プラ材 [5mm角棒](http://www.tamiya.com/japan/products/70131/index.html)"
+        - "フレームとして使用．2セット使った記憶があり．"
+      - - SG90
+        - サーボモータとして使用。16個使用
+      - - Ｉ２Ｃ接続１６チャンネル　サーボ＆ＰＷＭ駆動キットＩ２Ｃ接続１６チャンネル　サーボ＆ＰＷＭ駆動キット
+        - PCA9685。[秋月電子](https://akizukidenshi.com)で購入可能
+      - - アクリル板
+        - 4枚。大きさはsimulatorのmeasure参照。
+  - type: youtube
+    title: その他動画デモ
+    url: https://www.youtube.com/embed/CujnVfHNu5g
+  - type: documentList
+    title: 参考文献
+    listType: NUMBER
+    doc:
+      - description: マルチプレーン・カメラ
+        url: https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AB%E3%83%A1%E3%83%A9
+      - description: Live2D
+        url: www.live2d.com
+
+
+
+

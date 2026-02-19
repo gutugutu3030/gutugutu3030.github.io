@@ -1,0 +1,10 @@
+.DS_Store
+
+.*/
+/build/*
+!/build/dist/
+out/
+*.imp
+*.ipr
+*.iws
+*.idea
