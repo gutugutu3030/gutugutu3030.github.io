@@ -1,0 +1,110 @@
+simpleExpression:
+  趣味: ドライブ
+  興味分野: HCI・タンジブルインタフェース・Fab・電子工作支援・プログラミング支援
+  使用可能言語・環境（スクラッチ）: Java・Processing・C++・Arduino・TypeScript・openFrameworks
+  使用可能言語・環境（バイブコーディング）: Kotlin・C#・React
+oneSentence: ソフトウェアエンジニアをしています。大学・大学院時代はHCI分野で電子工作支援、3DプリンタUI研究をしていました。
+career:
+  - {date: 2012/4, description: "明治大学理工学部情報科学科入学"}
+  - {date: 2015/7, description: "玉木研所属"}
+  - {date: 2016/3, description: "明治大学理工学部情報科学科卒業"}
+  - {date: 2016/4, description: "明治大学大学院理工学研究科新領域創造専攻入学（宮下研）"}
+  - {date: 2017/7/24, description: "Zing!にて「3Dプリンタで“声の立体化”に挑戦!?」記事掲載", url: "http://eonet.jp/zing/articles/_4100703.html"}
+  - {date: 2017/9/6, description: "新たな技術を福祉にいかす体験ワークショップにて研究事例紹介", url: "http://goodjobcenter.com/topics/report/959/"}
+  - {date: 2017/9/22, description: "Zing!にてまるでハンドパワー！「手をかざすと動く台」をFabってみた」記事掲載", url: "http://eonet.jp/zing/articles/_4101119.html"}
+  - {date: 2018/3, description: "明治大学大学院理工学研究科新領域創造専攻卒業・工学（修士）取得", url: "./pdf/CertificateOfGraduation.pdf"}
+  - {date: 2018/4, description: "チームラボ株式会社入社"}
+  - {date: 2022~, description: "インタラクティブシステムとソフトウェアに関するワークショップ(WISS)にてプログラム委員に就任", url: "https://www.wiss.org/"}
+qualification:
+  - { description: 普通自動車第一種運転免許（AT限定）}
+  - { description: 第二種電気工事士 }
+  - { description: "Silver SE 17" , url: "./pdf/JavaSilver.pdf"}
+award:
+  - date: 2013/12
+    description: >-
+      第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集 対話発表賞 「部品へのプロジェクションマッピングによる通電しない電子工作」
+  - date: 2016/9/17
+    description: >-
+      二回　3D Printer Digging Festival プラチナ賞 「コピー機並みに使いやすい3Dプリンターの販売アイデア」
+    url: http://ictco.jp/syousai.html?id=137
+  - date: 2017/3/17
+    description: 第１回みたかFabコンテスト 発展賞 「ミニミニ映写機」
+    url: https://fabmitaka.co/docs/2017030600016/
+  - date: 2018
+    description: 第176回ヒューマンコンピュータインタラクション研究会 学生奨励賞 「3DPrinCar：行き先に応じた物品を推薦・提供する乗用車」
+    url: http://www.meiji.ac.jp/ams/info/6t5h7p00000qa5i3.html
+hobbyDocument:
+  - { path: "pdf/hobby/映写機・フィルム.pdf", title: "映写機・フィルムについての資料" }
+publication:
+  査読付き学術論文:
+    - description: >-
+        秋山耀, 宮下芳明. プロジェクションマッピングによる電子工作体験支援.
+        日本バーチャルリアリティ学会論文誌, Vol.20, No.2, pp.83-86, 2015.
+      pdf: "プロジェクションマッピングによる電子工作体験支援. 日本バーチャルリアリティ学会論文誌.pdf"
+      url: http://ci.nii.ac.jp/naid/40020528769
+      video: https://www.youtube.com/watch?v=N3dJ4XRDF1I
+  国際会議（デモ・ポスター・動画発表）:
+    - description: >-
+         Yoh Akiyama and Homei Miyashita. Electronic kit with no current flow that uses projection mapping.
+         CHI '14 Extended Abstracts on Human Factors in Computing Systems(CHI2014), pp.155-156, 2014.
+      pdf: http://dl.acm.org/citation.cfm?id=2559206.2579523&coll=DL&dl=ACM
+    - description: >-
+         Yoh Akiyama and Homei Miyashita. Projectron Mapping: The Exercise and Extension of Augmented Workspaces for Learning Electronic Modeling through Projection Mapping. Proceedings of the adjunct publication of the 27th annual ACM symposium on User interface software and technology(UIST2014), pp.57-58, 2014.
+      pdf: http://dl.acm.org/citation.cfm?id=2658779.2659113&coll=DL&dl=ACM
+      notice: SUI2014で招待デモ発表
+    - description: >-
+         Yoh Akiyama and Homei Miyashita. Fitter: A System for Easily Printing Objects that Fit Real Objects.
+         Proceedings of the adjunct publication of the 29th annual ACM symposium on User interface software and technology(UIST2016), pp.129-131, 2016.
+      pdf: http://dl.acm.org/citation.cfm?id=2985730&CFID=853513149&CFTOKEN=66983434
+  国内会議（査読付き口頭発表）:
+    - description: >-
+         秋山耀, 宮下芳明. 3DプリンタのためのPaper User Interface.
+         第24回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2016), pp.185-191, 2016.
+      pdf: http://www.wiss.org/WISS2016Proceedings/oral/25.pdf
+      video: https://www.youtube.com/watch?v=54m38d4nUgg
+  国内会議（査読無し口頭発表）:
+    - description: >-
+        秋山耀, 宮下芳明. 3DPrinCar: 行き先に応じた物品を推薦・提供する乗用車. 研究報告ヒューマンコンピュータインタラクション,
+        Vol.2018-HCI-176，Issue.6，No.12，2018．
+      pdf: https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=185427&item_no=1&page_id=13&block_id=8https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=185427&item_no=1&page_id=13&block_id=8
+      video: https://www.youtube.com/watch?v=jG5BceMWTeU
+  国内会議（査読無しデモ・ポスター発表）:
+    - description: >-
+        秋山耀, 宮下芳明. 部品へのプロジェクションマッピングによる通電しない電子工作.
+        第21回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2013), pp.141-142, 2013.
+      pdf: http://www.wiss.org/WISS2013Proceedings/demo/089.pdf
+      notice: 対話発表賞
+    - description: >-
+        加藤邦拓, 秋山耀, 宮下芳明. タッチ入力の柔軟な再配置を可能としたインタフェースの作成支援.
+        第22回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2014), pp.151-152, 2014.
+      pdf: http://www.wiss.org/WISS2014Proceedings/demo/086.pdf
+      video: https://www.youtube.com/watch?v=hM2Jfhzky48
+    - description: >-
+        秋山耀, 宮下芳明. ドラッグで配線できる基板による電子工作支援. 
+        第23回インタラクティブシステムとソフトウェアに関するワークショップ論文集(WISS2015), pp.183-184, 2015.
+      pdf: http://www.wiss.org/WISS2015Proceedings/demo/2-S02.pdf
+  メディア掲載（新聞・テレビ）:
+    - description: >-
+        「コピー感覚で立体造形−明治大、３年以内に新３Ｄプリンター実用化」, 日刊工業新聞記事掲載, (2016年9月16日付).
+      url: https://www.nikkan.co.jp/articles/view/00400049
+    - description: >-
+        「【トレたま】コピー機感覚の３Ｄプリンター」, テレビ東京 WBS「トレンドたまご」取材, (2016年10月3日放送).
+      url: http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/
+    - description: >-
+        「明治大の３Ｄプリンター　形や大きさ，調整容易　タッチパネル使う試作機」, 日経産業新聞記事掲載, (2016年10月12日付).
+    - description: >-
+        「描いた絵→立体造形　明大　３Ｄプリンターで簡単に」, 日経産業新聞記事掲載, (2017年1月6日付).
+  展示:
+    - description: >-
+        Fitter：実寸に合ったものを得るシステム, Maker Faire Tokyo 2016, 明治大学宮下研究室出展, (2016年8月6-7日).
+      url: http://makezine.jp/event/makers2016/meijidaigakumiyashita/
+  大学卒業論文:
+    - description: >-
+        部分グラフ同型アルゴリズムの実装と回路理解支援システムへの応用.
+      pdf: pdf/卒論.pdf
+      slide: pdf/秋山，卒論5分発表，配布資料.pdf
+  大学院修士論文:
+    - description: >-
+        3Dプリンタにおける制作支援と物品推薦・提供システム.
+      pdf: ./pdf/秋山,修論,第6稿.pdf
+
