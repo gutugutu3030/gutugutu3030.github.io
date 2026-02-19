@@ -2,7 +2,6 @@ package io.github.gutugutu3030.portfolio.components
 import io.github.gutugutu3030.portfolio.pages.PROFILE_PATH
 import io.kvision.core.Container
 import io.kvision.dropdown.dropDown
-import io.kvision.html.ButtonSize
 import io.kvision.html.ButtonStyle
 import io.kvision.html.Link
 import io.kvision.html.button
@@ -16,7 +15,6 @@ import io.kvision.navbar.navLink
 import io.kvision.navbar.navbar
 import io.kvision.theme.Theme
 import io.kvision.theme.ThemeManager
-import io.kvision.theme.themeSwitcher
 
 /**
  * リンクマーク付きリンクコンポーネント
@@ -63,9 +61,9 @@ fun Container.bar(){
             dropDown(
                 "Contents",
                 listOf("Products" to "/",
-                    "Libraries" to "/",
+                    "Libraries" to "/library",
                     "Apps" to "/",
-                    "Photos" to "/"),
+                    "Photos" to "/star"),
                 forNavbar = true,
             )
             navLink("Profile", url= PROFILE_PATH)

@@ -16,7 +16,7 @@ contents:
       thumbnailExp: jpg}
   - {directory: contents/pinteraction, name: pinteraction, date: 2015/9-2016/3 }
   - {directory: contents/GPrint, name: Processing コンソールサーチモード, date: 2016/1, url: "https://github.com/gutugutu3030/gprintMode" }
-  - {directory: contents/8mmFilm, name: 自作8mmフィルムプロジェクト, date: 2016/5 ,
+  - {directory: contents/8mmFilm/badapple, name: 自作8mmフィルムプロジェクト, date: 2016/5 ,
       thumbnailExp: jpg}
   - {directory: contents/kirbyPC, name: カービィでPC作ってみた, date: 2016/7,
       thumbnailExp: gif }
@@ -26,7 +26,7 @@ contents:
       thumbnailExp: gif}
   - {directory: contents/PUI3DPrinter, name: Pocon, date: 2016/7-2018/3,
       thumbnailExp: jpg}
-  - {directory: contents/PaperBattler, name: Paper Battler, date: 2017/1 }
+  - {directory: contents/PaperBattler, name: Paper Battler, date: 2017/1, url: "https://youtu.be/eRLvTMQ5Emc" }
   - { directory: contents/8mmFilm/projector, name: ミニミニ8mm映写機, date: 2017/1 }
   - {directory: contents/Theater, name: Theater, date: 2017/1-2017/2 }
   - {directory: contents/mobileFabrication, name: 背負型3Dプリンタ, date: 2017/3-2018/3, url: "https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua", thumbnailExp: jpg }
