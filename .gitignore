@@ -6,7 +6,6 @@
 .vscode/
 .kotlin-js-store/
 /build
-!/build/dist/
 out/
 *.imp
 *.ipr
