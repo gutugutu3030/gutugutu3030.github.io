@@ -54,3 +54,32 @@ kotlin {
         implementation("io.kvision:kvision-testutils:$kvisionVersion")
     }
 }
+
+// ========== AllClean タスク ==========
+// build ディレクトリ、.gradle キャッシュ、node_modules を一括削除します
+tasks.register("AllClean") {
+    group = "build"
+    description = "ビルド成果物・Gradleキャッシュ・node_modules を全て削除します"
+
+    doLast {
+        // build ディレクトリ
+        val buildDir = layout.buildDirectory.asFile.get()
+        if (buildDir.exists()) {
+            delete(buildDir)
+            println("削除: ${buildDir.absolutePath}")
+        }
+
+        // プロジェクト直下の .gradle キャッシュ
+        val gradleCacheDir = file("${rootDir}/.gradle")
+        if (gradleCacheDir.exists()) {
+            delete(gradleCacheDir)
+            println("削除: ${gradleCacheDir.absolutePath}")
+        }
+
+        // ホームディレクトリの Gradle キャッシュ (任意 — コメントを外すと実行)
+        // val globalCache = file("${System.getProperty("user.home")}/.gradle/caches")
+        // if (globalCache.exists()) { delete(globalCache); println("削除: ${globalCache.absolutePath}") }
+
+        println("AllClean 完了。次回ビルドは完全にクリーンな状態で実行されます。")
+    }
+}
