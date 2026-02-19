@@ -1,6 +1,10 @@
 .DS_Store
 
-.*/
+.gradle/
+.kotlin/
+.vim/
+.vscode/
+.kotlin-js-store/
 /build
 !/build/dist/
 out/
