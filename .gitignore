@@ -2,6 +2,10 @@
 
 .*/
 build/
+!/build/dist/
+!/build/dist/js/
+!/build/dist/js/productionExecutable/
+!/build/dist/js/productionExecutable/**
 out/
 *.imp
 *.ipr
