@@ -1,0 +1,39 @@
+title: Processing RealtimeMode
+subTitle: プログラムの構造理解支援機能
+notice:
+  message: モードを公開しました。使用にはJDKのインストール・Processing/oscP5ライブラリのインストールが必要です．また，環境に合わせて同梱されているjdk_path.txtの記述を変更してください．
+  buttonUrl: https://www.dropbox.com/s/sh3sxz9d6fd343v/RealtimeTweakMode.zip?dl=0
+  buttonName: ダウンロード
+contents:
+  - type: col
+    column:
+      - type: p
+        title: 概要
+        text:
+          - プログラミング中にコードをいじった時に，どのように実行画面に反映されるかという対応関係を明らかにすることは大事である．特に初学者はプログラミングに慣れておらず，プログラムを変更して実行，という繰り返しではプログラム構造の理解が難しいことがある．
+          - そこで，プログラムが変更されたと同時に実行結果にも反映されるシステムを作成した．今回は[Processing](https://processing.org/)という言語のモード機能として実装した．システムをProcessingというIDEのアドインとして実装することで，システム使用なしのProcessingへスムーズな移行ができると考えている．
+      - type: youtube
+        url: https://www.youtube.com/embed/gYHUTUrAxFQ
+  - type: p
+    title: システム
+    text:
+      - システムは主に3つの機能を搭載している．まず，プログラム実行時にソースコードを変更すると即時反映する機能，「Realtime」である．これにより，記述したコードが画面上でどのように振る舞うのかを見ただけで知ることができる．
+      - 次は，fill・strokeといった，コンポーネントに色を塗る命令に対して，指定する色をカラーピッカーによって選べる機能，「Tweak」である．これは，色を設定したい命令をダブルクリックすることで起動する．Tweak機能により視覚的な色の設定を可能とした．
+      - 最後は，実行画面上でマウスオーバーすることで，描画されている物体がソースコードのどこで記述されているかを特定する機能，「Picker」である．これにより，実行結果とソースコードの対応関係をさらにわかりやすくしている．
+  - type: youtube
+    title: 実装
+    url: https://www.slideshare.net/slideshow/embed_code/key/xSvKIAH61S8uyP
+  - type: documentList
+    title: その他
+    listType: BULLET
+    doc:
+      - description: Github
+        url: https://github.com/gutugutu3030/RealTimeTweakMode
+      - description: Makezineで紹介されました！
+        url: http://makezine.jp/blog/2015/02/tweak.html
+      - description: Processingのモード作成方法
+        url: https://sites.google.com/view/gutugutu3030/other/processingnomodewozuoru
+      - description: ProcessingからJavaのコードを生成する
+        url: https://sites.google.com/view/gutugutu3030/other/processingkarajavanokodowoshengchengsuru
+      - description: 後輩がC♯版を作ったみたいです！
+        url: http://kkrnt.hatenablog.com/entry/2015/05/21/230336

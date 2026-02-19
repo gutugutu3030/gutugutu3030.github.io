@@ -1,0 +1,69 @@
+title: Fitter
+subTitle: 実寸に合ったものを得るシステム
+notice:
+  message: プロジェクトソースコードを公開しました。
+  buttonUrl: https://github.com/gutugutu3030/Fitter
+  buttonName: Github
+contents:
+  - type: image
+    src: process.png
+    caption: モデリングプロセス
+  - type: col
+    column:
+      - type: p
+        title: 概要
+        text:
+          - 3Dモデルを新規に制作する場合でも,既存のモデルを造形する場合でも,実世界のものに合わせて作成する場合が多くあり,そのサイズ合わせはデリケートな問題である.
+          - この問題を解決するため,サイズをそのまま写しとり,それに合わせてモデル作成・修正を行い,それをその場で出力するというコンセプトを提案する．このコンセプトを実現するため,ビルドプレートにタッチディスプレイを設置した3Dプリンタのプロトタイプを制作した.
+          - 今回システムが対象とするのは，入れ物の作成とアクセサリの大きさ合わせである．
+      - type: youtube
+        url: https://www.youtube.com/embed/DO-5nfyj7cY
+  - type: col
+    column:
+      - type: image
+        src: system.png
+        caption: システム
+      - type: p
+        title: システム
+        text:
+          - システムは，造形を行うビルドプレートの部分がディスプレイ（build display）となっており，シングルタッチ入力が可能である．ユーザはそれを用いてモデリングや移動・拡縮など，造形作業を行う．また，プリンタ上部にはwebカメラが設置されており，ビルドプレート上に配置された実物体をキャプチャし，ディスプレイに実寸大表示することが可能である．
+          - build displayにはwebカメラを用いてキャプチャを行い作業の準備をするためのTraceボタン，PC内の3Dモデルを読み込むLoadボタン，造形を開始するPrintボタンの3つのボタンが用意されている．
+          - なお，システムはreprap機である[Prn3D](https://micro-factory.net/plaza/html/index.php/)を改造して作成している．
+  - type: col
+    width: [7,5]
+    column:
+      - type: p
+        title: モデリング
+        text:
+          - 新しくオリジナルの3Dモデルを制作するには，タッチペンを用いてbuild display上をなぞって作りたいモデルの形を描けば良い．
+          - 今回モデリングで制作できるのは入れ物である．ユーザは書き方を変えることで2種類の入れ物を設計できる．入力ストロークの始点と終点が離れている場合は，視点と終点の間を穴とする入れ物を作成できる（ハサミ入れ）．ストロークの始点と終点が近く，輪のようなストロークが与えられた時は，底面が空いたような3Dモデルを作成できる（ドローンケース）．
+      - type: image
+        src: strokeToModel.png
+        caption: モデリングシステム：a)入力ストロークが輪でない場合 b)入力ストロークが輪の場合
+  - type: p
+    title: 既存モデルの造形
+    text:
+      - 提案システムではモデリングを行えるだけでなく，既存のモデルを拡縮して出力することが可能である．build display上のLoadボタンを押すことで，ユーザが事前に設定したPC上の特定のフォルダ内から，最新の3Dモデルを探しだす．ユーザは表示された概形の枠を掴んで拡縮・内部を掴んで移動を行い，位置合わせと大きさ合わせを行う．
+      - 例えば，自分の手のコピーを取り，ダウンロードしてきた指輪のモデルをそれに合わせて拡縮することで，ぴったりの大きさの指輪を造形できる．
+  - type: documentList
+    title: 書誌情報
+    listType: NUMBER
+    doc:
+      - description: >-
+                     Yoh Akiyama and Homei Miyashita. Fitter: A System for Easily Printing Objects that Fit Real Objects. Proceedings of the adjunct publication of the 29th annual ACM symposium on User interface software and technology(UIST2016), pp.129-131, 2016.
+        pdf: http://dl.acm.org/citation.cfm?id=2985730&CFID=853513149&CFTOKEN=66983434
+  - type: documentList
+    title: その他
+    listType: BULLET
+    doc:
+      - description: Maker Faire Tokyo 2016に出展しました！
+        url: http://makezine.jp/event/makers2016/meijidaigakumiyashita/
+      - description: 日刊工業新聞で紹介されました！
+        url: https://www.nikkan.co.jp/articles/view/00400049
+      - description: 第二回　3D Printer Digging Festivalで1位を取りました！
+        url: http://ictco.jp/syousai.html?id=137
+      - description: WBSのトレたまで紹介されました！（10/3）
+        url: http://www.tv-tokyo.co.jp/mv/wbs/trend_tamago/post_119100/
+      - description: 明治大学からのプレスリリースがでました！
+        url: http://www.meiji.ac.jp/koho/press/2016/6t5h7p00000m2z6v.html
+      - description: 日経産業新聞で紹介されました！

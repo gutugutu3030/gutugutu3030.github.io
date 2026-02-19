@@ -1,0 +1,60 @@
+title: やさしいギルガメッシュ
+subTitle: ゲート・オブ・バビロンを自作した話
+contents:
+  - type: image
+    src: thumbnail.gif
+  - type: col
+    column:
+      - type: p
+        text:
+          - 剣でちゃんばらごっこをするのは男のロマンです．
+          - 今回はギルガメッシュと戦いたかったのでゲート・オブ・バビロンを作ることにしました．
+          - ""
+          - しかしいくつかの問題点があります．まず，投げてくれる人がいないということ．そして刺さると危ないということです．
+      - type: image
+        src: issue.png
+  - type: col
+    column:
+      - type: p
+        text:
+          - これらを解決するためにやさしいギルガメッシュをつくることにしました．
+          - まずギリギリ人に当たらないような方角に剣を射出します．そして持っている剣を振ったのに合わせて，それに当たるように剣の射出を調整します．
+      - type: image
+        src: image.png
+  - type: col
+    column:
+      - type: p
+        text:
+          - ギルガメッシュといえば慢心しなければ最強格，ということでモーターも奮発しました．
+          - スマホの加速度を送信して，振ると剣が射出されるようにします．
+      - type: image
+        src: GOB.png
+  - type: col
+    column:
+      - type: p
+        text:
+          - アーチャーの干将莫耶も用意しました！
+      - type: image
+        src: archer.jpg
+  - type: col
+    column:
+      - type: p
+        text:
+        - サーボの調子が悪かったので，今回実装できたのは「持っている剣に合わせて射出をする」機能だけです．
+        - そのため，あまりやさしくないギルガメッシュとなってしまいました．
+      - type: youtube
+        url: https://www.youtube.com/embed/J8Ur_qdHZ2Y
+  - type: documentList
+    title: その他
+    listType: BULLET
+    doc:
+      - description: デイリーポータルＺで紹介されました！
+        url: http://portal.nifty.com/kiji/161019197846_2.htm
+  - type: p
+    text:
+      - 技術指導：いわたせんぱい
+      - 撮影協力：まつおくん
+
+
+
+

@@ -1,0 +1,113 @@
+contents:
+  - title: HSP3DPrinter
+    date: 2016/4
+    description:
+      - とても簡単に3DプリンタをHSPから制御できます．
+      - 現在楕円と矩形が造形できます．
+    download:
+      - url: https://github.com/gutugutu3030/HSP3DPrinting
+        subTitle: Github
+    moreInfoUrl: https://github.com/gutugutu3030/HSP3DPrinting
+  - title: typeS8mmPDFMaker
+    date: 2016/4~2016/5
+    description:
+      - 連番画像から8mmフィルム（Super8と同規格）のpdfを出力します．
+      - OHPシートに印刷してご使用ください．
+    download:
+      - url: https://github.com/gutugutu3030/super8filmMaker/releases
+        subTitle: Github
+        description: サウンドフィルム
+    moreInfoUrl: https://github.com/gutugutu3030/super8filmMaker
+    isUnderConstruction: true
+  - title: Processing 2.x カンニングモード
+    date: 2016/2
+    description:
+      - プログラムに任意のコードを実行時に挿入できるモードです．
+      - マクロみたいなものを組めます．Processingをハックした気になれるお手軽モードです．
+      - 詳しい使い方はgithubを御覧ください．
+    download:
+      - url: https://www.dropbox.com/s/olk1u6h1a90ejsj/CheatMode.zip?dl=0
+        subTitle: CheatMode.zip
+    moreInfoUrl: https://github.com/gutugutu3030/cheatMode
+  - title: Processing 2.x コンソールサーチモード
+    date: 2016/1
+    description:
+      - コンソールを少し便利にするモードです．
+      - コンソールをクリックするとそれがどこのprintln記述によるものかを解析し，記述地点にジャンプしてくれます．
+      - 詳しい使い方はgithubを御覧ください．
+    download:
+      - url: https://www.dropbox.com/s/5ogamroq70ywa4n/GreatPrintMode.zip?dl=0
+        subTitle: GreatPrintMode.zip
+    moreInfoUrl: https://github.com/gutugutu3030/gprintMode
+  - title: OpenCV-Java-Processing画像変換ライブラリ
+    date: 2014/2~2015/9
+    description:
+      - javaのBufferedImage，ProcessingのPImageと，OpenCV for JavaのMatを変換するためのライブラリです．例えば，OpenCVのMatからProcessingのPImageに変換したい場合は，`PImage dst=it.Mat2PI(src);`と書くだけで行えます．
+      - 詳しい使い方はzipファイルに同梱されているjava-docを御覧ください．
+    download:
+      - url: https://www.dropbox.com/sh/4t22x1v30wmspir/AAAgPXp8CibC9q2fOeGNsQqga/imageTranslater.zip?dl=0
+        subTitle: imageTranslater.zip
+    moreInfoUrl: https://sites.google.com/view/gutugutu3030/other/matopencvtobufferedimagetopimageprocesingwoxianghubianhuankenengnaraiburariwozuottemita
+  - title: weka・LibSVMのgrid.py　csv変換ソフト
+    date: 2015/4
+    description:
+      - wekaで交差検証したり，LibSVMのgrid.pyでグリッドサーチしたりするために，データを適切な必要なフォーマットに変換するライブラリ兼ソフトを作りました．
+      - Javaのライブラリとして使用することも可能ですし，どちらかのフォーマットをどちらかのフォーマットに変換することも可能です．
+    download:
+      - url: https://www.dropbox.com/s/ycmp0mxkgd570hf/%E5%A4%89%E6%8F%9B.zip?dl=0
+        subTitle: 変換.zip
+        description: 変換用bat付き　java8を使用
+      - url: https://www.dropbox.com/s/aekgam8uwqa2duv/wlformatter.jar?dl=0
+        subTitle: wlformatter.jar
+        description: Processing動作確認　java7を使用
+    moreInfoUrl: https://gutugutu3030.github.io/contents/realtimeProcessing/index.html
+  - title: Processing RealtimeMode
+    date: 2014/9
+    description:
+      - Javaから[ポケットミク](http://otonanokagaku.net/nsx39/)を喋らせるためのライブラリです．
+      - 別途ポケットミクを用意する必要があります．
+    download:
+      - url: https://www.dropbox.com/s/f1u03m1q18tmhhe/pocketmiku.jar
+        subTitle: pocketmiku.jar
+    moreInfoUrl: https://sites.google.com/view/gutugutu3030/other/pokettomikuwojiandannishieruyouniraiburariwozuottemitaprocessing%E3%83%BBjava
+  - title: chatwork4j
+    date: 2014/9
+    description:
+      - Javaからchatworkへ投稿するためのライブラリです．現時点では投稿のみ可能です．chatwork APIを取得しておく必要があります．
+      - >-
+        `new Chatwork("トークンID","部屋番号").mes("メッセージ");`と書くだけで投稿が可能です．
+    download:
+      - url: https://www.dropbox.com/s/zy0y8j5666y86qt/chatwork4j.zip?dl=0
+        subTitle: chatwork4j.zip
+    moreInfoUrl: https://sites.google.com/view/gutugutu3030/other/javaprocessingkarachattowakuhetougaosuru
+  - title: Awav Java
+    date: 2014/4
+    description:
+      - 立体音響ライブラリをJavaから叩くためのアダプタライブラリです．
+      - 別途[3DSoundSimulator](http://3daudioprogramminginjava.blogspot.jp/2010/09/3dsoundsimulator.html)が必要になります．
+    download:
+      - url: https://www.dropbox.com/s/6olfp7e0yx88nte/Awav.jar
+  - title: BanBanJar
+    date: 2009/8
+    description:
+      - キー入力をするとウィンドウ内のキャラクタがキーボードを叩く素振りをします．
+      - 高1の高大連携講座で製作を行いました．
+    download:
+      - url: https://www.dropbox.com/s/zq0less9xiytgtu/banbanban.jar?dl=0
+  - title: BattleLine
+    date: 2009/3~2011/12
+    description:
+      - 線がアイテム以外の何かにぶつかると死にます．線をぶつからないように操作して，相手の線を殺しに行くゲームです．明治高校物理部が昔作成したゲームのリメイクです．
+      - COMは実装してません．一つのキーボードで最大4人の操作が入るため，外付けキーボードを用意することを推奨します．
+    download:
+      - url: http://www.mediafire.com/download/zqmjdzb3y0z/%E3%83%90%E3%83%88%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%B34.0.zip
+        subTitle: バトルライン4.0.zip
+        description: HSP版　BGMインポート機能あり
+      - url: http://www.mediafire.com/download/yv9326aovibtmv4/battlelinex.zip
+        subTitle: battleLinex.zip
+        description: java版　HSPに比べアイテム・システムが強化　BGMインポート機能なし
+
+
+
+
+

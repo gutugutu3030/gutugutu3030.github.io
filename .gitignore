@@ -1,7 +1,8 @@
 .DS_Store
 
 .*/
-build/
+/build/*
+!/build/dist/
 out/
 *.imp
 *.ipr
