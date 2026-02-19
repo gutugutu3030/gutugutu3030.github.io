@@ -83,3 +83,31 @@ tasks.register("AllClean") {
         println("AllClean 完了。次回ビルドは完全にクリーンな状態で実行されます。")
     }
 }
+
+// ========== publish タスク ==========
+// jsBrowserDistribution を実行後、成果物を docs/ ディレクトリへコピーします
+tasks.register("publish") {
+    group = "publishing"
+    description = "プロダクションビルドして成果物を docs/ ディレクトリへコピーします"
+
+    dependsOn("jsBrowserDistribution")
+
+    doLast {
+        val srcDir = layout.buildDirectory.dir("dist/js/productionExecutable").get().asFile
+        val docsDir = rootDir.resolve("docs")
+
+        // docs/ をいったんクリア
+        if (docsDir.exists()) {
+            delete(docsDir)
+            println("削除: ${docsDir.absolutePath}")
+        }
+        docsDir.mkdirs()
+
+        // 成果物をコピー
+        copy {
+            from(srcDir)
+            into(docsDir)
+        }
+        println("コピー完了: ${srcDir.absolutePath} → ${docsDir.absolutePath}")
+    }
+}
