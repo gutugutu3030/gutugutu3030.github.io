@@ -1,0 +1,22 @@
+{
+  "name": "gutugutu3030 Portfolio",
+  "short_name": "Portfolio",
+  "description": "gutugutu3030のポートフォリオサイト",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#212529",
+  "theme_color": "#212529",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
+

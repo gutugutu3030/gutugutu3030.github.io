@@ -36,6 +36,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      - name: Cache Kotlin/JS node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/nodejs
+            build/js/node_modules
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('build.gradle.kts', 'gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs-
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 

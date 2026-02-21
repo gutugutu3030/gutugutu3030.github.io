@@ -48,6 +48,14 @@ kotlin {
         implementation("io.kvision:kvision-state:$kvisionVersion")
         implementation("com.charleskorn.kaml:kaml:0.55.0")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0")
+        // PWA: Service Worker 自動生成プラグイン
+        devNpm("workbox-webpack-plugin", "7.3.0")
+        // PWA: Service Worker ランタイム（sw-template.js で使用）
+        devNpm("workbox-precaching", "7.3.0")
+        devNpm("workbox-routing", "7.3.0")
+        devNpm("workbox-strategies", "7.3.0")
+        devNpm("workbox-expiration", "7.3.0")
+        devNpm("workbox-cacheable-response", "7.3.0")
     }
     sourceSets["jsTest"].dependencies {
         implementation(kotlin("test-js"))
@@ -74,6 +82,13 @@ tasks.register("AllClean") {
         if (gradleCacheDir.exists()) {
             delete(gradleCacheDir)
             println("削除: ${gradleCacheDir.absolutePath}")
+        }
+
+        // .kotlin-js-store（npm パッケージのロック情報）
+        val kotlinJsStore = file("${rootDir}/.kotlin-js-store")
+        if (kotlinJsStore.exists()) {
+            delete(kotlinJsStore)
+            println("削除: ${kotlinJsStore.absolutePath}")
         }
 
         // ホームディレクトリの Gradle キャッシュ (任意 — コメントを外すと実行)
@@ -109,5 +124,32 @@ tasks.register("publish") {
             into(docsDir)
         }
         println("コピー完了: ${srcDir.absolutePath} → ${docsDir.absolutePath}")
+
+        // ========== PWA ファイル検証 ==========
+        // sw-template.js が docs/ に混入していたら削除（resources/ 外に配置済みのため通常は不要）
+        val swTemplate = docsDir.resolve("sw-template.js")
+        if (swTemplate.exists()) {
+            swTemplate.delete()
+            println("🗑️  docs/sw-template.js を削除しました（テンプレートは公開不要）")
+        }
+
+        val pwaFiles = listOf("sw.js", "manifest.json", "offline.html")
+        pwaFiles.forEach { fileName ->
+            val f = docsDir.resolve(fileName)
+            if (f.exists()) {
+                println("✅ PWA: $fileName が docs/ に存在します")
+            } else {
+                println("⚠️  PWA: $fileName が docs/ に見つかりません！")
+            }
+        }
+        // アイコン PNG の確認
+        listOf("apple-touch-icon.png").forEach { iconName ->
+            val f = docsDir.resolve(iconName)
+            if (f.exists()) {
+                println("✅ PWA: $iconName が docs/ に存在します")
+            } else {
+                println("⚠️  PWA: $iconName が docs/ に見つかりません！")
+            }
+        }
     }
 }
