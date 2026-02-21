@@ -71,7 +71,7 @@ class ProfilePanel(config: ProfileConfig) : SimplePanel() {
             }
             col(8) {
                 h2 {
-                    +"秋山 耀"
+                    +"秋山 耀 "
                     small("Yoh Akiyama")
                 }
                 ul {
