@@ -33,7 +33,7 @@ data class ProfileConfig(
 data class Career(
     val date: String,
     val description: String,
-    val url: String? = null
+    val url: List<String> = emptyList()
 )
 
 /**
@@ -62,7 +62,7 @@ data class Publication(
     val pdf: String? = null,
     val url: String? = null,
     val video: String? = null,
-    val notice: String? = null,
+    val notice: List<String> = emptyList(),
     val slide: String? = null
 )
 

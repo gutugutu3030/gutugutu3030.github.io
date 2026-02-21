@@ -99,7 +99,7 @@ class ProfilePanel(config: ProfileConfig) : SimplePanel() {
                         td { +it.date.padEnd(maxDateLength) }
                         td {
                             +it.description
-                            it.url?.let { url -> linkMark(url) }
+                            it.url.forEach { url -> linkMark(url) }
                         }
                     }
                 }
@@ -122,7 +122,7 @@ class ProfilePanel(config: ProfileConfig) : SimplePanel() {
                 config.award.map {
                     li {
                         +"${it.date} ${it.description}"
-                        it.url?.let { url -> linkMark(url) }
+                        it.url.forEach { url -> linkMark(url) }
                     }
                 }
             }
@@ -139,7 +139,7 @@ class ProfilePanel(config: ProfileConfig) : SimplePanel() {
                             it.video?.let { url -> linkMark(url, "bi-film") }
                             it.url?.let { url -> linkMark(url) }
                             it.slide?.let { url -> linkMark(url, "bi-p-square") }
-                            it.notice?.let { notice -> strong("[$notice]", className = "text-info") }
+                            it.notice.forEach { notice -> strong("[$notice]", className = "text-info") }
                         }
                     }
                 }
