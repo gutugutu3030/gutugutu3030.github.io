@@ -48,14 +48,6 @@ kotlin {
         implementation("io.kvision:kvision-state:$kvisionVersion")
         implementation("com.charleskorn.kaml:kaml:0.55.0")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0")
-        // PWA: Service Worker 自動生成プラグイン
-        devNpm("workbox-webpack-plugin", "7.3.0")
-        // PWA: Service Worker ランタイム（sw-template.js で使用）
-        devNpm("workbox-precaching", "7.3.0")
-        devNpm("workbox-routing", "7.3.0")
-        devNpm("workbox-strategies", "7.3.0")
-        devNpm("workbox-expiration", "7.3.0")
-        devNpm("workbox-cacheable-response", "7.3.0")
     }
     sourceSets["jsTest"].dependencies {
         implementation(kotlin("test-js"))
