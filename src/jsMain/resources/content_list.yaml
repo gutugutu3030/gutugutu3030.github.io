@@ -6,7 +6,7 @@ contents:
   - {directory: contents/duelDisk, name: デュエルディスク, date: 2013/5}
   - {directory: contents/ProjectronMapping, name: Projectron Mapping, date: 2013/10-2014/12,
       thumbnailExp: jpg}
-  - {directory: contents/numericKeypad, name: オリジナルテンキー, date: 2014/3, url: "https://sites.google.com/view/gutugutu3030/other/tenkiwojietishitegaizaosuru", thumbnailExp: jpg }
+  - {directory: contents/numericKeypad, name: オリジナルテンキー, date: 2014/3, thumbnailExp: jpg }
   - {directory: contents/somen, name: 流しそうめん音ゲー, date: 2014/9,
       thumbnailExp: jpg }
   - {directory: contents/realtimeProcessing, name: Processing RealtimeMode, date: 2015/3,
