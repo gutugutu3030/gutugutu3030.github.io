@@ -29,7 +29,7 @@ contents:
   - {directory: contents/PaperBattler, name: Paper Battler, date: 2017/1, url: "https://youtu.be/eRLvTMQ5Emc" }
   - { directory: contents/8mmFilm/projector, name: ミニミニ8mm映写機, date: 2017/1 }
   - {directory: contents/Theater, name: Theater, date: 2017/1-2017/2 }
-  - {directory: contents/mobileFabrication, name: 背負型3Dプリンタ, date: 2017/3-2018/3, url: "https://sites.google.com/view/gutugutu3030/quanku-guan-xinai/3dpurintawobeifuttehuajianshitahua", thumbnailExp: jpg }
+  - {directory: contents/mobileFabrication, name: 背負型3Dプリンタ, date: 2017/3-2018/3,  thumbnailExp: jpg }
   - {directory: contents/8mmFilm/game, name: ICレスゲーム機, date: 2017/9,
       thumbnailExp: png }
   - {directory: contents/3DPrinCar, name: 3DPrinCar, date: 2017/5-2018/1 }
