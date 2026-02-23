@@ -1,22 +1,19 @@
 package io.github.gutugutu3030.portfolio.pages
 
-import com.charleskorn.kaml.Yaml
+import initPanel
 import io.github.gutugutu3030.portfolio.App
 import io.github.gutugutu3030.portfolio.components.config.StarConfig
 import io.github.gutugutu3030.portfolio.components.config.StarPhoto
 import io.kvision.core.Display
-import io.kvision.core.Style
 import io.kvision.core.onClick
 import io.kvision.core.style
 import io.kvision.html.div
-import io.kvision.html.image
-import io.kvision.html.p
 import io.kvision.panel.SimplePanel
 import io.kvision.state.ObservableValue
 import io.kvision.state.bind
 import kotlinx.browser.window
-import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
+import loadYaml
 
 /**
  * スターパネルのルーティングパス
@@ -28,19 +25,9 @@ const val STAR_PATH = "/star"
  */
 const val STAR_YAML = "star.yaml"
 
-private suspend fun loadStarConfig(): StarConfig =
-    window.fetch(STAR_YAML).await().text().await()
-        .let { Yaml.default.decodeFromString(StarConfig.serializer(), it) }
-
 fun initStar(app: App){
-    app.apply{
-        routing.kvOn(STAR_PATH){
-            scope.launch {
-                val config = loadStarConfig()
-                contentPanel.removeAll()
-                contentPanel.add(StarPanel(config))
-            }
-        }
+    initPanel(app = app, path= STAR_PATH){
+        StarPanel(loadYaml<StarConfig>(STAR_YAML))
     }
 }
 
