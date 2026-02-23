@@ -69,7 +69,7 @@ class WeatherPanel(
     init{
         val d = ObservableListWrapper(data.toMutableList())
         table(
-           headerNames =  listOf("時間","天気", "雲", "温度","風速", "風向"),
+           headerNames =  listOf("時間","天気", "雲", "温度","降水量","風速", "風向"),
             responsiveType = ResponsiveType.RESPONSIVE
         ){
             data.map{
@@ -83,6 +83,12 @@ class WeatherPanel(
                         setAttribute("style", "--bs-table-bg: $color; background-color: $color !important;")
                     }
                     cell("${it.temperature}度")
+                    cell("${it.precipitation.total}mm"){
+                        if(it.precipitation.total != 0.0){
+                            val color = "rgba(100, 0, 0)"
+                            setAttribute("style", "--bs-table-bg: $color; background-color: $color !important;")
+                        }
+                    }
                     cell("${it.wind.speed}m/s")
                     cell{
                         p("→").bind(ObservableValue(it.wind.angle) ){ angle ->
@@ -122,7 +128,8 @@ data class HourlyWeatherData(
     val icon: Int,
     val temperature: Double,
     val wind: Wind,
-    val cloud_cover: CloudCover
+    val cloud_cover: CloudCover,
+    val precipitation: Precipitation
 ){
     val dateTime: String
         get() = "${Date(date).getHours()}時"
@@ -137,4 +144,10 @@ data class Wind(
 @Serializable
 data class CloudCover(
     val total: Int
+)
+
+@Serializable
+data class Precipitation(
+    val total: Double,
+    val type: String
 )
