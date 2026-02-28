@@ -25,7 +25,7 @@ const val CONTENT_LIST_PATH = "/contents"
 /**
  * コンテンツ一覧データのYAMLファイル名
  */
-const val CONTENT_LIST_YAML = "content_list.yaml"
+const val CONTENT_LIST_YAML = "/content_list.yaml"
 
 
 /**
