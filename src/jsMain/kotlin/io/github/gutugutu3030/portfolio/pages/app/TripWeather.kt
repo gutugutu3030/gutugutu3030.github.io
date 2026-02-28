@@ -37,6 +37,11 @@ import kotlinx.serialization.json.Json
 @Suppress("UNUSED_VARIABLE")
 private val initLeafletCss = leafletCss
 
+// webpack バンドル時のデフォルトマーカーアイコン 404 問題を修正
+// leafletCss と同様にモジュール初期化時に一度だけ実行される
+@Suppress("UNUSED_VARIABLE")
+private val initLeafletIcons = fixLeafletDefaultIcons()
+
 val tripWeatherPanelCreator: suspend CoroutineScope.() -> SimplePanel = {
     TripWeatherPanel()
 }
@@ -222,7 +227,6 @@ class TripWeatherPanel : SimplePanel() {
                     setStyle("max-height", "100px")
                     setStyle("overflow-y", "auto")
 
-                    h4("天気")
                     table(headerNames = listOf("時間","天気", "温度")){
                         it.map{
                             tableRow {

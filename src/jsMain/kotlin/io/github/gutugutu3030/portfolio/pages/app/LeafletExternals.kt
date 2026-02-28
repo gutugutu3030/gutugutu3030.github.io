@@ -7,6 +7,49 @@ package io.github.gutugutu3030.portfolio.pages.app
 external val leafletCss: dynamic
 
 /**
+ * Leaflet デフォルトマーカーアイコン画像を webpack 経由で明示的にインポートする。
+ * `asset/resource` として処理され、バンドル後の正しい URL 文字列が返される。
+ *
+ * webpack + Leaflet では `L.Icon.Default.prototype._getIconUrl` が
+ * スクリプトタグの URL を自動検出しようとするが、webpack バンドル内では
+ * 失敗してサーバルート (`/marker-icon-2x.png` 等) を参照し 404 になる。
+ * これらを明示インポートして [fixLeafletDefaultIcons] で正しく上書きする。
+ */
+@JsModule("leaflet/dist/images/marker-icon.png")
+@JsNonModule
+external val markerIconUrl: dynamic
+
+@JsModule("leaflet/dist/images/marker-icon-2x.png")
+@JsNonModule
+external val markerIconRetinaUrl: dynamic
+
+@JsModule("leaflet/dist/images/marker-shadow.png")
+@JsNonModule
+external val markerShadowUrl: dynamic
+
+/**
+ * webpack バンドル時に発生する Leaflet デフォルトマーカーアイコン 404 問題を修正する。
+ *
+ * 処理内容:
+ * 1. `L.Icon.Default.prototype._getIconUrl` を削除して自動パス検出を無効化する
+ * 2. webpack が `asset/resource` として処理した正しい PNG URL を
+ *    `L.Icon.Default.mergeOptions` で設定する
+ *
+ * [leafletCss] と同様にモジュール初期化時に一度だけ実行される。
+ */
+fun fixLeafletDefaultIcons() {
+    // webpack の _getIconUrl による自動パス検出を無効化する。
+    // js() 内でローカル変数 `l` を通して leaflet モジュールにアクセスする。
+    val l: dynamic = L
+    js("delete l.Icon.Default.prototype._getIconUrl")
+    val opts = js("({})")
+    opts["iconUrl"] = markerIconUrl
+    opts["iconRetinaUrl"] = markerIconRetinaUrl
+    opts["shadowUrl"] = markerShadowUrl
+    L.asDynamic().Icon.Default.mergeOptions(opts)
+}
+
+/**
  * Leaflet.js のエントリポイントとなるグローバルオブジェクト `L` の外部宣言。
  * npm パッケージ "leaflet" からインポートされる。
  */
