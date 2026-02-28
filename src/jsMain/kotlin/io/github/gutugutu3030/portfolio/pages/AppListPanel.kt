@@ -3,6 +3,7 @@ package io.github.gutugutu3030.portfolio.pages
 import initPanel
 import io.github.gutugutu3030.portfolio.App
 import io.github.gutugutu3030.portfolio.components.linkMark
+import io.github.gutugutu3030.portfolio.pages.app.tripWeatherPanelCreator
 import io.github.gutugutu3030.util.parseMarkdown
 import io.kvision.core.Container
 import io.kvision.html.div
@@ -63,6 +64,17 @@ data class AppContentsItem(
  * @param content アプリの内容を表すデータクラス
  */
 enum class AppList(val panelCreator: suspend CoroutineScope.() -> SimplePanel, val content: AppContentsItem) {
+
+   TripWeather(
+       tripWeatherPanelCreator,
+         AppContentsItem(
+              title = "旅行天気予報アプリ",
+              description = listOf(
+                "旅行先の天気予報を表示するアプリです．",
+                "OpenWeatherMapのAPIを使用しています。"
+              ),
+         )
+   ),
 
     /**
      * 天気予報アプリ
