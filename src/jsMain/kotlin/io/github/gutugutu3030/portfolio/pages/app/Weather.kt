@@ -97,7 +97,7 @@ class WeatherPanel(
                         cell("${it.wind.speed}m/s")
                         cell{
                             p("→").bind(ObservableValue(it.wind.angle) ){ angle ->
-                                setAttribute("style", "transform: rotate(${angle}deg);")
+                                setAttribute("style", "transform: rotate(${angle + 90}deg);")
 
                             }
                         }
