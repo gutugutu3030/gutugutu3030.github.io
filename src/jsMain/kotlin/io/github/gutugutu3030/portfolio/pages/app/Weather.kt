@@ -1,20 +1,16 @@
-import io.github.gutugutu3030.portfolio.App
-import io.github.gutugutu3030.portfolio.components.row
 import io.kvision.form.text.textInput
 import io.kvision.html.InputType
-import io.kvision.html.header
 import io.kvision.html.image
 import io.kvision.html.p
 import io.kvision.panel.SimplePanel
-import io.kvision.state.ObservableListWrapper
 import io.kvision.state.ObservableValue
 import io.kvision.state.bind
 import io.kvision.table.ResponsiveType
 import io.kvision.table.cell
-import io.kvision.table.headerCell
 import io.kvision.table.row as tableRow
 import io.kvision.table.table
 import kotlinx.browser.window
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.serialization.Serializable
@@ -23,6 +19,7 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.js.Date
 import kotlin.math.max
+
 
 suspend fun getCurrentPosition(): Pair<Double, Double> = suspendCancellableCoroutine { cont ->
     val geolocation = js("window.navigator.geolocation")
@@ -38,29 +35,26 @@ suspend fun getCurrentPosition(): Pair<Double, Double> = suspendCancellableCorou
     )
 }
 
-
 val json = Json{
     ignoreUnknownKeys = true
 }
 
 const val PATH = "/app/weather"
 
-fun initWeather(app: App){
-    console.log("init")
-    initPanel(app, PATH){
-        runCatching {
-            val (lat, lon) = getCurrentPosition()
-            val weatherDataText =
-                window.fetch("https://www.meteosource.com/api/v1/free/point?lat=$lat&lon=$lon&sections=current%2Chourly&language=en&units=metric&key=$apiKey").await().text().await()
-            json.decodeFromString<Weather>(weatherDataText)
-        }.getOrNull().let {
-            WeatherPanel(it?.hourly?.data)
-        }
+val weatherPanelCreator : suspend CoroutineScope.() -> SimplePanel= {
+    runCatching {
+        val (lat, lon) = getCurrentPosition()
+        val weatherDataText =
+            window.fetch("https://www.meteosource.com/api/v1/free/point?lat=$lat&lon=$lon&sections=current%2Chourly&language=en&units=metric&key=$weatherApiKey")
+                .await().text().await()
+        json.decodeFromString<Weather>(weatherDataText)
+    }.getOrNull().let {
+        WeatherPanel(it?.hourly?.data)
     }
 }
 
 private const val apiKeyName = "meteoSourceApiKey"
-private var apiKey: String?
+var weatherApiKey: String?
     get() = window.localStorage.getItem(apiKeyName) ?: ""
     set(value){
         window.localStorage.setItem(apiKeyName, value?:"")
@@ -103,10 +97,10 @@ class WeatherPanel(
                 }
             }
         }
-        textInput(type = InputType.PASSWORD, value = apiKey) {
+        textInput(type = InputType.PASSWORD, value = weatherApiKey) {
             placeholder = "Enter your MeteoSource API Key"
             subscribe {
-                apiKey = value
+                weatherApiKey = value
             }
         }
     }

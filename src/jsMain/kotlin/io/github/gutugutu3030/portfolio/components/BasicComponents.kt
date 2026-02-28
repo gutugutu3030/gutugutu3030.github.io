@@ -22,8 +22,9 @@ import io.kvision.theme.ThemeManager
  * @param url リンクURL
  * @param icon アイコンのクラス名（デフォルトはBootstrap Iconsのリンクアイコン）
  */
-fun Container.linkMark(url: String, icon: String = "bi-link-45deg",     init: (Link.() -> Unit)? = null
-): Container = link(label = "", url = url, target = "_blank") {
+fun Container.linkMark(url: String, icon: String = "bi-link-45deg",   openInCurrent: Boolean = false,
+    init: (Link.() -> Unit)? = null
+): Container = link(label = "", url = url, target = if(!openInCurrent) "_blank" else null) {
     i(className = icon)
     init?.invoke(this)
 }
@@ -62,7 +63,7 @@ fun Container.bar(){
                 "Contents",
                 listOf("Products" to "/",
                     "Libraries" to "/library",
-                    "Apps" to "/",
+                    "Apps" to "/app",
                     "Photos" to "/star"),
                 forNavbar = true,
             )

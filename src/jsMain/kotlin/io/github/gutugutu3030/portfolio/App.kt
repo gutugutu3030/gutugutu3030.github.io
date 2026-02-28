@@ -1,9 +1,9 @@
 package io.github.gutugutu3030.portfolio
 
-import initWeather
 import io.github.gutugutu3030.portfolio.components.bar
 import io.github.gutugutu3030.portfolio.components.config.loadContentConfig
 import io.github.gutugutu3030.portfolio.pages.contents.ContentPanel
+import io.github.gutugutu3030.portfolio.pages.initApps
 import io.github.gutugutu3030.portfolio.pages.initContentList
 import io.github.gutugutu3030.portfolio.pages.initLibrary
 import io.github.gutugutu3030.portfolio.pages.initProfile
@@ -60,7 +60,7 @@ class App : Application() {
             initContentList(this@App)
             initLibrary(this@App)
             initStar(this@App)
-            initWeather(this@App)
+            initApps(this@App)
 
                 config.contents
 //                    .filter{ it.url == null }
