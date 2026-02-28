@@ -103,6 +103,13 @@ external class LeafletMap {
     fun addLayer(layer: Layer): LeafletMap
 
     /**
+     * マップからレイヤーを削除する。
+     * @param layer 削除する [Layer]
+     * @return メソッドチェーン用に自身を返す
+     */
+    fun removeLayer(layer: Layer): LeafletMap
+
+    /**
      * マップを破棄してリソースを解放する。
      * コンポーネントのアンマウント時に呼び出すこと。
      */
@@ -172,4 +179,17 @@ external class Marker : Layer {
      * @return メソッドチェーン用に自身を返す
      */
     fun bindPopup(content: String): Marker
+
+    /**
+     * マーカーに DOM 要素をポップアップコンテンツとして紐付ける。
+     * @param element ポップアップに表示する [HTMLElement]
+     * @return メソッドチェーン用に自身を返す
+     */
+    fun bindPopup(element: org.w3c.dom.HTMLElement): Marker
+
+    /**
+     * 紐付けられたポップアップを開く。
+     * @return メソッドチェーン用に自身を返す
+     */
+    fun openPopup(): Marker
 }

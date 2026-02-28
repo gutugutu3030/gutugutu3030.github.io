@@ -1,3 +1,4 @@
+import io.github.gutugutu3030.portfolio.pages.AppList
 import io.kvision.form.text.textInput
 import io.kvision.html.InputType
 import io.kvision.html.image
@@ -39,18 +40,25 @@ val json = Json{
     ignoreUnknownKeys = true
 }
 
-const val PATH = "/app/weather"
+/**
+ * 指定した緯度経度の天気情報を取得する関数
+ * @param lat 緯度 * @param lon 経度
+ * @return 天気情報（取得に失敗した場合は null）
+ */
+suspend fun getWeather(lat: Double, lon: Double): Weather? = runCatching {
+        window.fetch("https://www.meteosource.com/api/v1/free/point?lat=$lat&lon=$lon&sections=current%2Chourly&language=en&units=metric&key=$weatherApiKey")
+            .await().text().await().let{
+                json.decodeFromString<Weather>(it)
+            }
+}.getOrNull()
+
+
 
 val weatherPanelCreator : suspend CoroutineScope.() -> SimplePanel= {
-    runCatching {
-        val (lat, lon) = getCurrentPosition()
-        val weatherDataText =
-            window.fetch("https://www.meteosource.com/api/v1/free/point?lat=$lat&lon=$lon&sections=current%2Chourly&language=en&units=metric&key=$weatherApiKey")
-                .await().text().await()
-        json.decodeFromString<Weather>(weatherDataText)
-    }.getOrNull().let {
-        WeatherPanel(it?.hourly?.data)
+    getCurrentPosition().let {
+        getWeather(it.first, it.second)
     }
+             .let{ WeatherPanel(it?.hourly?.data) }
 }
 
 private const val apiKeyName = "meteoSourceApiKey"
@@ -73,7 +81,7 @@ class WeatherPanel(
                     tableRow {
                         cell(it.dateTime)
                         cell{
-                            image("$PATH/${it.icon}.png", alt = it.weather)
+                            image("${AppList.WEATHER.path}/${it.icon}.png", alt = it.weather)
                         }
                         cell("${it.cloud_cover.total}%"){
                             val color = "rgba(0, 0, 100, ${1 - max(0.0, it.cloud_cover.total / 60.0)})"
