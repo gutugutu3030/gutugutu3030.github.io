@@ -66,7 +66,7 @@ class App : Application() {
 //                    .filter{ it.url == null }
                     .forEach {
                     it.apply {
-                        routing.kvOn("$directory"){
+                        routing.kvOn(directory){
                             console.log("call route /$directory")
                             scope.launch{
                                 loadContentConfig("$directory/data.yaml").let{
