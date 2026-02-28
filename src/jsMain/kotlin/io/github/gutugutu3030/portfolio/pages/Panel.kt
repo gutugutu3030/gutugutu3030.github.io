@@ -1,5 +1,6 @@
 import com.charleskorn.kaml.Yaml
 import io.github.gutugutu3030.portfolio.App
+import io.kvision.html.div
 import io.kvision.panel.SimplePanel
 import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
@@ -16,9 +17,15 @@ fun initPanel(app: App, path: String, panelCreater: suspend CoroutineScope.() ->
     app.apply{
         routing.kvOn(path){
             scope.launch {
-                val panel = panelCreater()
-                contentPanel.removeAll()
-                contentPanel.add(panel)
+                try {
+                    val panel = panelCreater()
+                    contentPanel.removeAll()
+                    contentPanel.add(panel)
+                } catch (e: Exception) {
+                    console.error("Panel error: ${e.message}")
+                    contentPanel.removeAll()
+                    contentPanel.div("エラー: ${e.message}")
+                }
             }
         }
     }
