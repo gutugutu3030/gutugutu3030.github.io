@@ -1,9 +1,5 @@
 package io.github.gutugutu3030.portfolio.pages.app
 
-import CloudCover
-import HourlyWeatherData
-import Precipitation
-import Wind
 import getWeather
 import io.github.gutugutu3030.portfolio.pages.AppList
 import io.kvision.core.Container
@@ -54,6 +50,27 @@ private data class NominatimResult(
     @SerialName("display_name") val displayName: String
 )
 
+/** OSRM Routing API レスポンス */
+@Serializable
+private data class OsrmResponse(
+    val code: String,
+    val routes: List<OsrmRoute> = emptyList()
+)
+
+@Serializable
+private data class OsrmRoute(
+    val duration: Double, // 秒
+    val distance: Double  // メートル
+)
+
+/** 経路検索結果 */
+data class RouteResult(
+    val originName: String,
+    val destName: String,
+    val duration: Double,
+    val distance: Double
+)
+
 private val jsonParser = Json { ignoreUnknownKeys = true }
 
 private val statusText = ObservableValue<String>("")
@@ -77,10 +94,22 @@ class TripWeatherPanel : SimplePanel() {
      * KVision の [Div] をポップアップ用に DOM マウントするためのオフスクリーン隠しコンテナ。
      * 画面外に配置されているためユーザーには見えない。
      */
-    private lateinit var popupContainer: Div
+    private var popupContainer: Div
 
     /** 検索状態メッセージ */
     private val searchMessage = ObservableValue<Message?>(null)
+
+    /** 経路検索の出発地座標 (lat, lng) */
+    private var originLatLng: Pair<Double, Double>? = null
+
+    /** 経路検索の目的地座標 (lat, lng) */
+    private var destLatLng: Pair<Double, Double>? = null
+
+    /** 経路検索結果 */
+    private val routeResult = ObservableValue<RouteResult?>(null)
+
+    /** 経路検索中メッセージ */
+    private val routeMessage = ObservableValue<Message?>(null)
 
     /**
      * 検索状態メッセージを更新する関数
@@ -119,6 +148,77 @@ class TripWeatherPanel : SimplePanel() {
         // 検索結果メッセージ表示
         div().bind(searchMessage) {
             it?.render(this)
+        }
+
+        // ---- 経路検索セクション ----
+        h4("経路検索", className = "mt-3 mb-2")
+        var originInput: io.kvision.form.text.TextInput? = null
+        var destInput: io.kvision.form.text.TextInput? = null
+        div(className = "row g-2 mb-2") {
+            div(className = "col") {
+                originInput = textInput(InputType.TEXT) {
+                    placeholder = "出発地 (例: 大阪駅)"
+                    addCssClass("form-control")
+                    onEvent {
+                        keydown = { e ->
+                            if (e.asDynamic().key == "Enter") {
+                                scope.launch {
+                                    doRouteSearch(value ?: "", destInput?.value ?: "")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            div(className = "col") {
+                destInput = textInput(InputType.TEXT) {
+                    placeholder = "目的地 (例: 東京駅)"
+                    addCssClass("form-control")
+                    onEvent {
+                        keydown = { e ->
+                            if (e.asDynamic().key == "Enter") {
+                                scope.launch {
+                                    doRouteSearch(originInput?.value ?: "", value ?: "")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            button("経路検索", className = "btn btn-success col-auto") {
+                onClick {
+                    scope.launch {
+                        doRouteSearch(originInput?.value ?: "", destInput?.value ?: "")
+                    }
+                }
+            }
+        }
+
+        // 経路検索メッセージ
+        div().bind(routeMessage) { it?.render(this) }
+
+        // 経路検索結果
+        div(className = "card mb-3").bind(routeResult) { result ->
+            if (result != null) {
+                div(className = "card-body py-2") {
+                    p(className = "mb-1") {
+                        span("出発地: ", className = "fw-bold")
+                        span(result.originName)
+                    }
+                    p(className = "mb-1") {
+                        span("目的地: ", className = "fw-bold")
+                        span(result.destName)
+                    }
+                    p(className = "mb-1") {
+                        span("移動時間 (車): ", className = "fw-bold")
+                        span(formatDuration(result.duration))
+                    }
+                    p(className = "mb-0") {
+                        span("距離: ", className = "fw-bold")
+                        span("${(result.distance / 1000).asDynamic().toFixed(1)} km")
+                    }
+                }
+            }
         }
 
         add(Map { map -> leafletMap = map })
@@ -215,6 +315,85 @@ class TripWeatherPanel : SimplePanel() {
         } else {
             updateMessage("「$query」が見つかりませんでした", isError = true)
         }
+    }
+
+    /**
+     * 場所名 (または 緯度,経度 文字列) をジオコードして座標を返す。
+     * 失敗時は null。
+     */
+    private suspend fun geocode(query: String): Pair<Pair<Double, Double>, String>? {
+        val coordRegex = Regex("""^\s*(-?\d+\.?\d*)\s*,\s*(-?\d+\.?\d*)\s*$""")
+        val coordMatch = coordRegex.find(query)
+        if (coordMatch != null) {
+            val lat = coordMatch.groupValues[1].toDoubleOrNull()
+            val lng = coordMatch.groupValues[2].toDoubleOrNull()
+            if (lat != null && lng != null) return Pair(lat, lng) to "($lat, $lng)"
+        }
+        val url = "https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1"
+        val response = window.fetch(url).await()
+        val text = response.text().await()
+        val results = jsonParser.decodeFromString<List<NominatimResult>>(text)
+        if (results.isEmpty()) return null
+        val r = results.first()
+        return Pair(r.lat.toDouble(), r.lon.toDouble()) to r.displayName.take(40)
+    }
+
+    /**
+     * 出発地・目的地を OSRM でルート検索し移動時間・距離を表示する。
+     */
+    private suspend fun doRouteSearch(originQuery: String, destQuery: String) {
+        if (originQuery.isBlank() || destQuery.isBlank()) {
+            routeMessage.value = Message("出発地と目的地を両方入力してください", isError = true)
+            return
+        }
+        routeMessage.value = Message("検索中...")
+        routeResult.value = null
+
+        val originGeo = geocode(originQuery)
+        if (originGeo == null) {
+            routeMessage.value = Message("出発地「$originQuery」が見つかりませんでした", isError = true)
+            return
+        }
+        val destGeo = geocode(destQuery)
+        if (destGeo == null) {
+            routeMessage.value = Message("目的地「$destQuery」が見つかりませんでした", isError = true)
+            return
+        }
+
+        val (originCoord, originName) = originGeo
+        val (destCoord, destName) = destGeo
+
+        val (oLat, oLng) = originCoord
+        val (dLat, dLng) = destCoord
+
+        val url = "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=false"
+        try {
+            val response = window.fetch(url).await()
+            val text = response.text().await()
+            val osrm = jsonParser.decodeFromString<OsrmResponse>(text)
+            if (osrm.code != "Ok" || osrm.routes.isEmpty()) {
+                routeMessage.value = Message("ルートが見つかりませんでした (${osrm.code})", isError = true)
+                return
+            }
+            val route = osrm.routes.first()
+            routeResult.value = RouteResult(
+                originName = originName,
+                destName = destName,
+                duration = route.duration,
+                distance = route.distance
+            )
+            routeMessage.value = Message("")
+        } catch (e: Exception) {
+            routeMessage.value = Message("通信エラー: ${e.message}", isError = true)
+        }
+    }
+
+    /** 秒数を「X時間Y分」形式の文字列に変換する */
+    private fun formatDuration(seconds: Double): String {
+        val totalMin = (seconds / 60).toInt()
+        val hours = totalMin / 60
+        val mins = totalMin % 60
+        return if (hours > 0) "${hours}時間${mins}分" else "${mins}分"
     }
 
     private suspend fun setMapTarget(lat: Double, lng: Double){
