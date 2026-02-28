@@ -1,0 +1,89 @@
+title: 3Dプリンタを背負って花見した話
+contents:
+  - type: p
+    text:
+      - 僕の好きな研究に[モバイルファブリケーション](https://hpi.de/en/baudisch/projects/pervasive-fabrication.html)という研究があります。これのユーザスタディに地下鉄で3Dプリントした話があって、
+      - 「やってみてえ！」
+      - となったので持ち歩ける3Dプリンタセットを作ってみました。
+      - 3月。
+      - 手元にあった3Dプリンタとバッテリは[MF-500](https://www.mutoh.co.jp/3d/mf-500.html)とAnker PowerHouse。
+      - PowerHouseは100V100Wまでの対応。MF-500は65Wだけど、モーターって電源入れたときにすごい電力食うので心配。動作確認したところ、ちゃんと動いたので一安心です。この3Dプリンタは単体での印刷が不可能なので、ノートパソコンをバッテリ駆動させてつなぎます。
+  - type: col
+    column:
+      - type: image
+        src: 1.png
+      - type: p
+        text:
+          - さて、動作確認したので、持ち歩くための機材を適当に設計。家にあった木の板を切って3時間で組み立て。
+          - 棚ができました。ガッタガタだけど木にしないことに。棚は3つに別れていて、下からバッテリ、ノートPC、3Dプリンタが収納されます。
+          - ユニクロで伸縮しそうなベルト2本買って、この棚にくくりつけるとリュックになります！
+  - type: col
+    column:
+      - type: image
+        src: 2.png
+      - type: p
+        text:
+          - 背負っても大丈夫そう。
+          - ちなみに前につけると
+  - type: col
+    column:
+      - type: image
+        src: 3.png
+      - type: p
+        text:
+          - 「ぼくドラえもん〜」みたいな３次元ポケットになります。取り出すのに1時間かかるけど
+          - そして4月。
+  - type: col
+    column:
+      - type: image
+        src: 4.png
+      - type: p
+        text:
+          - 桜の季節だ！！
+          - 研究室で花見をするということになったので、3Dプリンタを背負っていくことにしました。
+          - 行くとみんな花見をしながらご飯食べてました。お腹が減ったのですが、食器を忘れたのでthingiverseに検索に行きます。
+  - type: col
+    column:
+      - type: image
+        src: 5.png
+      - type: p
+        text:
+          - フォークがあったのでこれを出力します。ちなみに使ったのは[コレ](https://www.thingiverse.com/thing:12821)
+  - type: col
+    column:
+      - type: image
+        src: 6.png
+      - type: p
+        text:
+          - 印刷するよ〜！
+          - で、出たのがコレ。
+  - type: col
+    column:
+      - type: image
+        src: 7.png
+      - type: p
+        text:
+          - 10分かかりました。
+          - これで芋ようかんとパスタを食べました。美味しかったです。
+  - type: col
+    column:
+      - type: image
+        src: 8.png
+      - type: p
+        text:
+          - その後、後輩たちがシャボン玉で遊び始めたので、シャボン玉のリングをthingiverseからダウンロードして5分で印刷しました。
+  - type: col
+    column:
+      - type: image
+        src: 9.png
+      - type: p
+        text:
+          - 使用したモデルは[コレ](https://www.thingiverse.com/thing:893814)です
+          - 花見が終わった後、研究室に戻ってみるとバッテリ残量は94%でした。まだまだいけそうです。
+  - type: col
+    column:
+      - type: image
+        src: 10.png
+      - type: p
+        text:
+          - 花見楽しかったです。
