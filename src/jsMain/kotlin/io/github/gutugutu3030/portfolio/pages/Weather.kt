@@ -22,6 +22,7 @@ import kotlinx.serialization.json.Json
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.js.Date
+import kotlin.math.max
 
 suspend fun getCurrentPosition(): Pair<Double, Double> = suspendCancellableCoroutine { cont ->
     val geolocation = js("window.navigator.geolocation")
@@ -45,14 +46,16 @@ val json = Json{
 const val PATH = "/app/weather"
 
 fun initWeather(app: App){
+    console.log("init")
     initPanel(app, PATH){
-        val (lat, lon) = getCurrentPosition()
-        val weatherDataText =
-        window.fetch("https://www.meteosource.com/api/v1/free/point?lat=$lat&lon=$lon&sections=current%2Chourly&language=en&units=metric&key=$apiKey").await().text().await()
-        val weatherData = json.decodeFromString<Weather>(weatherDataText)
-
-        console.log(weatherData)
-        WeatherPanel(weatherData.hourly.data)
+        runCatching {
+            val (lat, lon) = getCurrentPosition()
+            val weatherDataText =
+                window.fetch("https://www.meteosource.com/api/v1/free/point?lat=$lat&lon=$lon&sections=current%2Chourly&language=en&units=metric&key=$apiKey").await().text().await()
+            json.decodeFromString<Weather>(weatherDataText)
+        }.getOrNull().let {
+            WeatherPanel(it?.hourly?.data)
+        }
     }
 }
 
@@ -64,36 +67,37 @@ private var apiKey: String?
     }
 
 class WeatherPanel(
-    val data: List<HourlyWeatherData>
+    val data: List<HourlyWeatherData>?
 ): SimplePanel() {
     init{
-        val d = ObservableListWrapper(data.toMutableList())
-        table(
-           headerNames =  listOf("時間","天気", "雲", "温度","降水量","風速", "風向"),
-            responsiveType = ResponsiveType.RESPONSIVE
-        ){
-            data.map{
-                tableRow {
-                    cell(it.dateTime)
-                    cell{
-                        image("$PATH/${it.icon}.png", alt = it.weather)
-                    }
-                    cell("${it.cloud_cover.total}%"){
-                        val color = "rgba(0, 0, 100, ${1 - it.cloud_cover.total / 100.0})"
-                        setAttribute("style", "--bs-table-bg: $color; background-color: $color !important;")
-                    }
-                    cell("${it.temperature}度")
-                    cell("${it.precipitation.total}mm"){
-                        if(it.precipitation.total != 0.0){
-                            val color = "rgba(100, 0, 0)"
+        if(data != null){
+            table(
+                headerNames =  listOf("時間","天気", "雲", "温度","降水量","風速", "風向"),
+                responsiveType = ResponsiveType.RESPONSIVE
+            ){
+                data.map{
+                    tableRow {
+                        cell(it.dateTime)
+                        cell{
+                            image("$PATH/${it.icon}.png", alt = it.weather)
+                        }
+                        cell("${it.cloud_cover.total}%"){
+                            val color = "rgba(0, 0, 100, ${1 - max(0.0, it.cloud_cover.total / 60.0)})"
                             setAttribute("style", "--bs-table-bg: $color; background-color: $color !important;")
                         }
-                    }
-                    cell("${it.wind.speed}m/s")
-                    cell{
-                        p("→").bind(ObservableValue(it.wind.angle) ){ angle ->
-                            setAttribute("style", "transform: rotate(${angle}deg);")
+                        cell("${it.temperature}度")
+                        cell("${it.precipitation.total}mm"){
+                            if(it.precipitation.total != 0.0){
+                                val color = "rgba(100, 0, 0)"
+                                setAttribute("style", "--bs-table-bg: $color; background-color: $color !important;")
+                            }
+                        }
+                        cell("${it.wind.speed}m/s")
+                        cell{
+                            p("→").bind(ObservableValue(it.wind.angle) ){ angle ->
+                                setAttribute("style", "transform: rotate(${angle}deg);")
 
+                            }
                         }
                     }
                 }
@@ -138,16 +142,16 @@ data class HourlyWeatherData(
 @Serializable
 data class Wind(
     val speed: Double,
-    val angle: Int,
+    val angle: Double,
 )
 
 @Serializable
 data class CloudCover(
-    val total: Int
+    val total: Double
 )
 
 @Serializable
 data class Precipitation(
     val total: Double,
-    val type: String
+    val type: String?
 )
