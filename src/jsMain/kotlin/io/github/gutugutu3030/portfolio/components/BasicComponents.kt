@@ -63,8 +63,7 @@ fun Container.bar(){
                 "Contents",
                 listOf("Products" to "/",
                     "Libraries" to "/library",
-                    "Apps" to "/app",
-                    "Photos" to "/star"),
+                    "Apps" to "/app"),
                 forNavbar = true,
             )
             navLink("Profile", url= PROFILE_PATH)
