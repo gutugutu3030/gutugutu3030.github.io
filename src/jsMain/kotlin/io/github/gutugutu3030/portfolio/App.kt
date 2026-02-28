@@ -29,6 +29,9 @@ import io.kvision.theme.ThemeManager
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
+@JsName("__BUILD_TIME__")
+external val BUILD_TIME: String
+
 class App : Application() {
     init {
         ThemeManager.init(initialTheme = Theme.DARK)
@@ -47,6 +50,7 @@ class App : Application() {
     lateinit var routing: Routing
 
     override fun start() {
+        console.log("[Portfolio] Build time: $BUILD_TIME")
         root("kvapp") {
             setStyle("margin-top", "70px")
             bar()
