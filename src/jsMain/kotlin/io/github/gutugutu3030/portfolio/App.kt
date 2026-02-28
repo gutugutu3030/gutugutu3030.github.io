@@ -40,7 +40,7 @@ class App : Application() {
     /**
      * Scope for coroutines
      */
-    val scope = MainScope()
+    val scope: kotlinx.coroutines.CoroutineScope = MainScope()
 
     /**
      * Content panel for routing
