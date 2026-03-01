@@ -16,6 +16,8 @@ import io.kvision.html.image
 import io.kvision.html.p
 import io.kvision.html.span
 import io.kvision.panel.SimplePanel
+import io.kvision.state.ObservableList
+import io.kvision.state.ObservableListWrapper
 import io.kvision.state.ObservableValue
 import io.kvision.state.bind
 import io.kvision.table.cell
@@ -83,11 +85,11 @@ private val jsonParser = Json { ignoreUnknownKeys = true }
 
 private val statusText = ObservableValue<String>("")
 
-data class Message(val text: String = "", val isError: Boolean = false){
-    fun render(container: Container){
+data class Message(val text: String = "", val isError: Boolean = false) {
+    fun render(container: Container) {
         container.apply {
-                val cls = if (isError) "alert alert-danger py-1 px-2" else "alert alert-success py-1 px-2"
-                span(text, className = cls)
+            val cls = if (isError) "alert alert-danger py-1 px-2" else "alert alert-success py-1 px-2"
+            span(text, className = cls)
         }
     }
 }
@@ -126,20 +128,17 @@ class TripWeatherPanel : SimplePanel() {
      * 検索状態メッセージを更新する関数
      * @param text メッセージテキスト
      * @param isError エラーメッセージかどうか（デフォルトはfalse）
-      */
-    fun updateMessage(text: String = "", isError: Boolean = false){
+     */
+    fun updateMessage(text: String = "", isError: Boolean = false) {
         searchMessage.value = Message(text, isError)
     }
 
     init {
         h1("旅行天気")
 
-        val position = ObservableValue<String>("")
-
-
-
         // 検索バー
         div(className = "input-group mb-2") {
+            val position = ObservableValue("")
             textInput().bind(position) {
                 value = it
                 placeholder = "場所名 または 緯度,経度 (例: 東京, 35.68,139.76)"
@@ -163,44 +162,34 @@ class TripWeatherPanel : SimplePanel() {
 
         // ---- 経路検索セクション ----
         h4("経路検索", className = "mt-3 mb-2")
-        var originInput: io.kvision.form.text.TextInput? = null
-        var destInput: io.kvision.form.text.TextInput? = null
-        div(className = "row g-2 mb-2") {
-            div(className = "col") {
-                originInput = textInput(InputType.TEXT) {
-                    placeholder = "出発地 (例: 大阪駅)"
-                    addCssClass("form-control")
-                    onEvent {
-                        keydown = { e ->
-                            if (e.asDynamic().key == "Enter") {
-                                scope.launch {
-                                    doRouteSearch(value ?: "", destInput?.value ?: "")
-                                }
-                            }
+        val origin = ObservableValue("")
+        textInput(className = "mb-2").bind(origin) {
+            value = it
+            placeholder = "出発地"
+            addCssClass("form-control")
+            onChange { origin.value = value ?: "" }
+        }
+        val destList = ObservableListWrapper<String>(mutableListOf(""))
+        div().bind(destList) { list ->
+            list.forEachIndexed { i, it ->
+                textInput(className = "mb-2") {
+                    value = it
+                    placeholder = "目的地 ${i + 1}"
+                    onChange {
+                        if (value.isNullOrBlank()) {
+                            if (i != 0) destList.removeAt(i)
+                        } else {
+                            if (i == list.size - 1) destList.add("")
+                            destList[i] = value ?: ""
                         }
                     }
                 }
             }
-            div(className = "col") {
-                destInput = textInput(InputType.TEXT) {
-                    placeholder = "目的地 (例: 東京駅)"
-                    addCssClass("form-control")
-                    onEvent {
-                        keydown = { e ->
-                            if (e.asDynamic().key == "Enter") {
-                                scope.launch {
-                                    doRouteSearch(originInput?.value ?: "", value ?: "")
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            button("経路検索", className = "btn btn-success col-auto") {
-                onClick {
-                    scope.launch {
-                        doRouteSearch(originInput?.value ?: "", destInput?.value ?: "")
-                    }
+        }
+        button("経路検索", className = "btn btn-success col-auto") {
+            onClick {
+                scope.launch {
+                    doRouteSearch(origin.value, destList.firstOrNull { it.isNotBlank() } ?: "")
                 }
             }
         }
@@ -234,7 +223,7 @@ class TripWeatherPanel : SimplePanel() {
 
         add(Map { map -> leafletMap = map })
 
-        p().bind(statusText){
+        p().bind(statusText) {
             +it
         }
 
@@ -293,7 +282,7 @@ class TripWeatherPanel : SimplePanel() {
     }
 
     private suspend fun doSearch(query: String) {
-        if (query.isBlank()){
+        if (query.isBlank()) {
             updateMessage("検索バーが空です", isError = true)
             return
         }
@@ -377,7 +366,8 @@ class TripWeatherPanel : SimplePanel() {
         val (oLat, oLng) = originCoord
         val (dLat, dLng) = destCoord
 
-        val url = "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=full&geometries=geojson"
+        val url =
+            "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=full&geometries=geojson"
         try {
             val response = window.fetch(url).await()
             val text = response.text().await()
@@ -440,21 +430,21 @@ class TripWeatherPanel : SimplePanel() {
         return if (hours > 0) "${hours}時間${mins}分" else "${mins}分"
     }
 
-    private suspend fun setMapTarget(lat: Double, lng: Double){
+    private suspend fun setMapTarget(lat: Double, lng: Double) {
         val latlng = L.latLng(lat, lng)
 
-        getWeather(lat, lng)?.hourly?.data?.let{
+        getWeather(lat, lng)?.hourly?.data?.let {
             console.log(it)
-            showMarker(latlng, Div{
-                div{
+            showMarker(latlng, Div {
+                div {
                     setStyle("max-height", "100px")
                     setStyle("overflow-y", "auto")
 
-                    table(headerNames = listOf("時間","天気", "温度")){
-                        it.map{
+                    table(headerNames = listOf("時間", "天気", "温度")) {
+                        it.map {
                             tableRow {
                                 cell(it.dateTime)
-                                cell{
+                                cell {
                                     image("${AppList.WEATHER.path}/${it.icon}.png", alt = it.weather)
                                 }
                                 cell("${it.temperature}度")
@@ -465,7 +455,7 @@ class TripWeatherPanel : SimplePanel() {
             })
 
             leafletMap?.flyTo(latlng, 13)
-        } ?: run{
+        } ?: run {
             console.warn("天気情報の取得に失敗")
             leafletMap?.flyTo(latlng, 13)
         }
@@ -476,7 +466,7 @@ class Map(val onMapReady: (LeafletMap) -> Unit) : Div() {
 
     init {
         id = "trip-weather-map"
-        setStyle("height", "${window.innerHeight /2}px")
+        setStyle("height", "${window.innerHeight / 2}px")
         setStyle("width", "100%")
 
         addAfterInsertHook {
