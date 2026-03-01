@@ -57,6 +57,9 @@ kotlin {
     }
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack> {
+    outputs.cacheIf { false } // webpack は常に実行（Gradle ビルドキャッシュ対象外）
+}
 // ========== AllClean タスク ==========
 // build ディレクトリ、.gradle キャッシュ、node_modules を一括削除します
 tasks.register("AllClean") {
