@@ -1,31 +1,45 @@
 name: Deploy to GitHub Pages
 
+# master ブランチへの push をトリガーに GitHub Pages へデプロイする
+# ただし README.md のみの変更はワークフローをトリガーしない
 on:
   push:
     branches:
       - master
     paths-ignore:
-      # - '.github/**'
+      # - '.github/**'  # ワークフロー自体の変更もトリガーしたい場合はコメントアウト
       - 'README.md'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
+      # gh-pages ブランチへの書き込みに必要
       contents: write
 
     steps:
+      # ----------------------------------------
+      # 1. ソースコードの取得
+      # fetch-depth: 0 は全履歴を取得（gh-pages ブランチ操作に必要）
+      # ----------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # ----------------------------------------
+      # 2. ビルド環境のセットアップ
+      # ----------------------------------------
+
+      # Kotlin/JS のビルドには JDK が必要
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
+      # Gradle のキャッシュ（ビルド時間短縮）
+      # *.gradle.kts / gradle.properties が変わった場合はキャッシュを再生成
       - name: Cache Gradle packages
         uses: actions/cache@v4
         with:
@@ -36,6 +50,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      # Kotlin/JS が管理する Node.js バイナリと node_modules のキャッシュ
+      # build.gradle.kts が変わった場合はキャッシュを再生成
       - name: Cache Kotlin/JS node_modules
         uses: actions/cache@v4
         with:
@@ -46,12 +62,26 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nodejs-
 
+      # ----------------------------------------
+      # 3. ビルド
+      # ----------------------------------------
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      # Kotlin/JS をプロダクションビルド
+      # 成果物は build/dist/js/productionExecutable/ に出力される
       - name: Build
         run: ./gradlew jsBrowserDistribution
 
+      # ----------------------------------------
+      # 4. Service Worker バージョン注入
+      #
+      # sw.js 内のプレースホルダー __SW_VERSION__ を
+      # ビルド時刻（Asia/Tokyo、yyyyMMdd-HHmmss 形式）で置換する。
+      # webpack.DefinePlugin が main.bundle.js に同じ値を埋め込むため、
+      # Kotlin 側ログと Service Worker のキャッシュバージョンが常に一致する。
+      # ----------------------------------------
       - name: Inject SW version
         run: |
           SW_FILE="build/dist/js/productionExecutable/sw.js"
@@ -63,6 +93,12 @@ jobs:
             echo "⚠️  sw.js not found, skipping version injection"
           fi
 
+      # ----------------------------------------
+      # 5. gh-pages ブランチへデプロイ
+      #
+      # peaceiris/actions-gh-pages が publish_dir の内容を
+      # gh-pages ブランチに force push する
+      # ----------------------------------------
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
