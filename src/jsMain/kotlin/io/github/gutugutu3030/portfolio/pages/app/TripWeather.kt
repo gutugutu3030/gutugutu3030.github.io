@@ -3,6 +3,7 @@ package io.github.gutugutu3030.portfolio.pages.app
 import getWeather
 import io.github.gutugutu3030.portfolio.pages.AppList
 import io.kvision.core.Container
+import io.kvision.core.onChange
 import io.kvision.core.onEvent
 import io.kvision.form.text.textInput
 import io.kvision.html.Div
@@ -106,12 +107,6 @@ class TripWeatherPanel : SimplePanel() {
     /** 検索状態メッセージ */
     private val searchMessage = ObservableValue<Message?>(null)
 
-    /** 経路検索の出発地座標 (lat, lng) */
-    private var originLatLng: Pair<Double, Double>? = null
-
-    /** 経路検索の目的地座標 (lat, lng) */
-    private var destLatLng: Pair<Double, Double>? = null
-
     /** 経路検索結果 */
     private val routeResult = ObservableValue<RouteResult?>(null)
 
@@ -139,24 +134,24 @@ class TripWeatherPanel : SimplePanel() {
     init {
         h1("旅行天気")
 
+        val position = ObservableValue<String>("")
+
+
+
         // 検索バー
         div(className = "input-group mb-2") {
-            val input = textInput(InputType.TEXT) {
+            textInput().bind(position) {
+                value = it
                 placeholder = "場所名 または 緯度,経度 (例: 東京, 35.68,139.76)"
                 addCssClass("form-control")
-
-                // Enter キーで検索
-                onEvent {
-                    keydown = { e ->
-                        if (e.asDynamic().key == "Enter") {
-                            scope.launch { doSearch(value ?: "") }
-                        }
-                    }
+                onChange {
+                    position.value = value ?: ""
+                    scope.launch { doSearch(position.value) }
                 }
             }
             button("検索", className = "btn btn-primary") {
                 onClick {
-                    scope.launch { doSearch(input.value ?: "") }
+                    scope.launch { doSearch(position.value) }
                 }
             }
         }
