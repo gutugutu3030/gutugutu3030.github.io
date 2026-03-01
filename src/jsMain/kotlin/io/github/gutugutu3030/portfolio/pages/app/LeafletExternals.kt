@@ -109,6 +109,14 @@ external object L {
      * @return 生成された [LeafletIcon] インスタンス
      */
     fun divIcon(options: dynamic): LeafletIcon
+
+    /**
+     * 緯度・経度の配列からポリラインを生成する。
+     * @param latlngs 座標の配列
+     * @param options Leaflet の PolylineOptions に相当する動的オブジェクト
+     * @return 生成された [Polyline] インスタンス
+     */
+    fun polyline(latlngs: Array<LatLng>, options: dynamic = definedExternally): Polyline
 }
 
 /**
@@ -163,6 +171,13 @@ external class LeafletMap {
      * コンテナのサイズが動的に変わった場合に呼び出す。
      */
     fun invalidateSize()
+
+    /**
+     * 指定したバウンドに収まるようにマップを調整する。
+     * @param bounds フィットさせる境界 (Leaflet の LatLngBounds または getBounds() の戻り値)
+     * @return メソッドチェーン用に自身を返す
+     */
+    fun fitBounds(bounds: dynamic): LeafletMap
 }
 
 /**
@@ -202,6 +217,26 @@ data class TileLayerOptions(
  * [L.icon] または [L.divIcon] で生成し、MarkerOptions の `icon` プロパティに渡す。
  */
 external class LeafletIcon
+
+/**
+ * 複数の緯度・経度を結ぶポリラインを表すクラス。
+ * [L.polyline] で生成する。
+ */
+external class Polyline : Layer {
+    /**
+     * ポリラインを指定のマップに追加する。
+     * @param map 追加先の [LeafletMap]
+     * @return メソッドチェーン用に自身を返す
+     */
+    fun addTo(map: LeafletMap): Polyline
+
+    /**
+     * ポリライン全体を包む境界矩形を返す。
+     * [LeafletMap.fitBounds] に渡して全体を表示する際に使用する。
+     * @return Leaflet の LatLngBounds オブジェクト
+     */
+    fun getBounds(): dynamic
+}
 
 /**
  * 地図上の特定座標に配置されるマーカーを表すクラス。

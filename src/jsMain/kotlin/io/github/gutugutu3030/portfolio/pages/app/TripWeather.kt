@@ -50,6 +50,12 @@ private data class NominatimResult(
     @SerialName("display_name") val displayName: String
 )
 
+/** OSRM ジオメトリ (GeoJSON LineString) */
+@Serializable
+private data class OsrmGeometry(
+    val coordinates: List<List<Double>> = emptyList() // 各要素は [lon, lat]
+)
+
 /** OSRM Routing API レスポンス */
 @Serializable
 private data class OsrmResponse(
@@ -59,8 +65,9 @@ private data class OsrmResponse(
 
 @Serializable
 private data class OsrmRoute(
-    val duration: Double, // 秒
-    val distance: Double  // メートル
+    val duration: Double,  // 秒
+    val distance: Double,  // メートル
+    val geometry: OsrmGeometry = OsrmGeometry()
 )
 
 /** 経路検索結果 */
@@ -110,6 +117,15 @@ class TripWeatherPanel : SimplePanel() {
 
     /** 経路検索中メッセージ */
     private val routeMessage = ObservableValue<Message?>(null)
+
+    /** 地図上に描画中の経路ポリライン */
+    private var routePolyline: Polyline? = null
+
+    /** 経路の出発地マーカー */
+    private var routeOriginMarker: Marker? = null
+
+    /** 経路の目的地マーカー */
+    private var routeDestMarker: Marker? = null
 
     /**
      * 検索状態メッセージを更新する関数
@@ -366,7 +382,7 @@ class TripWeatherPanel : SimplePanel() {
         val (oLat, oLng) = originCoord
         val (dLat, dLng) = destCoord
 
-        val url = "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=false"
+        val url = "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=full&geometries=geojson"
         try {
             val response = window.fetch(url).await()
             val text = response.text().await()
@@ -383,6 +399,39 @@ class TripWeatherPanel : SimplePanel() {
                 distance = route.distance
             )
             routeMessage.value = Message("")
+
+            // 経路を地図に描画
+            val map = leafletMap ?: return
+
+            // 古い経路レイヤーを削除
+            routePolyline?.let { map.removeLayer(it) }
+            routeOriginMarker?.let { map.removeLayer(it) }
+            routeDestMarker?.let { map.removeLayer(it) }
+
+            // GeoJSON の座標は [lon, lat] 順なので入れ替える
+            val latlngs = route.geometry.coordinates
+                .map { L.latLng(it[1], it[0]) }
+                .toTypedArray()
+
+            // ポリライン描画
+            val opts = js("({})")
+            opts["color"] = "#0d6efd"
+            opts["weight"] = 4
+            opts["opacity"] = 0.85
+            val polyline = L.polyline(latlngs, opts).addTo(map)
+            routePolyline = polyline
+
+            // 出発地・目的地マーカー
+            routeOriginMarker = L.marker(L.latLng(oLat, oLng))
+                .bindPopup("出発地: $originName")
+                .addTo(map)
+            routeDestMarker = L.marker(L.latLng(dLat, dLng))
+                .bindPopup("目的地: $destName")
+                .addTo(map)
+                .openPopup()
+
+            // 経路全体が見えるように地図をフィット
+            map.fitBounds(polyline.getBounds())
         } catch (e: Exception) {
             routeMessage.value = Message("通信エラー: ${e.message}", isError = true)
         }
