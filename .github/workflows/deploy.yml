@@ -1,13 +1,11 @@
 name: Deploy to GitHub Pages
 
 # master ブランチへの push をトリガーに GitHub Pages へデプロイする
-# ただし README.md のみの変更はワークフローをトリガーしない
 on:
   push:
     branches:
       - master
     paths-ignore:
-      # - '.github/**'  # ワークフロー自体の変更もトリガーしたい場合はコメントアウト
       - 'README.md'
 
 jobs:
