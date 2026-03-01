@@ -1,10 +1,12 @@
 /**
  * Service Worker for gutugutu3030 Portfolio PWA
  *
- * キャッシュ更新方法: CACHE_VERSION の値を変更してデプロイする
+ * キャッシュ更新方法:
+ *   CI (GitHub Actions) が deploy 時に __SW_VERSION__ をタイムスタンプへ自動置換する。
+ *   手動で変更する必要はない。
  */
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = '__SW_VERSION__';
 
 // =========================================================
 // Precache: アプリシェル（オフラインで必ず動くべきファイル）
@@ -38,7 +40,17 @@ const CACHE_STAR      = 'star-'     + CACHE_VERSION;
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(PRECACHE_NAME)
-            .then((cache) => cache.addAll(PRECACHE_URLS))
+            .then((cache) =>
+                // 個別に addAll するとどれか 1 つ 404 で全体が失敗するため
+                // 個別 fetch でエラーを吸収する
+                Promise.all(
+                    PRECACHE_URLS.map((url) =>
+                        cache.add(url).catch((err) => {
+                            console.warn('SW precache skip:', url, err);
+                        })
+                    )
+                )
+            )
             .then(() => self.skipWaiting())
     );
 });
@@ -121,7 +133,13 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // ---- その他（main.bundle.js, icon等）→ CacheFirst ---
+    // ---- main.bundle.js → NetworkFirst（最新バンドルを優先）---
+    if (url.pathname === '/main.bundle.js') {
+        event.respondWith(networkFirst(event.request, PRECACHE_NAME, 5000));
+        return;
+    }
+
+    // ---- その他（icon, manifest 等の静的アセット）→ CacheFirst ---
     event.respondWith(cacheFirst(event.request, PRECACHE_NAME));
 });
 

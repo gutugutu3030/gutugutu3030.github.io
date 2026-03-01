@@ -52,6 +52,17 @@ jobs:
       - name: Build
         run: ./gradlew jsBrowserDistribution
 
+      - name: Inject SW version
+        run: |
+          SW_FILE="build/dist/js/productionExecutable/sw.js"
+          if [ -f "$SW_FILE" ]; then
+            TIMESTAMP=$(TZ=Asia/Tokyo date '+%Y%m%d-%H%M%S')
+            sed -i "s/__SW_VERSION__/$TIMESTAMP/g" "$SW_FILE"
+            echo "✅ SW: CACHE_VERSION → $TIMESTAMP"
+          else
+            echo "⚠️  sw.js not found, skipping version injection"
+          fi
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:

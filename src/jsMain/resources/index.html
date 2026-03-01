@@ -29,9 +29,24 @@
                 });
             } else {
                 // 本番環境のみ SW を登録
+                // updateViaCache: 'none' で SW 自体の HTTP キャッシュを無視させ
+                // デプロイ後すぐに新しい sw.js を検出できるようにする
                 window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js')
-                        .then(function(reg) { console.log('SW registered:', reg.scope); })
+                    navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
+                        .then(function(reg) {
+                            console.log('SW registered:', reg.scope);
+                            // 新しい SW がインストール完了したらページを自動リロード
+                            reg.addEventListener('updatefound', function() {
+                                var newSW = reg.installing;
+                                if (!newSW) return;
+                                newSW.addEventListener('statechange', function() {
+                                    if (newSW.state === 'activated' && navigator.serviceWorker.controller) {
+                                        console.log('New SW activated, reloading for update...');
+                                        window.location.reload();
+                                    }
+                                });
+                            });
+                        })
                         .catch(function(err) { console.warn('SW registration failed:', err); });
                 });
             }
