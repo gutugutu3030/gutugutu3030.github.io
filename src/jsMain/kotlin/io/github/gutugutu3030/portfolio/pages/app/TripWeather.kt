@@ -7,7 +7,7 @@ import io.kvision.core.onChange
 import io.kvision.core.onEvent
 import io.kvision.form.text.textInput
 import io.kvision.html.Div
-import io.kvision.html.InputType
+import io.kvision.html.ButtonStyle
 import io.kvision.html.button
 import io.kvision.html.div
 import io.kvision.html.h1
@@ -16,7 +16,6 @@ import io.kvision.html.image
 import io.kvision.html.p
 import io.kvision.html.span
 import io.kvision.panel.SimplePanel
-import io.kvision.state.ObservableList
 import io.kvision.state.ObservableListWrapper
 import io.kvision.state.ObservableValue
 import io.kvision.state.bind
@@ -146,6 +145,7 @@ class TripWeatherPanel : SimplePanel() {
                 onChange {
                     position.value = value ?: ""
                     scope.launch { doSearch(position.value) }
+                    scope.launch { doSearch(position.value) }
                 }
             }
             button("検索", className = "btn btn-primary") {
@@ -162,25 +162,46 @@ class TripWeatherPanel : SimplePanel() {
 
         // ---- 経路検索セクション ----
         h4("経路検索", className = "mt-3 mb-2")
-        val origin = ObservableValue("")
-        textInput(className = "mb-2").bind(origin) {
-            value = it
-            placeholder = "出発地"
-            addCssClass("form-control")
-            onChange { origin.value = value ?: "" }
-        }
-        val destList = ObservableListWrapper<String>(mutableListOf(""))
+        val destList = ObservableListWrapper(mutableListOf(
+            ""
+        ))
         div().bind(destList) { list ->
             list.forEachIndexed { i, it ->
-                textInput(className = "mb-2") {
-                    value = it
-                    placeholder = "目的地 ${i + 1}"
-                    onChange {
-                        if (value.isNullOrBlank()) {
-                            if (i != 0) destList.removeAt(i)
-                        } else {
-                            if (i == list.size - 1) destList.add("")
+                div(className = "input-group mb-2") {
+                    textInput() {
+                        value = it
+                        addCssClass("form-control")
+                        placeholder = if(i === 0) "出発地" else "目的地 $i"
+                        onChange {
                             destList[i] = value ?: ""
+                            if(i == destList.size - 1 && value != "")
+                                destList.add("")
+                        }
+                        onEvent{
+                            blur = {
+                                console.log("blur", value)
+
+                                if(value == null && destList.size > 1 && i < destList.size - 1)
+                                    destList.removeAt(i)
+                            }
+                        }
+                    }
+                    button("↓", style = ButtonStyle.OUTLINEPRIMARY){
+                        onClick {
+                            if(i < destList.size - 1){
+                                val temp = destList[i]
+                                destList[i] = destList[i + 1]
+                                destList[i + 1] = temp
+                            }
+                        }
+                    }
+                    button("↑", style = ButtonStyle.OUTLINEPRIMARY){
+                        onClick {
+                            if (i > 0) {
+                                val temp = destList[i]
+                                destList[i] = destList[i - 1]
+                                destList[i - 1] = temp
+                            }
                         }
                     }
                 }
@@ -189,7 +210,12 @@ class TripWeatherPanel : SimplePanel() {
         button("経路検索", className = "btn btn-success col-auto") {
             onClick {
                 scope.launch {
-                    doRouteSearch(origin.value, destList.firstOrNull { it.isNotBlank() } ?: "")
+                    val data = destList.toList().filterNot{ it.isBlank() }
+                    if(data.size < 2){
+                        routeMessage.value = Message("出発地と目的地を両方入力してください", isError = true)
+                    } else {
+                        doRouteSearch(data)
+                    }
                 }
             }
         }
@@ -341,85 +367,101 @@ class TripWeatherPanel : SimplePanel() {
     /**
      * 出発地・目的地を OSRM でルート検索し移動時間・距離を表示する。
      */
-    private suspend fun doRouteSearch(originQuery: String, destQuery: String) {
-        if (originQuery.isBlank() || destQuery.isBlank()) {
-            routeMessage.value = Message("出発地と目的地を両方入力してください", isError = true)
-            return
-        }
+    private suspend fun doRouteSearch(list: List<String>) {
         routeMessage.value = Message("検索中...")
         routeResult.value = null
 
-        val originGeo = geocode(originQuery)
-        if (originGeo == null) {
-            routeMessage.value = Message("出発地「$originQuery」が見つかりませんでした", isError = true)
-            return
+        val geocodes = list.map{
+            runCatching {
+                geocode(it) ?: throw Exception("「$it」が見つかりませんでした")
+            }
         }
-        val destGeo = geocode(destQuery)
-        if (destGeo == null) {
-            routeMessage.value = Message("目的地「$destQuery」が見つかりませんでした", isError = true)
-            return
-        }
-
-        val (originCoord, originName) = originGeo
-        val (destCoord, destName) = destGeo
-
-        val (oLat, oLng) = originCoord
-        val (dLat, dLng) = destCoord
-
-        val url =
-            "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=full&geometries=geojson"
-        try {
-            val response = window.fetch(url).await()
-            val text = response.text().await()
-            val osrm = jsonParser.decodeFromString<OsrmResponse>(text)
-            if (osrm.code != "Ok" || osrm.routes.isEmpty()) {
-                routeMessage.value = Message("ルートが見つかりませんでした (${osrm.code})", isError = true)
+        geocodes.mapNotNull{ it.exceptionOrNull() }
+            .takeUnless { it.isEmpty() }
+            ?.let{
+                routeMessage.value = Message(it.joinToString("\n") { e -> e.message ?: "不明なエラー" }, isError = true)
                 return
             }
-            val route = osrm.routes.first()
-            routeResult.value = RouteResult(
-                originName = originName,
-                destName = destName,
-                duration = route.duration,
-                distance = route.distance
-            )
-            routeMessage.value = Message("")
+        val routes = geocodes.mapNotNull{ it.getOrNull() }.zipWithNext { originGeo, destGeo ->
+            runCatching {
+                val (originCoord, originName) = originGeo
+                val (destCoord, destName) = destGeo
 
-            // 経路を地図に描画
-            val map = leafletMap ?: return
+                val (oLat, oLng) = originCoord
+                val (dLat, dLng) = destCoord
 
-            // 古い経路レイヤーを削除
-            routePolyline?.let { map.removeLayer(it) }
-            routeOriginMarker?.let { map.removeLayer(it) }
-            routeDestMarker?.let { map.removeLayer(it) }
-
-            // GeoJSON の座標は [lon, lat] 順なので入れ替える
-            val latlngs = route.geometry.coordinates
-                .map { L.latLng(it[1], it[0]) }
-                .toTypedArray()
-
-            // ポリライン描画
-            val opts = js("({})")
-            opts["color"] = "#0d6efd"
-            opts["weight"] = 4
-            opts["opacity"] = 0.85
-            val polyline = L.polyline(latlngs, opts).addTo(map)
-            routePolyline = polyline
-
-            // 出発地・目的地マーカー
-            routeOriginMarker = L.marker(L.latLng(oLat, oLng))
-                .bindPopup("出発地: $originName")
-                .addTo(map)
-            routeDestMarker = L.marker(L.latLng(dLat, dLng))
-                .bindPopup("目的地: $destName")
-                .addTo(map)
-                .openPopup()
-
-            // 経路全体が見えるように地図をフィット
-            map.fitBounds(polyline.getBounds())
-        } catch (e: Exception) {
-            routeMessage.value = Message("通信エラー: ${e.message}", isError = true)
+                val url =
+                    "https://router.project-osrm.org/route/v1/driving/$oLng,$oLat;$dLng,$dLat?overview=full&geometries=geojson"
+                val response = window.fetch(url).await().text().await()
+                val osrm = jsonParser.decodeFromString<OsrmResponse>(response)
+                if (osrm.code != "Ok" || osrm.routes.isEmpty()) {
+                    throw Exception("[$originName->$destName]ルートが見つかりませんでした (${osrm.code})")
+                }
+                val route = osrm.routes.first()
+                RouteResult(
+                    originName = originName,
+                    destName = destName,
+                    duration = route.duration,
+                    distance = route.distance
+                )
+            }
         }
+        routes.mapNotNull { it.exceptionOrNull() }
+            .takeUnless { it.isEmpty() }
+            ?.let {
+                routeMessage.value = Message(it.joinToString("\n") { e -> e.message ?: "不明なエラー" }, isError = true)
+                return
+            }
+        val route = routes.mapNotNull { it.getOrNull() }
+        console.log(route)
+
+
+
+
+//        try {
+//            routeResult.value = RouteResult(
+//                originName = originName,
+//                destName = destName,
+//                duration = route.duration,
+//                distance = route.distance
+//            )
+//            routeMessage.value = Message("")
+//
+//            // 経路を地図に描画
+//            val map = leafletMap ?: return
+//
+//            // 古い経路レイヤーを削除
+//            routePolyline?.let { map.removeLayer(it) }
+//            routeOriginMarker?.let { map.removeLayer(it) }
+//            routeDestMarker?.let { map.removeLayer(it) }
+//
+//            // GeoJSON の座標は [lon, lat] 順なので入れ替える
+//            val latlngs = route.geometry.coordinates
+//                .map { L.latLng(it[1], it[0]) }
+//                .toTypedArray()
+//
+//            // ポリライン描画
+//            val opts = js("({})")
+//            opts["color"] = "#0d6efd"
+//            opts["weight"] = 4
+//            opts["opacity"] = 0.85
+//            val polyline = L.polyline(latlngs, opts).addTo(map)
+//            routePolyline = polyline
+//
+//            // 出発地・目的地マーカー
+//            routeOriginMarker = L.marker(L.latLng(oLat, oLng))
+//                .bindPopup("出発地: $originName")
+//                .addTo(map)
+//            routeDestMarker = L.marker(L.latLng(dLat, dLng))
+//                .bindPopup("目的地: $destName")
+//                .addTo(map)
+//                .openPopup()
+//
+//            // 経路全体が見えるように地図をフィット
+//            map.fitBounds(polyline.getBounds())
+//        } catch (e: Exception) {
+//            routeMessage.value = Message("通信エラー: ${e.message}", isError = true)
+//        }
     }
 
     /** 秒数を「X時間Y分」形式の文字列に変換する */
