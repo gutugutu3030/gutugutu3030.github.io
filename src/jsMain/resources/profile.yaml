@@ -1,20 +1,29 @@
 simpleExpression:
-  趣味: ドライブ
+  趣味: ドライブ・旅行
   興味分野: HCI・タンジブルインタフェース・Fab・電子工作支援・プログラミング支援
-  使用可能言語・環境（スクラッチ）: Java・Processing・C++・Arduino・TypeScript・openFrameworks
-  使用可能言語・環境（バイブコーディング）: Kotlin・C#・React
-oneSentence: ソフトウェアエンジニアをしています。大学・大学院時代はHCI分野で電子工作支援、3DプリンタUI研究をしていました。
+  好きな言語: Kotlin
+  使用可能言語・環境（スクラッチ）: Kotlin・Java・Processing
+  開発経験言語・環境（バイブコーディング含む）: C++・openFrameworks・Arduino・TypeScript・React・C#
+oneSentence: ソフトウェアエンジニアをしています。大学・大学院時代はHCI分野で電子工作支援、3DプリンタUI研究をしていました。windows/linuxよりmacOSが好きです。
 career:
   - {date: 2012/4, description: "明治大学理工学部情報科学科入学"}
-  - {date: 2015/7, description: "玉木研所属"}
+  - {date: 2015/7, description: "玉木研所属　組合せ最適化について研究"}
   - {date: 2016/3, description: "明治大学理工学部情報科学科卒業"}
-  - {date: 2016/4, description: "明治大学大学院理工学研究科新領域創造専攻入学（宮下研）"}
+  - {date: 2016/4, description: "明治大学大学院理工学研究科新領域創造専攻入学（宮下研）　HCI分野で電子工作支援、3DプリンタUI研究を開始"}
   - {date: 2017/7/24, description: "Zing!にて「3Dプリンタで“声の立体化”に挑戦!?」記事掲載", url: [ "http://eonet.jp/zing/articles/_4100703.html" ] }
   - {date: 2017/9/6, description: "新たな技術を福祉にいかす体験ワークショップにて研究事例紹介", url: [ "http://goodjobcenter.com/topics/report/959/" ] }
   - {date: 2017/9/22, description: "Zing!にてまるでハンドパワー！「手をかざすと動く台」をFabってみた」記事掲載", url: [ "http://eonet.jp/zing/articles/_4101119.html" ]}
   - {date: 2018/3, description: "明治大学大学院理工学研究科新領域創造専攻卒業・工学（修士）取得", url: [ "./pdf/CertificateOfGraduation.pdf" ] }
   - {date: 2018/4, description: "チームラボ株式会社入社"}
   - date: 2018
+    description: 国内アート展示7件、海外アート案件1件に参加
+  - date: 2019
+    description: 国内アート展示2件、海外アート案件2件に参加
+  - date: 2020
+    description: 国内アート展示3件、海外アート案件1件に参加
+  - date: 2021
+    description: 国内アート展示4件、海外アート案件1件に参加
+  - date: 2022
     description: 国内アート展示4件、海外アート案件1件に参加
   - date: 2022~
     description: "インタラクティブシステムとソフトウェアに関するワークショップ(WISS)にてプログラム委員に就任"
@@ -23,10 +32,16 @@ career:
       - https://www.wiss.org/WISS2023/committee.html
       - https://www.wiss.org/WISS2024/committee.html
       - https://www.wiss.org/WISS2025/committee.html
+  - date: 2023
+    description: 国内アート展示1件、海外アート案件1件に参加
+  - date: 2024
+    description: 国内アート展示1件、海外アート案件1件に参加
+  - date: 2025
+    description: 国内アート展示3件、海外アート案件1件に参加
 qualification:
   - { description: 普通自動車第一種運転免許（AT限定）}
   - { description: 第二種電気工事士 }
-  - { description: "Silver SE 17" , url: "./pdf/JavaSilver.pdf"}
+  - { description: "Java Silver SE 17" , url: "./pdf/JavaSilver.pdf"}
 award:
   - date: 2013/12
     description: >-
