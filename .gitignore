@@ -5,9 +5,11 @@
 .vim/
 .vscode/
 .kotlin-js-store/
+kotlin-js-store/
 /build
 out/
 *.imp
 *.ipr
 *.iws
 *.idea
+composeApp/build

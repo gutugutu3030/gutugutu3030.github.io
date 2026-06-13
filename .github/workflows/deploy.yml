@@ -50,11 +50,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build
-        run: ./gradlew jsBrowserDistribution
+        run: ./gradlew :composeApp:wasmJsBrowserDistribution
 
       - name: Inject SW version
         run: |
-          SW_FILE="build/dist/js/productionExecutable/sw.js"
+          SW_FILE="composeApp/build/dist/wasmJs/productionExecutable/sw.js"
           if [ -f "$SW_FILE" ]; then
             TIMESTAMP=$(TZ=Asia/Tokyo date '+%Y%m%d-%H%M%S')
             sed -i "s/__SW_VERSION__/$TIMESTAMP/g" "$SW_FILE"
@@ -67,4 +67,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/dist/js/productionExecutable
+          publish_dir: composeApp/build/dist/wasmJs/productionExecutable
