@@ -23,7 +23,6 @@ import io.kvision.panel.root
 import io.kvision.panel.SimplePanel
 import io.kvision.routing.Routing
 import io.kvision.startApplication
-import io.kvision.theme.Theme
 import io.kvision.theme.ThemeManager
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -33,7 +32,7 @@ external val SW_VERSION: String
 
 class App : Application() {
     init {
-        ThemeManager.init(initialTheme = Theme.DARK)
+        ThemeManager.init()
     }
 
     /**
