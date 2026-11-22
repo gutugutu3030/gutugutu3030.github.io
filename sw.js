@@ -2,11 +2,11 @@
  * Service Worker for gutugutu3030 Portfolio PWA
  *
  * キャッシュ更新方法:
- *   CI (GitHub Actions) が deploy 時に 20260613-110527 をタイムスタンプへ自動置換する。
+ *   CI (GitHub Actions) が deploy 時に 20261122-152719 をタイムスタンプへ自動置換する。
  *   手動で変更する必要はない。
  */
 
-const CACHE_VERSION = '20260613-110527';
+const CACHE_VERSION = '20261122-152719';
 
 // =========================================================
 // Precache: アプリシェル（オフラインで必ず動くべきファイル）
