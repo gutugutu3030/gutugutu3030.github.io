@@ -1,0 +1,26 @@
+[versions]
+kotlin = "2.4.21"
+kvision = "9.7.0"
+kaml = "0.55.0"
+leaflet = "1.9.4"
+types-leaflet = "1.9.14"
+
+[libraries]
+kvision = { module = "io.kvision:kvision", version.ref = "kvision" }
+kvision-bootstrap = { module = "io.kvision:kvision-bootstrap", version.ref = "kvision" }
+kvision-datetime = { module = "io.kvision:kvision-datetime", version.ref = "kvision" }
+kvision-richtext = { module = "io.kvision:kvision-richtext", version.ref = "kvision" }
+kvision-tom-select = { module = "io.kvision:kvision-tom-select", version.ref = "kvision" }
+kvision-bootstrap-upload = { module = "io.kvision:kvision-bootstrap-upload", version.ref = "kvision" }
+kvision-bootstrap-icons = { module = "io.kvision:kvision-bootstrap-icons", version.ref = "kvision" }
+kvision-pace = { module = "io.kvision:kvision-pace", version.ref = "kvision" }
+kvision-ktml = { module = "io.kvision:kvision-ktml", version.ref = "kvision" }
+kvision-routing-navigo-ng = { module = "io.kvision:kvision-routing-navigo-ng", version.ref = "kvision" }
+kvision-state = { module = "io.kvision:kvision-state", version.ref = "kvision" }
+kvision-testutils = { module = "io.kvision:kvision-testutils", version.ref = "kvision" }
+kaml = { module = "com.charleskorn.kaml:kaml", version.ref = "kaml" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kvision = { id = "io.kvision", version.ref = "kvision" }
